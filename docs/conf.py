@@ -52,11 +52,10 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.ipynb_checkpoints']
 #
 html_theme = 'sphinx_rtd_theme'
 
-####html_logo = 'images/EuMesmo.png'
-####html_favicon = 'images/iFoodLogo.ico'
+####html_logo = 'images/image.png'
 
-####html_title = 'iFood Interview Project'
-####html_short_title = 'iFood Interview'
+html_title = 'Cancer Project Documentation'
+html_short_title = 'Cancer Project'
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
