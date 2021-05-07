@@ -51,12 +51,10 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.ipynb_checkpoints']
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-
 ####html_logo = 'images/image.png'
 
 html_title = 'Cancer Project Documentation'
 html_short_title = 'Cancer Project'
-
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
