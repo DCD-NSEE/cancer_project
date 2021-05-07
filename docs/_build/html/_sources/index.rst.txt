@@ -20,9 +20,9 @@ Summary
 
 The project will be divided into stages to provide a better understanding and organization. The steps being:
 
-* Data analysis.
-* Data preprocessing.
-* Creation and validation of machine learning models.
+* Libraries and Functions
+* Data analysis and first preprocessing.
+* Preprocessing, creation and validation of machine learning models.
 
    * Classifiers
    * Regressors
@@ -425,9 +425,27 @@ Data Dictionary
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents
+   :caption: Libraries and functions
 
-   Cancer Models
+   Cancer Libraries and functions
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Data Analysis
+
+   Cancer Data Analysis
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Classifiers
+
+   Cancer Classifiers
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Regressors
+
+   Cancer Regressors
 
 
 Indices and tables
