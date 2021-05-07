@@ -1,0 +1,9 @@
+nbsphinx
+pandas
+matplotlib
+scikit-learn
+numpy
+seaborn
+plotly
+xgboost
+ipython
