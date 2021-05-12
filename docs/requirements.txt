@@ -2,6 +2,7 @@ nbsphinx
 pandas
 matplotlib
 scikit-learn
+imblearn
 numpy
 seaborn
 plotly
