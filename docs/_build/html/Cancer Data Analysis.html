@@ -2109,7 +2109,7 @@ Name: ULTINFO, dtype: int64
 <img alt="_images/Cancer_Data_Analysis_33_0.png" src="_images/Cancer_Data_Analysis_33_0.png" />
 </div>
 </div>
-<p>Now we will analyze the correlation of the ULTINFO column with the others in this dataset, we notice a good correlation with PERDASEG, which indicates whether the patient is being monitored by the hospital, and with the ANODIAG column, which has the year of the patient’s diagnosis, otherwise we don’t have such high correlations.</p>
+<p>Now we will analyze the correlation of the <code class="docutils literal notranslate"><span class="pre">ULTINFO</span></code> column with the others in this dataset, we notice a good correlation with <code class="docutils literal notranslate"><span class="pre">PERDASEG</span></code>, which indicates whether the patient is being monitored by the hospital, and with the <code class="docutils literal notranslate"><span class="pre">ANODIAG</span></code> column, which has the year of the patient’s diagnosis, otherwise we don’t have such high correlations.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -2183,7 +2183,7 @@ ERRO               NaN
 Name: ULTINFO, dtype: float64
 </pre></div></div>
 </div>
-<p>In the correlation matrix we can see the correlations between all columns and as described above for the case of the analysis only for ULTINFO, we do not have very high correlations.</p>
+<p>In the correlation matrix we can see the correlations between all columns and as described above for the case of the analysis only for <code class="docutils literal notranslate"><span class="pre">ULTINFO</span></code>, we do not have very high correlations.</p>
 <p>It is important to note that the data has not been processed yet, so after preprocessing a more explanatory matrix for the data should be obtained.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -2335,41 +2335,41 @@ dtype: float64
 <h2><strong>Columns analysis</strong><a class="headerlink" href="#Columns-analysis" title="Permalink to this headline">¶</a></h2>
 <p>In this section, the columns will be analyzed individually, with the aim of examining each one of them and obtaining a function that will be used in the data before starting the study with the machine learning models.</p>
 <p>The columns were divided according to the type of each one, resulting in the categories: dates, numeric categories, letters categories, numbers, strings, letters and numbers categories.</p>
-<p>Columns with unique values will be dropped from the dataset in the function called variables_preprocessing. Another treatment that will be done in the columns is the filling of string columns with missing values with ** Sem informação **, being the columns:</p>
+<p>Columns with unique values will be dropped from the dataset in the function called <code class="docutils literal notranslate"><span class="pre">variables_preprocessing</span></code>. Another treatment that will be done in the columns is the filling of string columns with missing values with ** Sem informação **, being the columns:</p>
 <ul class="simple">
-<li><p>META01;</p></li>
-<li><p>META02;</p></li>
-<li><p>META03;</p></li>
-<li><p>META04;</p></li>
-<li><p>REC01;</p></li>
-<li><p>REC02;</p></li>
-<li><p>REC03;</p></li>
-<li><p>REC04;</p></li>
-<li><p>PT;</p></li>
-<li><p>PN;</p></li>
-<li><p>PM;</p></li>
-<li><p>CICI;</p></li>
-<li><p>CICIGRUP.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">META01</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">META02</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">META03</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">META04</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REC01</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REC02</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REC03</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REC04</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PT</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PN</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PM</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CICI</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CICIGRUP</span></code>.</p></li>
 </ul>
-<p>The DRS column will have the missing values filled with 0, after using the split method to obtain only the numbers in this column, just as done for the CICIGRUP column.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">DRS</span></code> column will have the missing values filled with 0, after using the split method to obtain only the numbers in this column, just as done for the <code class="docutils literal notranslate"><span class="pre">CICIGRUP</span></code> column.</p>
 <p>Finally, the columns that were dropped from the dataset, because they have unique values or because they are descriptions of the disease, are the following:</p>
 <ul class="simple">
-<li><p>S;</p></li>
-<li><p>QUIMIOANT;</p></li>
-<li><p>HORMOANT;</p></li>
-<li><p>TMOANT;</p></li>
-<li><p>IMUNOANT;</p></li>
-<li><p>OUTROANT;</p></li>
-<li><p>ERRO;</p></li>
-<li><p>CIDO;</p></li>
-<li><p>UFNASC;</p></li>
-<li><p>CIDADE;</p></li>
-<li><p>DESCTOPO;</p></li>
-<li><p>DESCMORFO;</p></li>
-<li><p>DSCCIDO;</p></li>
-<li><p>CICISUBGRU;</p></li>
-<li><p>INSTORIG;</p></li>
-<li><p>OUTRACLA.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QUIMIOANT</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HORMOANT</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TMOANT</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IMUNOANT</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OUTROANT</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ERRO</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CIDO</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UFNASC</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CIDADE</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DESCTOPO</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DESCMORFO</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DSCCIDO</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CICISUBGRU</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INSTORIG</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OUTRACLA</span></code>.</p></li>
 </ul>
 <blockquote>
 <div><p>Check the <a class="reference external" href="https://cancer-project.readthedocs.io/en/latest/Cancer%20Libraries%20and%20functions.html#Models">functions section</a> to see the complete function.</p>
@@ -5187,7 +5187,7 @@ array([nan,
 </div>
 <div class="section" id="First-preprocessing">
 <h3><strong>First preprocessing</strong><a class="headerlink" href="#First-preprocessing" title="Permalink to this headline">¶</a></h3>
-<p>Here the variables_preprocessing function will be applied, obtaining a new dataset with 79 columns (the raw data has 95 columns). It appears that we still have columns with missing values (DTRECIDIVA, TRATCONS, DTTRAT, DIAGTRAT, DTULTINFO and IDADE), all will be dealt with later.</p>
+<p>Here the variables_preprocessing function will be applied, obtaining a new dataset with 79 columns (the raw data has 95 columns). It appears that we still have columns with missing values (<code class="docutils literal notranslate"><span class="pre">DTRECIDIVA</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>, <code class="docutils literal notranslate"><span class="pre">DTTRAT</span></code>, <code class="docutils literal notranslate"><span class="pre">DIAGTRAT</span></code>, <code class="docutils literal notranslate"><span class="pre">DTULTINFO</span></code> and <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>), all will be dealt with later.</p>
 <p>After the function, the new dataset will be saved as a csv file, to be used in the sequence.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -6346,7 +6346,7 @@ dtype: int64
 <div class="section" id="Date-difference-columns">
 <h2><strong>Date difference columns</strong><a class="headerlink" href="#Date-difference-columns" title="Permalink to this headline">¶</a></h2>
 <p>The differences between the dates of consultation, diagnosis and treatment will be calculated, and then the difference between the date of recurrence and last information and the first three.</p>
-<p>This process will be performed by the function get_dates_diff, which drops the empty rows of the DTTRAT and DTULTINFO columns, converts the date columns to the datetime format and then calculates the difference between the dates in days.</p>
+<p>This process will be performed by the function <code class="docutils literal notranslate"><span class="pre">get_dates_diff</span></code>, which drops the empty rows of the <code class="docutils literal notranslate"><span class="pre">DTTRAT</span></code> and <code class="docutils literal notranslate"><span class="pre">DTULTINFO</span></code> columns, converts the date columns to the datetime format and then calculates the difference between the dates in days.</p>
 <p>The idea is presented below.</p>
 <blockquote>
 <div><p>See the full function in the <a class="reference external" href="https://cancer-project.readthedocs.io/en/latest/Cancer%20Libraries%20and%20functions.html#General">functions section</a>.</p>
@@ -7435,10 +7435,10 @@ dtype: int64
 </div>
 <div class="section" id="Creation-of-death-label">
 <h2><strong>Creation of death label</strong><a class="headerlink" href="#Creation-of-death-label" title="Permalink to this headline">¶</a></h2>
-<p>In this section, labels will be created based on the latest information, one column only if the person died or not (called ob) and another with information on how many years after the diagnosis the person died (called ano_ob).</p>
+<p>In this section, labels will be created based on the latest information, one column only if the person died or not (<code class="docutils literal notranslate"><span class="pre">ob</span></code>) and another with information on how many years after the diagnosis the person died (<code class="docutils literal notranslate"><span class="pre">ano_ob</span></code>).</p>
 <p>After creating the columns, the datasets will be saved in csv files, one for São Paulo and one for the other states.</p>
 <blockquote>
-<div><p>This process will be performed by the get_labels function, see the <a class="reference external" href="https://cancer-project.readthedocs.io/en/latest/Cancer%20Libraries%20and%20functions.html#General">functions section</a> to see the complete function.</p>
+<div><p>This process will be performed by the <code class="docutils literal notranslate"><span class="pre">get_labels</span></code> function, see the <a class="reference external" href="https://cancer-project.readthedocs.io/en/latest/Cancer%20Libraries%20and%20functions.html#General">functions section</a> to see the complete function.</p>
 </div></blockquote>
 <p><strong>Death labels</strong></p>
 <ul class="simple">
@@ -8235,7 +8235,7 @@ CSV file saved successfully!
 <p>In this section, labels will be created based on the recurrence, two columns for people who died, one without recurrence and one with recurrence, and two for people who are alive, also one without recurrence and one with recurrence.</p>
 <p>After creating the columns, the datasets will be saved in csv files, one for São Paulo and one for the other states, now both datasets have 94 columns.</p>
 <blockquote>
-<div><p>This process will be performed by the get_labels_rec function, see the <a class="reference external" href="https://cancer-project.readthedocs.io/en/latest/Cancer%20Libraries%20and%20functions.html#General">functions section</a> to see the complete function.</p>
+<div><p>This process will be performed by the <code class="docutils literal notranslate"><span class="pre">get_labels_rec</span></code> function, see the <a class="reference external" href="https://cancer-project.readthedocs.io/en/latest/Cancer%20Libraries%20and%20functions.html#General">functions section</a> to see the complete function.</p>
 </div></blockquote>
 <p><strong>Recurrence labels</strong></p>
 <ul class="simple">
