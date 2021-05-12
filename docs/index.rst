@@ -32,15 +32,15 @@ Data Dictionary
 
 * **ESCOLARI**: Code for patient education (int = 1).
 
-   1 - ANALPHABETUS;
+   1 - ILLITERATE;
    
-   2 - ENS. FUND. INCOMPLETE;
+   2 - ELEMENTARY SCHOOL INCOMPLETE;
    
-   3 - ENS. FUND. COMPLETE;
+   3 - ELEMENTARY SCHOOL COMPLETE;
    
    4 - HIGH SCHOOL;
    
-   5 - SUPERIOR;
+   5 - UNIVERSITY EDUCATION;
    
    9 - IGNORED.
 * **IDADE**: Patient's age (int = 3).
@@ -55,7 +55,7 @@ Data Dictionary
 * **CIDADE**: City of residence of the patient (char = 200).
 * **CATEATEND**: Category of diagnosis assistance (int = 1).
 
-   1 - AGREEMENT;
+   1 - HEALTH INSURANCE;
    
    2 - SUS;
    
@@ -197,11 +197,11 @@ Data Dictionary
 
    1 - SUPERIOR;
 
-   2 - MEDIO;
+   2 - MEDIUM;
 
    3 - LOWER;
 
-   8 - DOES NOT APPLY;
+   8 - NOT APPLICABLE;
 
    9 - X.
 * **IDMITOTIC**: TNM Classification - Mitotic Index (int = 1).
@@ -210,7 +210,7 @@ Data Dictionary
       
    2 - LOW;
       
-   8 - DOES NOT APPLY;
+   8 - NOT APPLICABLE;
       
    9 - X.
 * **PSA**: TNM - PSA classification (int = 1).
@@ -221,7 +221,7 @@ Data Dictionary
       
    3 - GREATER OR EQUAL TO 20;
       
-   8 - DOES NOT APPLY;
+   8 - NOT APPLICABLE;
       
    9 - X.
 * **GLEASON**: TNM - Gleason classification (int = 1).
@@ -232,7 +232,7 @@ Data Dictionary
       
    3 - GREATER OR EQUAL TO 8;
       
-   8 - DOES NOT APPLY;
+   8 - NOT APPLICABLE;
       
    9 - X.
 * **OUTRACLA**: Another classification of staging (char = 20).
@@ -249,15 +249,15 @@ Data Dictionary
       
    3 - OTHER ASSOCIATED DISEASES;
       
-   4 - ABANDONMENT OF TREATMENT;
+   4 - TREATMENT ABANDONMENT;
       
    5 - CANCER DEATH;
       
-   6 - OBITUARY FOR OTHER CAUSES, SOE;
+   6 - DEATH FOR OTHER CAUSES;
       
    7 - OTHER;
       
-   8 - DOES NOT APPLY (IF HAVE TREATMENT);
+   8 - NOT APPLICABLE (IF HAVE TREATMENT);
       
    9 - NO INFORMATION.
 * **TRATAMENTO**: Combination code of the treatments (char = 1).
@@ -398,7 +398,7 @@ Data Dictionary
       
    3 - BILATERAL;
       
-   8 - DOES NOT APPLY.
+   8 - NOT APPLICABLE.
 * **INSTORIG**: Home institution (char = 200). Mandatory only if DIAGPREV = 03 - WITH DIAGNOSIS / WITH TREATMENT.
 * **DRS**: Regional Health Departments (char = 200).
 * **RRAS**: Regional Health Care Network (char = 200).
@@ -415,10 +415,10 @@ Data Dictionary
 * **RECLOCAL**: Local recurrence (int = 1). 0 - No; 1 - Yes
 * **RECREGIO**: Regional recurrence (int = 1). 0 - No; 1 - Yes
 * **RECDIST**: Distance / metastasis recurrence (int = 1). 0 - No; 1 - Yes
-* **REC01**: Recurrence / metastasis site (char = 3). Format: C99
-* **REC02**: Recurrence / metastasis site (char = 3). Format: C99
-* **REC03**: Recurrence / metastasis site (char = 3). Format: C99
-* **REC04**: Recurrence / metastasis site (char = 3). Format: C99
+* **REC01**: Recurrence / metastasis local (char = 3). Format: C99
+* **REC02**: Recurrence / metastasis local (char = 3). Format: C99
+* **REC03**: Recurrence / metastasis local (char = 3). Format: C99
+* **REC04**: Recurrence / metastasis local (char = 3). Format: C99
 * **IBGEATEN**: Institution's IBGE code (int = 7).
 * **CIDO**: Morphology code 3rd Edition (int = 5). Format: 99999
 * **DSCCIDO**: Description of the morphology 3rd Edition (char = 89).

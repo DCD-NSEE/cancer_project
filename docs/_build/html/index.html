@@ -39,7 +39,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Bibliotecas e instalações" href="Cancer%20Libraries%20and%20functions.html" /> 
+    <link rel="next" title="Libraries" href="Cancer%20Libraries%20and%20functions.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,15 +86,15 @@
             
               <p class="caption"><span class="caption-text">Libraries and functions</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html"><strong>Bibliotecas e instalações</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Funções"><strong>Funções</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Referências"><strong>Referências</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html"><strong>Libraries</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Functions"><strong>Functions</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#References"><strong>References</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Data Analysis</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Data%20Analysis.html"><strong>Leitura dos dados</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Análise-dos-dados"><strong>Análise dos dados</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Criação-de-labels-e-features"><strong>Criação de labels e features</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Data%20Analysis.html"><strong>Reading the data</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Data-analysis"><strong>Data analysis</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Creating-new-columns"><strong>Creating new columns</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classifiers</span></p>
 <ul>
@@ -227,11 +227,11 @@
 <ul>
 <li><p><strong>ESCOLARI</strong>: Code for patient education (int = 1).</p>
 <blockquote>
-<div><p>1 - ANALPHABETUS;</p>
-<p>2 - ENS. FUND. INCOMPLETE;</p>
-<p>3 - ENS. FUND. COMPLETE;</p>
+<div><p>1 - ILLITERATE;</p>
+<p>2 - ELEMENTARY SCHOOL INCOMPLETE;</p>
+<p>3 - ELEMENTARY SCHOOL COMPLETE;</p>
 <p>4 - HIGH SCHOOL;</p>
-<p>5 - SUPERIOR;</p>
+<p>5 - UNIVERSITY EDUCATION;</p>
 <p>9 - IGNORED.</p>
 </div></blockquote>
 </li>
@@ -248,7 +248,7 @@
 <li><p><strong>CIDADE</strong>: City of residence of the patient (char = 200).</p></li>
 <li><p><strong>CATEATEND</strong>: Category of diagnosis assistance (int = 1).</p>
 <blockquote>
-<div><p>1 - AGREEMENT;</p>
+<div><p>1 - HEALTH INSURANCE;</p>
 <p>2 - SUS;</p>
 <p>3 - PRIVATE;</p>
 <p>9 - NO INFORMATION.</p>
@@ -348,9 +348,9 @@
 <li><p><strong>LOCALTNM</strong>: TNM Classification - Location (int = 1).</p>
 <blockquote>
 <div><p>1 - SUPERIOR;</p>
-<p>2 - MEDIO;</p>
+<p>2 - MEDIUM;</p>
 <p>3 - LOWER;</p>
-<p>8 - DOES NOT APPLY;</p>
+<p>8 - NOT APPLICABLE;</p>
 <p>9 - X.</p>
 </div></blockquote>
 </li>
@@ -358,7 +358,7 @@
 <blockquote>
 <div><p>1 - HIGH;</p>
 <p>2 - LOW;</p>
-<p>8 - DOES NOT APPLY;</p>
+<p>8 - NOT APPLICABLE;</p>
 <p>9 - X.</p>
 </div></blockquote>
 </li>
@@ -367,7 +367,7 @@
 <div><p>1 - LESS THAN 10;</p>
 <p>2 - GREATER OR EQUAL TO 10 AND LESS THAN 20;</p>
 <p>3 - GREATER OR EQUAL TO 20;</p>
-<p>8 - DOES NOT APPLY;</p>
+<p>8 - NOT APPLICABLE;</p>
 <p>9 - X.</p>
 </div></blockquote>
 </li>
@@ -376,7 +376,7 @@
 <div><p>1 - SMALLER OR EQUAL TO 6;</p>
 <p>2 - EQUAL TO 7;</p>
 <p>3 - GREATER OR EQUAL TO 8;</p>
-<p>8 - DOES NOT APPLY;</p>
+<p>8 - NOT APPLICABLE;</p>
 <p>9 - X.</p>
 </div></blockquote>
 </li>
@@ -391,11 +391,11 @@
 <div><p>1 - REFUSAL OF TREATMENT;</p>
 <p>2 - ADVANCED DISEASE, LACK OF CLINICAL CONDITIONS;</p>
 <p>3 - OTHER ASSOCIATED DISEASES;</p>
-<p>4 - ABANDONMENT OF TREATMENT;</p>
+<p>4 - TREATMENT ABANDONMENT;</p>
 <p>5 - CANCER DEATH;</p>
-<p>6 - OBITUARY FOR OTHER CAUSES, SOE;</p>
+<p>6 - DEATH FOR OTHER CAUSES;</p>
 <p>7 - OTHER;</p>
-<p>8 - DOES NOT APPLY (IF HAVE TREATMENT);</p>
+<p>8 - NOT APPLICABLE (IF HAVE TREATMENT);</p>
 <p>9 - NO INFORMATION.</p>
 </div></blockquote>
 </li>
@@ -503,7 +503,7 @@
 <div><p>1 - RIGHT;</p>
 <p>2 - LEFT;</p>
 <p>3 - BILATERAL;</p>
-<p>8 - DOES NOT APPLY.</p>
+<p>8 - NOT APPLICABLE.</p>
 </div></blockquote>
 </li>
 <li><p><strong>INSTORIG</strong>: Home institution (char = 200). Mandatory only if DIAGPREV = 03 - WITH DIAGNOSIS / WITH TREATMENT.</p></li>
@@ -522,10 +522,10 @@
 <li><p><strong>RECLOCAL</strong>: Local recurrence (int = 1). 0 - No; 1 - Yes</p></li>
 <li><p><strong>RECREGIO</strong>: Regional recurrence (int = 1). 0 - No; 1 - Yes</p></li>
 <li><p><strong>RECDIST</strong>: Distance / metastasis recurrence (int = 1). 0 - No; 1 - Yes</p></li>
-<li><p><strong>REC01</strong>: Recurrence / metastasis site (char = 3). Format: C99</p></li>
-<li><p><strong>REC02</strong>: Recurrence / metastasis site (char = 3). Format: C99</p></li>
-<li><p><strong>REC03</strong>: Recurrence / metastasis site (char = 3). Format: C99</p></li>
-<li><p><strong>REC04</strong>: Recurrence / metastasis site (char = 3). Format: C99</p></li>
+<li><p><strong>REC01</strong>: Recurrence / metastasis local (char = 3). Format: C99</p></li>
+<li><p><strong>REC02</strong>: Recurrence / metastasis local (char = 3). Format: C99</p></li>
+<li><p><strong>REC03</strong>: Recurrence / metastasis local (char = 3). Format: C99</p></li>
+<li><p><strong>REC04</strong>: Recurrence / metastasis local (char = 3). Format: C99</p></li>
 <li><p><strong>IBGEATEN</strong>: Institution’s IBGE code (int = 7).</p></li>
 <li><p><strong>CIDO</strong>: Morphology code 3rd Edition (int = 5). Format: 99999</p></li>
 <li><p><strong>DSCCIDO</strong>: Description of the morphology 3rd Edition (char = 89).</p></li>
@@ -533,29 +533,29 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Libraries and functions</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html"><strong>Bibliotecas e instalações</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Funções"><strong>Funções</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Gerais"><strong>Gerais</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Modelos"><strong>Modelos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html"><strong>Libraries</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Functions"><strong>Functions</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#General"><strong>General</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Models"><strong>Models</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Referências"><strong>Referências</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#References"><strong>References</strong></a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Data Analysis</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Data%20Analysis.html"><strong>Leitura dos dados</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Análise-dos-dados"><strong>Análise dos dados</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Informações"><strong>Informações</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Variáveis-faltantes"><strong>Variáveis faltantes</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Análise-das-colunas"><strong>Análise das colunas</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Data%20Analysis.html"><strong>Reading the data</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Data-analysis"><strong>Data analysis</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Information"><strong>Information</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Missing-values"><strong>Missing values</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Columns-analysis"><strong>Columns analysis</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Criação-de-labels-e-features"><strong>Criação de labels e features</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Criação-das-features"><strong>Criação das features</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Criação-dos-labels-de-óbito"><strong>Criação dos labels de óbito</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Criação-dos-labels-de-recidiva"><strong>Criação dos labels de recidiva</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Creating-new-columns"><strong>Creating new columns</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Date-difference-columns"><strong>Date difference columns</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Creation-of-death-label"><strong>Creation of death label</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Creation-of-recurrence-labels"><strong>Creation of recurrence labels</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -639,7 +639,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Cancer%20Libraries%20and%20functions.html" class="btn btn-neutral float-right" title="Bibliotecas e instalações" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Cancer%20Libraries%20and%20functions.html" class="btn btn-neutral float-right" title="Libraries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
