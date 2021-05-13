@@ -1,4 +1,17 @@
-# Câncer Project
- Repositório do projeto com os dados do câncer
+# Cancer Project
+This repository contains the files of the cancer project, from the study notebooks to the documentation of the generated website.
+
+# Authors
+
+* Gisele Fernandes
+* Lucas Buk Cardoso
+* Maria Paula Curado
+* Tatiana Natasha Toporcov
+* Vanderlei Cunha Parro
+
+# Introduction
+Here is presented the project documentation with cancer data provided by FOSP (Fundação Oncocentro de São Paulo). Access the data on the [FOSP website](http://www.fosp.saude.sp.gov.br/publicacoes/downloadarquivos).
+
+The project was developed using the python language, with the objective of making predictions for deaths and recovery time of patients with the disease.
  
- [Dados FOSP](http://www.fosp.saude.sp.gov.br/publicacoes/downloadarquivos)
+The project website can be accessed [here](https://cancer-project.readthedocs.io/en/latest/index.html).
