@@ -98,9 +98,9 @@
 </ul>
 <p class="caption"><span class="caption-text">Classifiers</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Classifiers.html"><strong>Label = ob</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Classifiers.html#Label-=-RECNENHUM"><strong>Label = RECNENHUM</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Classifiers.html#Label-=-RECDIST"><strong>Label = RECDIST</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Classifiers.html"><strong>Classification - ob</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Classifiers.html#Classification---RECNENHUM"><strong>Classification - RECNENHUM</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Classifiers.html#Classification---RECDIST"><strong>Classification - RECDIST</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Regressors</span></p>
 <ul>
@@ -200,6 +200,16 @@
 </style>
 <div class="section" id="welcome-to-cancer-project-s-documentation">
 <h1>Welcome to Cancer Project’s documentation!<a class="headerlink" href="#welcome-to-cancer-project-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gisele Fernandes</p></li>
+<li><p>Lucas Buk Cardoso</p></li>
+<li><p>Maria Paula Curado</p></li>
+<li><p>Tatiana Natasha Toporcov</p></li>
+<li><p>Vanderlei Cunha Parro</p></li>
+</ul>
+</div>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Here is presented the project documentation with cancer data provided by FOSP (Fundação Oncocentro de São Paulo). Access the data on the <a class="reference external" href="http://www.fosp.saude.sp.gov.br/publicacoes/downloadarquivos">FOSP website</a>.</p>
@@ -563,35 +573,34 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Classifiers</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Classifiers.html"><strong>Label = ob</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#Dados"><strong>Dados</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#Divisão-em-treino-e-teste"><strong>Divisão em treino e teste</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#Encoder-e-normalização"><strong>Encoder e normalização</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Classifiers.html"><strong>Classification - ob</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#Reading-the-data"><strong>Reading the data</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#Training-and-testing-split"><strong>Training and testing split</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#Encoder-and-normalization"><strong>Encoder and normalization</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#PCA"><strong>PCA</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#Balanceamento-dos-dados"><strong>Balanceamento dos dados</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#Treinamento-dos-modelos-de-Machine-Learning"><strong>Treinamento dos modelos de Machine Learning</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#Salvando-modelos"><strong>Salvando modelos</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#Validação-dos-modelos"><strong>Validação dos modelos</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#Balancing-the-data"><strong>Balancing the data</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#Training-machine-learning-models"><strong>Training machine learning models</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#Models-evaluation"><strong>Models evaluation</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Classifiers.html#Label-=-RECNENHUM"><strong>Label = RECNENHUM</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id3"><strong>Dados</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id4"><strong>Divisão em treino e teste</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id5"><strong>Encoder e normalização</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Classifiers.html#Classification---RECNENHUM"><strong>Classification - RECNENHUM</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id3"><strong>Reading the data</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id4"><strong>Training and testing split</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id5"><strong>Encoder and normalization</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id6"><strong>PCA</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id7"><strong>Balanceamento dos dados</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id8"><strong>Treinamento dos modelos de Machine Learning</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id11"><strong>Validação dos modelos</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id7"><strong>Balancing the data</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id8"><strong>Training machine learning models</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id11"><strong>Models evaluation</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Classifiers.html#Label-=-RECDIST"><strong>Label = RECDIST</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id15"><strong>Dados</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id16"><strong>Divisão em treino e teste</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id17"><strong>Encoder e normalização</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Classifiers.html#Classification---RECDIST"><strong>Classification - RECDIST</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id15"><strong>Reading the data</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id16"><strong>Training and testing split</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id17"><strong>Encoder and normalization</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id18"><strong>PCA</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id19"><strong>Balanceamento dos dados</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id20"><strong>Treinamento dos modelos de Machine Learning</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id23"><strong>Validação dos modelos</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id19"><strong>Balancing the data</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id20"><strong>Training machine learning models</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cancer%20Classifiers.html#id23"><strong>Models evaluation</strong></a></li>
 </ul>
 </li>
 </ul>

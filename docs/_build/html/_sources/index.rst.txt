@@ -6,6 +6,15 @@
 Welcome to Cancer Project's documentation!
 ==========================================
 
+Authors
+-------
+
+* Gisele Fernandes
+* Lucas Buk Cardoso
+* Maria Paula Curado
+* Tatiana Natasha Toporcov
+* Vanderlei Cunha Parro
+
 Introduction
 ------------
 
