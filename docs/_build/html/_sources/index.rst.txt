@@ -22,7 +22,7 @@ Here is presented the project documentation with cancer data provided by FOSP (F
 
 The project was developed using the python language, with the objective of making predictions for deaths and recovery time of patients with the disease.
 
-Complete notebooks are available on `Github <https://github.com/Lucas-Buk/cancer_project>`_.
+Complete files and notebooks are available on `Github <https://github.com/Lucas-Buk/cancer_project>`_.
 
 Summary
 -------
