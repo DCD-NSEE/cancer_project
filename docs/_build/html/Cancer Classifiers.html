@@ -41,7 +41,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Regressão - Delta t7" href="Cancer%20Regressors.html" />
+    <link rel="next" title="Regression - Delta t7" href="Cancer%20Regressors.html" />
     <link rel="prev" title="Reading the data" href="Cancer%20Data%20Analysis.html" /> 
 </head>
 
@@ -161,9 +161,9 @@
 </ul>
 <p class="caption"><span class="caption-text">Regressors</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Regressors.html"><strong>Regressão - Delta t7</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Regressors.html#Regressão---Delta-t8"><strong>Regressão - Delta t8</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Regressors.html#Regressão---Delta-t9"><strong>Regressão - Delta t9</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Regressors.html"><strong>Regression - Delta t7</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Regressors.html#Regression---Delta-t8"><strong>Regression - Delta t8</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Regressors.html#Regression---Delta-t9"><strong>Regression - Delta t9</strong></a></li>
 </ul>
 
             
@@ -558,7 +558,7 @@ dtype: int64
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Fora</span>
+<span></span><span class="c1"># Other states</span>
 <span class="n">df_fora</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -622,7 +622,7 @@ Name: ob, dtype: float64
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Fora</span>
+<span></span><span class="c1"># Other states</span>
 <span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">df_fora</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
 <span class="nb">abs</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">[</span><span class="s1">&#39;ob&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
@@ -777,7 +777,7 @@ X_train = (604801, 70), X_test = (201601, 70)
 y_train = (604801,), y_test = (201601,)
 </pre></div></div>
 </div>
-<p><strong>Fora de SP</strong></p>
+<p><strong>Other states</strong></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -813,7 +813,7 @@ y_train = (46737,), y_test = (15580,)
 </pre></div>
 </div>
 </div>
-<p><strong>Fora de SP</strong></p>
+<p><strong>Other states</strong></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -866,7 +866,7 @@ y_train = (46737,), y_test = (15580,)
 <img alt="_images/Cancer_Classifiers_34_0.png" src="_images/Cancer_Classifiers_34_0.png" />
 </div>
 </div>
-<p><strong>Fora de SP</strong></p>
+<p><strong>Other states</strong></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -957,7 +957,7 @@ Name: ob, dtype: int64
 (488458,)
 </pre></div></div>
 </div>
-<p><strong>Fora de SP</strong></p>
+<p><strong>Other states</strong></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1043,7 +1043,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Fora</span>
+<span></span><span class="c1"># Other states</span>
 <span class="n">rf_fora</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mf">0.0001</span><span class="p">})</span>
 <span class="n">rf_fora</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_fora</span><span class="p">,</span> <span class="n">y_fora</span><span class="p">)</span>
 </pre></div>
@@ -1100,7 +1100,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Fora</span>
+<span></span><span class="c1"># Other states</span>
 <span class="n">xgboost_fora</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
                                  <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 
@@ -1148,7 +1148,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Fora de SP</span>
+<span></span><span class="c1"># Other states</span>
 <span class="n">X_testFora_</span> <span class="o">=</span> <span class="n">test_preprocessing</span><span class="p">(</span><span class="n">X_testFora</span><span class="p">,</span> <span class="n">enc_fora</span><span class="p">,</span> <span class="n">norm_fora</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1386,7 +1386,7 @@ dtype: int64
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Fora</span>
+<span></span><span class="c1"># Other states</span>
 <span class="n">df_fora</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1592,7 +1592,7 @@ X_train = (355326, 62), X_test = (118443, 62)
 y_train = (355326,), y_test = (118443,)
 </pre></div></div>
 </div>
-<p><strong>Fora de SP</strong></p>
+<p><strong>Other states</strong></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1628,7 +1628,7 @@ y_train = (46737,), y_test = (15580,)
 </pre></div>
 </div>
 </div>
-<p><strong>Fora de SP</strong></p>
+<p><strong>Other states</strong></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1683,7 +1683,7 @@ y_train = (46737,), y_test = (15580,)
 <img alt="_images/Cancer_Classifiers_117_0.png" src="_images/Cancer_Classifiers_117_0.png" />
 </div>
 </div>
-<p><strong>Fora de SP</strong></p>
+<p><strong>Other states</strong></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1775,7 +1775,7 @@ Name: RECNENHUM, dtype: int64
 (600114,)
 </pre></div></div>
 </div>
-<p><strong>Fora de SP</strong></p>
+<p><strong>Other states</strong></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1861,7 +1861,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Fora</span>
+<span></span><span class="c1"># Other states</span>
 <span class="n">rf_fora</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
                                  <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mf">0.000022</span><span class="p">})</span>
 <span class="n">rf_fora</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_fora</span><span class="p">,</span> <span class="n">y_fora</span><span class="p">)</span>
@@ -1921,7 +1921,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Fora de SP</span>
+<span></span><span class="c1"># Other states</span>
 <span class="n">xgboost_fora</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
                                  <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="c1"># 0.05 - 0.01</span>
                                  <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
@@ -1970,7 +1970,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Fora de SP</span>
+<span></span><span class="c1"># Other states</span>
 <span class="n">X_testFora_</span> <span class="o">=</span> <span class="n">test_preprocessing</span><span class="p">(</span><span class="n">X_testFora</span><span class="p">,</span> <span class="n">enc_fora</span><span class="p">,</span> <span class="n">norm_fora</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2409,7 +2409,7 @@ X_train = (314725, 62), X_test = (104909, 62)
 y_train = (314725,), y_test = (104909,)
 </pre></div></div>
 </div>
-<p><strong>Fora de SP</strong></p>
+<p><strong>Other states</strong></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -2445,7 +2445,7 @@ y_train = (46737,), y_test = (15580,)
 </pre></div>
 </div>
 </div>
-<p><strong>Fora de SP</strong></p>
+<p><strong>Other states</strong></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -2500,7 +2500,7 @@ y_train = (46737,), y_test = (15580,)
 <img alt="_images/Cancer_Classifiers_200_0.png" src="_images/Cancer_Classifiers_200_0.png" />
 </div>
 </div>
-<p><strong>Fora de SP</strong></p>
+<p><strong>Other states</strong></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -2592,7 +2592,7 @@ Name: RECDIST, dtype: int64
 (600108,)
 </pre></div></div>
 </div>
-<p><strong>Fora de SP</strong></p>
+<p><strong>Other states</strong></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -2677,7 +2677,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Fora</span>
+<span></span><span class="c1"># Other states</span>
 <span class="n">rf_fora</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mf">0.00001</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">24</span><span class="p">})</span>
 <span class="n">rf_fora</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_fora</span><span class="p">,</span> <span class="n">y_fora</span><span class="p">)</span>
 </pre></div>
@@ -2736,7 +2736,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Fora de SP</span>
+<span></span><span class="c1"># Other states</span>
 <span class="n">xgboost_fora</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
                                  <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mi">300_000</span><span class="p">,</span>
                                  <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
@@ -2785,7 +2785,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Fora de SP</span>
+<span></span><span class="c1"># Other states</span>
 <span class="n">X_testFora_</span> <span class="o">=</span> <span class="n">test_preprocessing</span><span class="p">(</span><span class="n">X_testFora</span><span class="p">,</span> <span class="n">enc_fora</span><span class="p">,</span> <span class="n">norm_fora</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2964,7 +2964,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Cancer%20Regressors.html" class="btn btn-neutral float-right" title="Regressão - Delta t7" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Cancer%20Regressors.html" class="btn btn-neutral float-right" title="Regression - Delta t7" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="Cancer%20Data%20Analysis.html" class="btn btn-neutral float-left" title="Reading the data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
