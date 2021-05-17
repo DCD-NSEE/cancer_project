@@ -39,6 +39,8 @@ The project will be divided into stages to provide a better understanding and or
 Data Dictionary
 ---------------
 
+The data has 95 columns, below we have a description of each one.
+
 * **ESCOLARI**: Code for patient education (int = 1).
 
    1 - ILLITERATE;
@@ -455,11 +457,3 @@ Data Dictionary
    :caption: Regressors
 
    Cancer Regressors
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
