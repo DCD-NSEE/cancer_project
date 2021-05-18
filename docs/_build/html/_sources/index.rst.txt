@@ -12,6 +12,7 @@ Authors
 * Gisele Fernandes
 * Lucas Buk Cardoso
 * Maria Paula Curado
+* Stela Verzinhasse Peres 
 * Tatiana Natasha Toporcov
 * Vanderlei Cunha Parro
 
