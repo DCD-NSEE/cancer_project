@@ -445,16 +445,22 @@ The data has 95 columns, below we have a description of each one.
    :maxdepth: 2
    :caption: Data Analysis
 
-   Cancer Data Analysis
+   Cancer Models 2.0
 
 .. toctree::
    :maxdepth: 2
-   :caption: Classifiers
+   :caption: Classification vivo_ano1
 
-   Cancer Classifiers
+   Label - vivo_ano1
 
 .. toctree::
    :maxdepth: 2
-   :caption: Regressors
+   :caption: Classification vivo_ano3
+   
+   Label - vivo_ano3
 
-   Cancer Regressors
+.. toctree::
+   :maxdepth: 2
+   :caption: Classification vivo_ano5
+
+   Label - vivo_ano5

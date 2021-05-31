@@ -41,7 +41,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Reading the data" href="Cancer%20Data%20Analysis.html" />
+    <link rel="next" title="Reading the data" href="Cancer%20Models%202.0.html" />
     <link rel="prev" title="Welcome to Cancer Project’s documentation!" href="index.html" /> 
 </head>
 
@@ -99,21 +99,23 @@
 </ul>
 <p class="caption"><span class="caption-text">Data Analysis</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Data%20Analysis.html"><strong>Reading the data</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Data-analysis"><strong>Data analysis</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Data%20Analysis.html#Creating-new-columns"><strong>Creating new columns</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Models%202.0.html"><strong>Reading the data</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Models%202.0.html#Data-analysis"><strong>Data analysis</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Models%202.0.html#Creating-new-columns"><strong>Creating new columns</strong></a></li>
 </ul>
-<p class="caption"><span class="caption-text">Classifiers</span></p>
+<p class="caption"><span class="caption-text">Classification vivo_ano1</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Classifiers.html"><strong>Label = ob</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Classifiers.html#Label-=-RECNENHUM"><strong>Label = RECNENHUM</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Classifiers.html#Label-=-RECDIST"><strong>Label = RECDIST</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano1.html"><strong>Classification - vivo_ano1</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano1.html#First-approach"><strong>First approach</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano1.html#Second-approach"><strong>Second approach</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano1.html#Third-approach"><strong>Third approach</strong></a></li>
 </ul>
-<p class="caption"><span class="caption-text">Regressors</span></p>
+<p class="caption"><span class="caption-text">Classification vivo_ano5</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Regressors.html"><strong>Regressão - Delta t7</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Regressors.html#Regressão---Delta-t8"><strong>Regressão - Delta t8</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Cancer%20Regressors.html#Regressão---Delta-t9"><strong>Regressão - Delta t9</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano5.html"><strong>Classification - vivo_ano5</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano5.html#First-approach"><strong>First approach</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano5.html#Second-approach"><strong>Second approach</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano5.html#Third-approach"><strong>Third approach</strong></a></li>
 </ul>
 
             
@@ -505,19 +507,6 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Regression</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">mean_squared_error</span>
-
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="Functions">
 <h1><strong>Functions</strong><a class="headerlink" href="#Functions" title="Permalink to this headline">¶</a></h1>
@@ -525,12 +514,12 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="General">
 <h2><strong>General</strong><a class="headerlink" href="#General" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">def</span> <span class="nf">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Read csv files</span>
+  <span class="sd">&quot;&quot;&quot;&quot;Read csv files</span>
 
 <span class="sd">  :param path str: path to the csv file.</span>
 
@@ -538,7 +527,7 @@ div.rendered_html tbody tr:hover {
 <span class="sd">  :rtype: pd.DataFrame</span>
 <span class="sd">  &quot;&quot;&quot;</span>
 
-  <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+  <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">})</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
   <span class="k">return</span> <span class="n">df</span>
@@ -546,7 +535,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -566,14 +555,15 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">get_dates_diff</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<span></span><span class="k">def</span> <span class="nf">get_dates_diff</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">dates_list</span><span class="p">):</span>
   <span class="sd">&quot;&quot;&quot;Get the difference, in days, between columns with dates</span>
 
 <span class="sd">  :param df pd.DataFrame: DataFrame to get the dates difference.</span>
+<span class="sd">  :param dates_list list: list with the name of date columns.</span>
 
 <span class="sd">  :return: DataFrame with dates difference in nine new columns</span>
 <span class="sd">  :rtype: pd.DataFrame</span>
@@ -583,11 +573,9 @@ div.rendered_html tbody tr:hover {
 
   <span class="n">df_aux</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;DTTRAT&#39;</span><span class="p">,</span><span class="s1">&#39;DTULTINFO&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-  <span class="n">lista_datas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DTCONSULT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;DTTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTULTINFO&#39;</span><span class="p">,</span> <span class="s1">&#39;DTRECIDIVA&#39;</span><span class="p">]</span>
-
-  <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">lista_datas</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s1">&#39;DTTRAT&#39;</span><span class="p">:</span> <span class="c1"># Has a different date format</span>
-      <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y&#39;</span>
+  <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">dates_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;DTTRAT&#39;</span><span class="p">,</span><span class="s1">&#39;DTULTINFO&#39;</span><span class="p">,</span><span class="s1">&#39;DTRECIDIVA&#39;</span><span class="p">]:</span> <span class="c1"># Has a different date format</span>
+      <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span>
     <span class="k">else</span><span class="p">:</span>
       <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span>
     <span class="n">df_aux</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_aux</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="n">fmt</span><span class="p">)</span>
@@ -609,7 +597,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -624,34 +612,24 @@ div.rendered_html tbody tr:hover {
 
   <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-  <span class="c1"># Label de óbito</span>
   <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;ob&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 
-  <span class="c1"># Label de óbito de acordo com o ano</span>
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;ano_ob&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;vivo_ano1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;vivo_ano3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;vivo_ano5&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 
-  <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">ULTINFO</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
-      <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;ob&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-      <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">delta_t8</span> <span class="o">&lt;</span> <span class="mi">365</span><span class="p">:</span>
-        <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;ano_ob&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-      <span class="k">elif</span> <span class="n">row</span><span class="o">.</span><span class="n">delta_t8</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="o">*</span><span class="mi">365</span><span class="p">:</span>
-        <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;ano_ob&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-      <span class="k">elif</span> <span class="n">row</span><span class="o">.</span><span class="n">delta_t8</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">*</span><span class="mi">365</span><span class="p">:</span>
-        <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;ano_ob&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
-      <span class="k">elif</span> <span class="n">row</span><span class="o">.</span><span class="n">delta_t8</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="o">*</span><span class="mi">365</span><span class="p">:</span>
-        <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;ano_ob&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
-      <span class="k">elif</span> <span class="n">row</span><span class="o">.</span><span class="n">delta_t8</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="o">*</span><span class="mi">365</span><span class="p">:</span>
-        <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;ano_ob&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
-      <span class="k">else</span><span class="p">:</span>
-        <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;ano_ob&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ULTINFO</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;ob&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">delta_t8</span> <span class="o">&gt;</span> <span class="mi">365</span><span class="p">,</span> <span class="s1">&#39;vivo_ano1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">delta_t8</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="o">*</span><span class="mi">365</span><span class="p">,</span> <span class="s1">&#39;vivo_ano3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">delta_t8</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="o">*</span><span class="mi">365</span><span class="p">,</span> <span class="s1">&#39;vivo_ano5&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
   <span class="k">return</span> <span class="n">df_aux</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -671,18 +649,10 @@ div.rendered_html tbody tr:hover {
   <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;vivo_com_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
   <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;vivo_sem_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 
-  <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;ob&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-      <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">RECNENHUM</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;ob_sem_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-      <span class="k">else</span><span class="p">:</span>
-        <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;ob_com_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-
-    <span class="k">else</span><span class="p">:</span>
-      <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">RECNENHUM</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;vivo_sem_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-      <span class="k">else</span><span class="p">:</span>
-        <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;vivo_com_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ob</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">RECNENHUM</span> <span class="o">==</span> <span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;ob_sem_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ob</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">RECNENHUM</span> <span class="o">==</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;ob_com_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ob</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">RECNENHUM</span> <span class="o">==</span> <span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;vivo_sem_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ob</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">RECNENHUM</span> <span class="o">==</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;vivo_com_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
   <span class="k">return</span> <span class="n">df_aux</span>
 </pre></div>
@@ -692,7 +662,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Models">
 <h2><strong>Models</strong><a class="headerlink" href="#Models" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -709,51 +679,43 @@ div.rendered_html tbody tr:hover {
   <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
   <span class="n">no_info</span> <span class="o">=</span> <span class="s1">&#39;**Sem informação**&#39;</span>
 
+  <span class="c1"># Excluding ECGRUP with X and Y values</span>
+  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[</span><span class="o">~</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ECGRUP</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">])]</span>
+
+  <span class="c1"># Excluding C44 topographies (with morphologies between 80101 and 81103)</span>
+  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[</span><span class="o">~</span><span class="p">((</span><span class="n">df_aux</span><span class="o">.</span><span class="n">TOPOGRUP</span> <span class="o">==</span> <span class="s1">&#39;C44&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">MORFO</span> <span class="o">&gt;=</span> <span class="mi">80101</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">MORFO</span> <span class="o">&lt;=</span> <span class="mi">81103</span><span class="p">))]</span>
+
+  <span class="c1"># REGISTRADO</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">REGISTRADO</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
   <span class="c1"># DRS</span>
   <span class="n">DRS_expand</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DRS</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
   <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;DRS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DRS_expand</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">DRS</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DRS</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">DRS</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
   <span class="c1"># META</span>
   <span class="n">df_aux</span><span class="o">.</span><span class="n">META01</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
   <span class="n">df_aux</span><span class="o">.</span><span class="n">META02</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">META03</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">META04</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
   <span class="c1"># REC</span>
   <span class="n">df_aux</span><span class="o">.</span><span class="n">REC01</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
   <span class="n">df_aux</span><span class="o">.</span><span class="n">REC02</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
   <span class="n">df_aux</span><span class="o">.</span><span class="n">REC03</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">REC04</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
   <span class="c1"># PT</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">PT</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">PT</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="mf">1.0</span><span class="p">],</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
   <span class="n">df_aux</span><span class="o">.</span><span class="n">PT</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">PT</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
   <span class="n">df_aux</span><span class="o">.</span><span class="n">PT</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
   <span class="c1"># PN</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">PN</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">PN</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="mf">0.0</span><span class="p">],</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">PN</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">PN</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">PN</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">PN</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;1BI&#39;</span><span class="p">,</span><span class="s1">&#39;IBII&#39;</span><span class="p">,</span><span class="s1">&#39;O&#39;</span><span class="p">],[</span><span class="s1">&#39;1B1&#39;</span><span class="p">,</span><span class="s1">&#39;1B2&#39;</span><span class="p">,</span><span class="s1">&#39;0&#39;</span><span class="p">])</span>
   <span class="n">df_aux</span><span class="o">.</span><span class="n">PN</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
   <span class="c1"># PM</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">PM</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">PM</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="mf">0.0</span><span class="p">],</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
   <span class="n">df_aux</span><span class="o">.</span><span class="n">PM</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-  <span class="c1"># CICI</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">CICI</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-  <span class="c1"># CICIGRUP</span>
-  <span class="n">CICIGRUP_expand</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">CICIGRUP</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;  &#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;CICIGRUP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">CICIGRUP_expand</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">CICIGRUP</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-  <span class="c1"># Colunas com valores únicos</span>
   <span class="n">col</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">columns</span>
-  <span class="n">drop_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">,</span><span class="s1">&#39;QUIMIOANT&#39;</span><span class="p">,</span><span class="s1">&#39;HORMOANT&#39;</span><span class="p">,</span><span class="s1">&#39;TMOANT&#39;</span><span class="p">,</span><span class="s1">&#39;IMUNOANT&#39;</span><span class="p">,</span><span class="s1">&#39;OUTROANT&#39;</span><span class="p">,</span><span class="s1">&#39;ERRO&#39;</span><span class="p">,</span>
-               <span class="s1">&#39;CIDO&#39;</span><span class="p">,</span> <span class="s1">&#39;UFNASC&#39;</span><span class="p">,</span><span class="s1">&#39;CIDADE&#39;</span><span class="p">,</span><span class="s1">&#39;DESCTOPO&#39;</span><span class="p">,</span><span class="s1">&#39;DESCMORFO&#39;</span><span class="p">,</span><span class="s1">&#39;DSCCIDO&#39;</span><span class="p">,</span><span class="s1">&#39;CICISUBGRU&#39;</span><span class="p">,</span>
-               <span class="s1">&#39;INSTORIG&#39;</span><span class="p">,</span> <span class="s1">&#39;OUTRACLA&#39;</span><span class="p">]</span>
+  <span class="n">drop_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">,</span><span class="s1">&#39;QUIMIOANT&#39;</span><span class="p">,</span><span class="s1">&#39;HORMOANT&#39;</span><span class="p">,</span><span class="s1">&#39;TMOANT&#39;</span><span class="p">,</span><span class="s1">&#39;IMUNOANT&#39;</span><span class="p">,</span><span class="s1">&#39;OUTROANT&#39;</span><span class="p">,</span><span class="s1">&#39;UFNASC&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;CICISUBGRU&#39;</span><span class="p">,</span><span class="s1">&#39;CICIGRUP&#39;</span><span class="p">,</span><span class="s1">&#39;CICI&#39;</span><span class="p">,</span><span class="s1">&#39;META04&#39;</span><span class="p">,</span><span class="s1">&#39;META03&#39;</span><span class="p">,</span><span class="s1">&#39;REC04&#39;</span><span class="p">,</span><span class="s1">&#39;CIDADE&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;DESCTOPO&#39;</span><span class="p">,</span><span class="s1">&#39;DESCMORFO&#39;</span><span class="p">,</span><span class="s1">&#39;INSTORIG&#39;</span><span class="p">,</span><span class="s1">&#39;OUTRACLA&#39;</span><span class="p">]</span>
 
   <span class="n">col</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">drop_cols</span><span class="p">)</span>
 
@@ -762,7 +724,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -795,7 +757,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -804,6 +766,11 @@ div.rendered_html tbody tr:hover {
 
 <span class="sd">  :param df pd.DataFrame: DataFrame to be preprocessed.</span>
 <span class="sd">  :param normalizer str: which normalizer to be fitted to the data (default=&#39;StandardScaler&#39;).</span>
+<span class="sd">    options:</span>
+<span class="sd">      * &#39;MinMaxScaler&#39;</span>
+<span class="sd">      * &#39;MaxAbsScaler&#39;</span>
+<span class="sd">      * &#39;PowerTransformer&#39;</span>
+<span class="sd">      * &#39;QuantileTransformer&#39;</span>
 <span class="sd">  :param pca bool: if want to use PCA components set True (default=False).</span>
 <span class="sd">  :param pca_components int: number of PCA components (default=None).</span>
 <span class="sd">  :param random_state int: value for pca random_state (default=10).</span>
@@ -852,7 +819,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -888,7 +855,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -910,7 +877,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -926,7 +893,7 @@ div.rendered_html tbody tr:hover {
 <span class="sd">  &quot;&quot;&quot;</span>
 
   <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-  <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Atual&#39;</span><span class="p">:</span> <span class="n">y_test</span><span class="p">,</span> <span class="s1">&#39;Predito&#39;</span><span class="p">:</span> <span class="n">y_pred</span><span class="p">})</span>
+  <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Real&#39;</span><span class="p">:</span> <span class="n">y_test</span><span class="p">,</span> <span class="s1">&#39;Predict&#39;</span><span class="p">:</span> <span class="n">y_pred</span><span class="p">})</span>
 
   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mean Absolute Error: </span><span class="si">{</span><span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mean Squared Error: </span><span class="si">{</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -963,7 +930,7 @@ div.rendered_html tbody tr:hover {
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Cancer%20Data%20Analysis.html" class="btn btn-neutral float-right" title="Reading the data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Cancer%20Models%202.0.html" class="btn btn-neutral float-right" title="Reading the data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Cancer Project’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
