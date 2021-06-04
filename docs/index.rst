@@ -32,10 +32,19 @@ The project will be divided into stages to provide a better understanding and or
 
 * Libraries and Functions
 * Data analysis and first preprocessing.
-* Preprocessing, creation and validation of machine learning models.
+* Classifiers: with preprocessing, creation and validation of machine learning models. Using six labels:
 
-   * Classifiers
-   * Regressors
+   * ob;
+
+   * RECNENHUM;
+
+   * RECDIST;
+
+   * vivo_ano1;
+
+   * vivo_ano3;
+
+   * vivo_ano5.
 
 Data Dictionary
 ---------------
@@ -449,18 +458,24 @@ The data has 95 columns, below we have a description of each one.
 
 .. toctree::
    :maxdepth: 2
+   :caption: Classification ob
+
+   Label - ob
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Classification RECNENHUM
+   
+   Label - RECNENHUM
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Classification RECDIST
+
+   Label - RECDIST
+
+.. toctree::
+   :maxdepth: 2
    :caption: Classification vivo_ano1
 
    Label - vivo_ano1
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Classification vivo_ano3
-   
-   Label - vivo_ano3
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Classification vivo_ano5
-
-   Label - vivo_ano5

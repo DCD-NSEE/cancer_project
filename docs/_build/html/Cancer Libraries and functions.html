@@ -103,19 +103,34 @@
 <li class="toctree-l1"><a class="reference internal" href="Cancer%20Models%202.0.html#Data-analysis"><strong>Data analysis</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Cancer%20Models%202.0.html#Creating-new-columns"><strong>Creating new columns</strong></a></li>
 </ul>
+<p class="caption"><span class="caption-text">Classification ob</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20ob.html"><strong>Classification - ob</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20ob.html#First-approach"><strong>First approach</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20ob.html#Second-approach"><strong>Second approach</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20ob.html#Third-approach"><strong>Third approach</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20ob.html#Fourth-approach"><strong>Fourth approach</strong></a></li>
+</ul>
+<p class="caption"><span class="caption-text">Classification RECNENHUM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20RECNENHUM.html"><strong>Classification - RECNENHUM</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20RECNENHUM.html#First-approach"><strong>First approach</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20RECNENHUM.html#Second-approach"><strong>Second approach</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20RECNENHUM.html#Third-approach"><strong>Third approach</strong></a></li>
+</ul>
+<p class="caption"><span class="caption-text">Classification RECDIST</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20RECDIST.html"><strong>Classification - RECDIST</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20RECDIST.html#First-approach"><strong>First approach</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20RECDIST.html#Second-approach"><strong>Second approach</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20RECDIST.html#Third-approach"><strong>Third approach</strong></a></li>
+</ul>
 <p class="caption"><span class="caption-text">Classification vivo_ano1</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano1.html"><strong>Classification - vivo_ano1</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano1.html#First-approach"><strong>First approach</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano1.html#Second-approach"><strong>Second approach</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano1.html#Third-approach"><strong>Third approach</strong></a></li>
-</ul>
-<p class="caption"><span class="caption-text">Classification vivo_ano5</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano5.html"><strong>Classification - vivo_ano5</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano5.html#First-approach"><strong>First approach</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano5.html#Second-approach"><strong>Second approach</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Label%20-%20vivo_ano5.html#Third-approach"><strong>Third approach</strong></a></li>
 </ul>
 
             
@@ -728,7 +743,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">get_train_test</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">drop_cols</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span></span><span class="k">def</span> <span class="nf">get_train_test</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">drop_cols</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
   <span class="sd">&quot;&quot;&quot;Get features and label, and then returns train and test dataframes.</span>
 
 <span class="sd">  :param df pd.DataFrame: dataframe that will be splitted.</span>
@@ -749,8 +764,6 @@ div.rendered_html tbody tr:hover {
   <span class="n">feat</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span>
 
   <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">feat</span><span class="p">,</span> <span class="n">lb</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">test_size</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X_train = </span><span class="si">{</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">, X_test = </span><span class="si">{</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y_train = </span><span class="si">{</span><span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">, y_test = </span><span class="si">{</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
   <span class="k">return</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span>
 </pre></div>
@@ -761,7 +774,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">train_preprocessing</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">normalizer</span><span class="o">=</span><span class="s1">&#39;StandardScaler&#39;</span><span class="p">,</span> <span class="n">pca</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pca_components</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span></span><span class="k">def</span> <span class="nf">train_preprocessing</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">normalizer</span><span class="o">=</span><span class="s1">&#39;StandardScaler&#39;</span><span class="p">,</span> <span class="n">pca</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                        <span class="n">pca_components</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
   <span class="sd">&quot;&quot;&quot;Preprocessing the train dataset.</span>
 
 <span class="sd">  :param df pd.DataFrame: DataFrame to be preprocessed.</span>
@@ -859,20 +873,83 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">plot_feat_importances</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Shows the features importances for the model.</span>
+<span></span><span class="k">def</span> <span class="nf">preprocessing</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cols_drop</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">norm_name</span><span class="o">=</span><span class="s1">&#39;StandardScaler&#39;</span><span class="p">,</span>
+                  <span class="n">pca</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pca_components</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">balance_data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">group_years</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                  <span class="n">first_year</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">last_year</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">morpho3</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
 
-<span class="sd">  :param model: machine learning model.</span>
-<span class="sd">  :param X_test pd.DataFrame: X_test for the model, before preprocessing.</span>
-<span class="sd">  :param n int: number of features to be shown (default=25).</span>
+  <span class="sd">&quot;&quot;&quot;Preprocessing the train and test datasets.</span>
 
-<span class="sd">  :return: no value</span>
-<span class="sd">  :rtype: none</span>
+<span class="sd">  :param df pd.DataFrame: DataFrame to be preprocessed.</span>
+<span class="sd">  :param cols_drop list: list of columns to be dropped from dataset.</span>
+<span class="sd">  :param label string: name of the column that will be the label.</span>
+<span class="sd">  :param test_size float: size of test set (default=0.25).</span>
+<span class="sd">  :param normalizer str: which normalizer to be fitted to the data (default=&#39;StandardScaler&#39;).</span>
+<span class="sd">    - options:</span>
+<span class="sd">      * &#39;StandardScaler&#39;;</span>
+<span class="sd">      * &#39;MinMaxScaler&#39;;</span>
+<span class="sd">      * &#39;MaxAbsScaler&#39;;</span>
+<span class="sd">      * &#39;PowerTransformer&#39;;</span>
+<span class="sd">      * &#39;QuantileTransformer&#39;.</span>
+<span class="sd">  :param pca bool: if want to use PCA components set True (default=False).</span>
+<span class="sd">  :param pca_components int: number of PCA components (default=None).</span>
+<span class="sd">  :param balance_data bool: balance the data using oversampling (default=True).</span>
+<span class="sd">  :param group_years bool: create a subset with years grouped (default=False).</span>
+<span class="sd">  :param first_year int: first year of the grouped years. Ignored if group_years = False.</span>
+<span class="sd">  :param last_year int: last year of the grouped years. Ignored if group_years = False.</span>
+<span class="sd">  :param morpho3 bool: use only morphologies that the last number is equal to 3 (default=False).</span>
+<span class="sd">  :param random_state int: value for pca random_state (default=10).</span>
+
+<span class="sd">  :return X_train_: preprocessed train DataFrame</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  :return X_test_: preprocessed test DataFrame</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  :return y_train_: preprocessed train label</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  :return y_test: preprocessed test label</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  :return feat_cols: list with the features columns names</span>
+<span class="sd">  :rtype: list</span>
 <span class="sd">  &quot;&quot;&quot;</span>
 
-  <span class="n">feat_import</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">X_test</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-  <span class="n">feat_import</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+  <span class="c1"># Morphology 3</span>
+  <span class="k">if</span> <span class="n">morpho3</span><span class="p">:</span>
+    <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;comportamento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">MORFO</span><span class="p">]</span>
+    <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">comportamento</span> <span class="o">==</span> <span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">df_aux</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;comportamento&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+  <span class="c1"># Grouped years</span>
+  <span class="k">if</span> <span class="n">group_years</span> <span class="ow">and</span> <span class="n">first_year</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">last_year</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ANODIAG</span> <span class="o">&gt;=</span> <span class="n">first_year</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ANODIAG</span> <span class="o">&lt;=</span> <span class="n">last_year</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+  <span class="c1"># Train Test split</span>
+  <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">get_train_test</span><span class="p">(</span><span class="n">df_aux</span><span class="p">,</span> <span class="n">cols_drop</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">test_size</span><span class="p">,</span>
+                                                    <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
+  <span class="n">feat_cols</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span>
+
+  <span class="c1"># Preprocessing</span>
+  <span class="k">if</span> <span class="n">pca</span> <span class="ow">and</span> <span class="n">pca_components</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">X_train_enc</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">pca</span> <span class="o">=</span> <span class="n">train_preprocessing</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">normalizer</span><span class="o">=</span><span class="n">norm_name</span><span class="p">,</span>
+                                                      <span class="n">pca</span><span class="o">=</span><span class="n">pca</span><span class="p">,</span> <span class="n">pca_components</span><span class="o">=</span><span class="n">pca_components</span><span class="p">,</span>
+                                                      <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
+    <span class="n">X_test_</span> <span class="o">=</span> <span class="n">test_preprocessing</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">pca</span><span class="p">)</span>
+
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">X_train_enc</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span> <span class="o">=</span> <span class="n">train_preprocessing</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">normalizer</span><span class="o">=</span><span class="n">norm_name</span><span class="p">)</span>
+    <span class="n">X_test_</span> <span class="o">=</span> <span class="n">test_preprocessing</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span><span class="p">)</span>
+
+  <span class="c1"># Balancing</span>
+  <span class="k">if</span> <span class="n">balance_data</span><span class="p">:</span>
+    <span class="n">X_train_</span><span class="p">,</span> <span class="n">y_train_</span> <span class="o">=</span> <span class="n">SMOTE</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">X_train_enc</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">X_train_</span><span class="p">,</span> <span class="n">y_train_</span> <span class="o">=</span> <span class="n">X_train_enc</span><span class="p">,</span> <span class="n">y_train</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X_train = </span><span class="si">{</span><span class="n">X_train_</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">, X_test = </span><span class="si">{</span><span class="n">X_test_</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y_train = </span><span class="si">{</span><span class="n">y_train_</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">, y_test = </span><span class="si">{</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">X_train_</span><span class="p">,</span> <span class="n">X_test_</span><span class="p">,</span> <span class="n">y_train_</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">feat_cols</span>
 </pre></div>
 </div>
 </div>
@@ -881,26 +958,20 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">validate_regression</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">y_test</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Validate the regression.</span>
+<span></span><span class="k">def</span> <span class="nf">plot_feat_importances</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">feat_cols</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Shows the features importances for the model.</span>
 
-<span class="sd">  :param X_test pd.DataFrame: values to be validated</span>
-<span class="sd">  :param model: trained machine learning model</span>
-<span class="sd">  :param y_test array-like: true labels for the regression</span>
+<span class="sd">  :param model: machine learning model.</span>
+<span class="sd">  :param feat_cols list: list of the features used in the model training.</span>
+<span class="sd">  :param n int: number of features to be shown (default=25).</span>
 
-<span class="sd">  :return: DataFrame comparing the real and predicted values</span>
-<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  :return: no value</span>
+<span class="sd">  :rtype: none</span>
 <span class="sd">  &quot;&quot;&quot;</span>
 
-  <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-  <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Real&#39;</span><span class="p">:</span> <span class="n">y_test</span><span class="p">,</span> <span class="s1">&#39;Predict&#39;</span><span class="p">:</span> <span class="n">y_pred</span><span class="p">})</span>
-
-  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mean Absolute Error: </span><span class="si">{</span><span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mean Squared Error: </span><span class="si">{</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Root Mean Squared Error: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Score: </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="n">df</span>
+  <span class="n">feat_import</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">feat_cols</span><span class="p">)</span>
+  <span class="n">feat_import</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
