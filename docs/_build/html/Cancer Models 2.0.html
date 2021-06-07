@@ -3005,14 +3005,6 @@ Columns (33,34,78,83,88,89,90) have mixed types.Specify dtype option on import o
 </div>
 <div class="section" id="Dates">
 <h3><strong>Dates</strong><a class="headerlink" href="#Dates" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><strong>DTCONSULT</strong>: Data da 1ª consulta (date = 10). Formato: DD/MM/YYYY</p></li>
-<li><p><strong>DTDIAG</strong>: Data do diagnóstico (date = 10). Formato: DD/MM/YYYY</p></li>
-<li><p><strong>DTTRAT</strong>: Data de inicio do tratamento (date = 10). Formato: DD/MM/YYYY</p></li>
-<li><p><strong>DTULTINFO</strong>: Data da última informação do paciente (date = 10). Formato: DD/MM/YYYY</p></li>
-<li><p><strong>DTRECIDIVA</strong>: Data da última ocorrência de recidiva (date = 10). Formato: DD/MM/YYYY</p></li>
-<li><p><strong>DTPREENCH</strong>: Data do preenchimento (date = 10). Formato: DD/MM/YYYY</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -3064,12 +3056,6 @@ dtype: float64
 </div>
 <div class="section" id="Numerical-categories">
 <h3><strong>Numerical categories</strong><a class="headerlink" href="#Numerical-categories" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p><strong>SEXO</strong>: Sexo do paciente (int = 1).</p>
-<p>1 – MASCULINO</p>
-<p>2 – FEMININO</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -3089,16 +3075,6 @@ dtype: float64
 Name: SEXO, dtype: int64
 </pre></div></div>
 </div>
-<ul>
-<li><p><strong>ESCOLARI</strong>: Código para escolaridade do paciente (int = 1).</p>
-<p>1 – ANALFABETO</p>
-<p>2 – ENS. FUND. INCOMPLETO</p>
-<p>3 – ENS. FUND. COMPLETO</p>
-<p>4 – ENSINO MÉDIO</p>
-<p>5 – SUPERIOR</p>
-<p>9 – IGNORADA</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -3122,14 +3098,6 @@ Name: SEXO, dtype: int64
 Name: ESCOLARI, dtype: int64
 </pre></div></div>
 </div>
-<ul>
-<li><p><strong>CATEATEND</strong>: Categoria de atendimento ao diagnóstico (int = 1).</p>
-<p>1 - CONVENIO</p>
-<p>2 - SUS</p>
-<p>3 – PARTICULAR</p>
-<p>9 – SEM INFORMAÇÃO</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -3151,49 +3119,6 @@ Name: ESCOLARI, dtype: int64
 Name: CATEATEND, dtype: int64
 </pre></div></div>
 </div>
-<ul>
-<li><p><strong>CLINICA</strong>: Código da clinica (int = 2).</p>
-<p>1 – ALERGIA/IMUNOLOGIA</p>
-<p>2 – CIRURGIA CARDIACA</p>
-<p>3 – CIRURGIA CABEÇA E PESCOÇO</p>
-<p>4 – CIRURGIA GERAL</p>
-<p>5 – CIRURGIA PEDIATRICA</p>
-<p>6 – CIRURGIA PLASTICA</p>
-<p>7 – CIRURGIA TORAXICA</p>
-<p>8 – CIRURGIA VASCULAR</p>
-<p>9 – CLINICA MEDICA</p>
-<p>10 – DERMATOLOGIA</p>
-<p>11 – ENDOCRINOLOGIA</p>
-<p>12 – GASTROCIRURGIA</p>
-<p>13 – GASTROENTEROLOGIA</p>
-<p>14 – GERIATRIA</p>
-<p>15 – GINECOLOGIA</p>
-<p>16 – GINECOLOGIA / OBSTETRICIA</p>
-<p>17 – HEMATOLOGIA</p>
-<p>18 – INFECTOLOGIA</p>
-<p>19 – NEFROLOGIA</p>
-<p>20 – NEUROCIRURGIA</p>
-<p>21 – NEUROLOGIA</p>
-<p>22 – OFTALMOLOGIA</p>
-<p>23 – ONCOLOGIA CIRURGICA</p>
-<p>24 – ONCOLOGIA CLINICA</p>
-<p>25 – ONCOLOGIA PEDIATRICA</p>
-<p>26 – ORTOPEDIA</p>
-<p>27 – OTORRINOLARINGOLOGIA</p>
-<p>28 – PEDIATRIA</p>
-<p>29 – PNEUMOLOGIA</p>
-<p>30 – PROCTOLOGIA</p>
-<p>31 – RADIOTERAPIA</p>
-<p>32 – UROLOGIA</p>
-<p>33 – MASTOLOGIA</p>
-<p>34 – ONCOLOGIA CUTANEA</p>
-<p>35 – CIRURGIA PELVICA</p>
-<p>36 – CIRURGIA ABDOMINAL</p>
-<p>37 – ODONTOLOGIA</p>
-<p>38 – TRANSPLANTE HEPATICO</p>
-<p>99 – IGNORADO</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -3213,12 +3138,6 @@ array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
        35, 36, 37, 38, 39, 99])
 </pre></div></div>
 </div>
-<ul>
-<li><p><strong>DIAGPREV</strong>: Diagnóstico e tratamento anterior (int = 1).</p>
-<p>1 – SEM DIAGNÓSTICO / SEM TRATAMENTO</p>
-<p>2 – COM DIAGNÓSTICO / SEM TRATAMENTO</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -3238,14 +3157,6 @@ array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
 Name: DIAGPREV, dtype: int64
 </pre></div></div>
 </div>
-<ul>
-<li><p><strong>BASEDIAG</strong>: Código da base do diagnóstico (int = 1).</p>
-<p>1 – EXAME CLINICO</p>
-<p>2 – RECURSOS AUXILIARES NÃO MICROSCÓPICOS</p>
-<p>3 – CONFIRMAÇÃO MICROSCÓPICA</p>
-<p>9 – SEM INFORMAÇÃO</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -3267,13 +3178,6 @@ Name: DIAGPREV, dtype: int64
 Name: BASEDIAG, dtype: int64
 </pre></div></div>
 </div>
-<ul>
-<li><p><strong>S</strong>: Classificação TNM - S (int = 1). Domínio: 0; 1; 2; 3; 8 – NÃO SE APLICA; 9 – X</p></li>
-<li><p><strong>G</strong>: Classificação TNM – G (Grau) (char = 5).</p>
-<p>Domínio (exceto C40, C41, C381, C382, C383, C47, C48 e C49): 0; 1; 2; 3; 4; 8 – NÃO SE APLICA; 9 – X</p>
-<p>Domínio (somente C40, C41, C381, C382, C383, C47, C48 e C49): ALTO; BAIXO; 8 – NÃO SE APLICA; 9 – X</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -3333,15 +3237,6 @@ Name: G, dtype: int64
 26739
 </pre></div></div>
 </div>
-<ul>
-<li><p><strong>LOCALTNM</strong>: Classificação TNM - Localização (int = 1).</p>
-<p>1 – SUPERIOR</p>
-<p>2 – MEDIO</p>
-<p>3 – INFERIOR</p>
-<p>8 – NÃO SE APLICA</p>
-<p>9 – X</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -3382,14 +3277,6 @@ Name: LOCALTNM, dtype: int64
 3526
 </pre></div></div>
 </div>
-<ul>
-<li><p><strong>IDMITOTIC</strong>: Classificação TNM – Índice Mitótico (int = 1).</p>
-<p>1 – ALTA</p>
-<p>2 – BAIXA</p>
-<p>8 – NÃO SE APLICA</p>
-<p>9 – X</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -3429,15 +3316,6 @@ Name: IDMITOTIC, dtype: int64
 453
 </pre></div></div>
 </div>
-<ul>
-<li><p><strong>PSA</strong>: Classificação TNM - PSA (int = 1).</p>
-<p>1 – MENOR QUE 10</p>
-<p>2 – MAIOR OU IGUAL A 10 E MENOR QUE 20</p>
-<p>3 – MAIOR OU IGUAL A 20</p>
-<p>8 – NÃO SE APLICA</p>
-<p>9 – X</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -3478,15 +3356,6 @@ Name: PSA, dtype: int64
 30650
 </pre></div></div>
 </div>
-<ul>
-<li><p><strong>GLEASON</strong>: Classificação TNM - Gleason (int = 1).</p>
-<p>1 – MENOR OU IGUAL A 6</p>
-<p>2 – IGUAL A 7</p>
-<p>3 – MAIOR OU IGUAL A 8</p>
-<p>8 – NÃO SE APLICA</p>
-<p>9 – X</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -3527,19 +3396,6 @@ Name: GLEASON, dtype: int64
 30868
 </pre></div></div>
 </div>
-<ul>
-<li><p><strong>NAOTRAT</strong>: Código da razão para não realização do tratamento (int = 1).</p>
-<p>1 – RECUSA DO TRATAMENTO</p>
-<p>2 – DOENÇA AVANÇADA, FALTA DE CONDIÇÕES CLINICAS</p>
-<p>3 – OUTRAS DOENÇAS ASSOCIADAS</p>
-<p>4 – ABANDONO DE TRATAMENTO</p>
-<p>5 – OBITO POR CANCER</p>
-<p>6 – OBITO POR OUTRAS CAUSAS, SOE</p>
-<p>7 – OUTRAS</p>
-<p>8 – NÃO SE APLICA (CASO TENHA TRATAMENTO)</p>
-<p>9 – SEM INFORMAÇÃO</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -3566,16 +3422,6 @@ Name: GLEASON, dtype: int64
 Name: NAOTRAT, dtype: int64
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>NENHUM</strong>: Tratamento recebido no hospital = nenhum (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>CIRURGIA</strong>: Tratamento recebido no hospital = cirurgia (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>RADIO</strong>: Tratamento recebido no hospital = radioterapia (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>QUIMIO</strong>: Tratamento recebido no hospital = quimioterapia (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>HORMONIO</strong>: Tratamento recebido no hospital = hormonioterapia (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>TMO</strong>: Tratamento recebido no hospital = tmo (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>IMUNO</strong>: Tratamento recebido no hospital = imunoterapia (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>OUTROS</strong>: Tratamento recebido no hospital = outros (int = 1). 0 – NÃO; 1 – SIM</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -3712,16 +3558,6 @@ array([0, 1])
 array([0, 1])
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>NENHUMANT</strong>: Tratamento recebido fora do hospital e antes da admissão = nenhum (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>CIRURANT</strong>: Tratamento recebido fora do hospital e antes da admissão = cirurgia (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>RADIOANT</strong>: Tratamento recebido fora do hospital e antes da admissão = radioterapia (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>QUIMIOANT</strong>: Tratamento recebido fora do hospital e antes da admissão = quimioterapia (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>HORMOANT</strong>: Tratamento recebido fora do hospital e antes da admissão = hormonioterapia (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>TMOANT</strong>: Tratamento recebido fora do hospital e antes da admissão = tmo (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>IMUNOANT</strong>: Tratamento recebido fora do hospital e antes da admissão = imunoterapia (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>OUTROANT</strong>: Tratamento recebido fora do hospital e antes da admissão = outros (int = 1). 0 – NÃO; 1 – SIM</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -3858,16 +3694,6 @@ array([0])
 array([0])
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>NENHUMAPOS</strong>: Tratamento recebido fora do hospital e durante/após admissão = nenhum (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>CIRURAPOS</strong>: Tratamento recebido fora do hospital e durante/após admissão = cirurgia (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>RADIOAPOS</strong>: Tratamento recebido fora do hospital e durante/após admissão = radioterapia (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>QUIMIOAPOS</strong>: Tratamento recebido fora do hospital e durante/após admissão = quimioterapia (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>HORMOAPOS</strong>: Tratamento recebido fora do hospital e durante/após admissão = hormonioterapia (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>TMOAPOS</strong>: Tratamento recebido fora do hospital e durante/após admissão = tmo (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>IMUNOAPOS</strong>: Tratamento recebido fora do hospital e durante/após admissão = imunoterapia (int = 1). 0 – NÃO; 1 – SIM</p></li>
-<li><p><strong>OUTROAPOS</strong>: Tratamento recebido fora do hospital e durante/após admissão = outros (int = 1). 0 – NÃO; 1 – SIM</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4004,14 +3830,6 @@ array([0, 1])
 array([0, 1])
 </pre></div></div>
 </div>
-<ul>
-<li><p><strong>ULTINFO</strong>: Última informação sobre o paciente (int = 1).</p>
-<p>1 – VIVO, COM CÂNCER</p>
-<p>2 – VIVO, SOE</p>
-<p>3 – OBITO POR CANCER</p>
-<p>4 – OBITO POR OUTRAS CAUSAS, SOE</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4033,14 +3851,6 @@ array([0, 1])
 Name: ULTINFO, dtype: int64
 </pre></div></div>
 </div>
-<ul>
-<li><p><strong>LATERALI</strong>: Lateralidade (int = 1).</p>
-<p>1 – DIREITA</p>
-<p>2 – ESQUERDA</p>
-<p>3 – BILATERAL</p>
-<p>8 - NÃO SE APLICA</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4062,12 +3872,6 @@ Name: ULTINFO, dtype: int64
 Name: LATERALI, dtype: int64
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>RECNENHUM</strong>: Sem recidiva (int = 1). 0 - Não; 1 - Sim</p></li>
-<li><p><strong>RECLOCAL</strong>: Recidiva local (int = 1). 0 - Não; 1 - Sim</p></li>
-<li><p><strong>RECREGIO</strong>: Recidiva regional (int = 1). 0 - Não; 1 - Sim</p></li>
-<li><p><strong>RECDIST</strong>: Recidiva a distância / metástase (int = 1). 0 - Não; 1 - Sim</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4144,7 +3948,6 @@ Name: RECREGIO, dtype: int64
 Name: RECDIST, dtype: int64
 </pre></div></div>
 </div>
-<p><strong>HABILIT2</strong>:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4165,60 +3968,6 @@ array([1, 2])
 </div>
 <div class="section" id="Letter-categories">
 <h3><strong>Letter categories</strong><a class="headerlink" href="#Letter-categories" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p><strong>TRATAMENTO</strong>: Código de combinação dos tratamentos realizados (char = 1).</p>
-<p>A – Cirurgia</p>
-<p>B – Radioterapia</p>
-<p>C – Quimioterapia</p>
-<p>D – Cirurgia + Radioterapia</p>
-<p>E – Cirurgia + Quimioterapia</p>
-<p>F – Radioterapia + Quimioterapia</p>
-<p>G – Cirurgia + Radio + Quimio</p>
-<p>H – Cirurgia + Radio + Quimio + Hormonio</p>
-<p>I – Outras combinações de tratamento</p>
-<div class="line-block">
-<div class="line">J – Nenhum tratamento realizado</div>
-</div>
-</li>
-<li><p><strong>TRATHOSP</strong>: Código de combinação dos tratamentos realizados no hospital (char = 1).</p>
-<p>A – Cirurgia</p>
-<p>B – Radioterapia</p>
-<p>C – Quimioterapia</p>
-<p>D – Cirurgia + Radioterapia</p>
-<p>E – Cirurgia + Quimioterapia</p>
-<p>F – Radioterapia + Quimioterapia</p>
-<p>G – Cirurgia + Radio + Quimio</p>
-<p>H – Cirurgia + Radio + Quimio + Hormonio</p>
-<p>I – Outras combinações de tratamento</p>
-<p>J – Nenhum tratamento realizado</p>
-</li>
-<li><p><strong>TRATFANTES</strong>: Código de combinação dos tratamentos realizados antes/durante admissão fora do hospital (char = 1).</p>
-<p>A – Cirurgia</p>
-<p>B – Radioterapia</p>
-<p>C – Quimioterapia</p>
-<p>D – Cirurgia + Radioterapia</p>
-<p>E – Cirurgia + Quimioterapia</p>
-<p>F – Radioterapia + Quimioterapia</p>
-<p>G – Cirurgia + Radio + Quimio</p>
-<p>H – Cirurgia + Radio + Quimio + Hormonio</p>
-<p>I – Outras combinações de tratamento</p>
-<p>J – Nenhum tratamento realizado</p>
-<p>K – Sem informação</p>
-</li>
-<li><p><strong>TRATFAPOS</strong>: Código de combinação dos tratamentos realizados após admissão fora do hospital (char = 1).</p>
-<p>A – Cirurgia</p>
-<p>B – Radioterapia</p>
-<p>C – Quimioterapia</p>
-<p>D – Cirurgia + Radioterapia</p>
-<p>E – Cirurgia + Quimioterapia</p>
-<p>F – Radioterapia + Quimioterapia</p>
-<p>G – Cirurgia + Radio + Quimio</p>
-<p>H – Cirurgia + Radio + Quimio + Hormonio</p>
-<p>I – Outras combinações de tratamento</p>
-<p>J – Nenhum tratamento realizado</p>
-<p>K – Sem informação</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4290,9 +4039,6 @@ array([&#39;J&#39;, &#39;C&#39;, &#39;I&#39;, &#39;B&#39;, &#39;A&#39;, &#39;F&#
 </div>
 <div class="section" id="Numbers">
 <h3><strong>Numbers</strong><a class="headerlink" href="#Numbers" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><strong>IDADE</strong>: Idade do paciente (int = 3).</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4310,11 +4056,6 @@ array([&#39;J&#39;, &#39;C&#39;, &#39;I&#39;, &#39;B&#39;, &#39;A&#39;, &#39;F&#
 109
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>CONSDIAG</strong>: Diferença em dias entre as datas de consulta o diagnóstico (num = dias).</p></li>
-<li><p><strong>TRATCONS</strong>: Diferença em dias entre as datas de consulta e tratamento (num = dias).</p></li>
-<li><p><strong>DIAGTRAT</strong>: Diferença em dias entre as datas de tratamento e diagnóstico (num = dias).</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4366,9 +4107,6 @@ array([&#39;J&#39;, &#39;C&#39;, &#39;I&#39;, &#39;B&#39;, &#39;A&#39;, &#39;F&#
 73791
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>ANODIAG</strong>: Ano de diagnóstico (int = 4). Formato: 9999</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4387,9 +4125,6 @@ array([2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,
        2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021])
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>IBGE</strong>: Código da cidade de residência do paciente segundo IBGE com digito verificador (int = 7).</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4407,9 +4142,6 @@ array([2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,
 2891
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>MORFO</strong>: Código da morfologia (char = 5). Formato: 99999</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4511,9 +4243,6 @@ array([82611, 88231, 92613, 83133, 90153, 90143, 82513, 84013, 81473,
        91053, 80401, 94243])
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>RRAS</strong>: RRAS (int = 200). [1,2,3, … ,16,17,99]</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4567,9 +4296,6 @@ array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
 Name: RRAS, dtype: int64
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>OUTRACLA</strong>: Outra classificação de estadiamento (int = 20).</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4625,9 +4351,6 @@ Name: RRAS, dtype: int64
 Name: OUTRACLA, dtype: int64
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>REGISTRADO</strong>:</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4652,11 +4375,6 @@ array([ 1.,  3.,  5.,  2.,  6.,  7., 20., 16., 21., 15., 38.,  4., 10.,
 </div>
 <div class="section" id="Strings">
 <h3><strong>Strings</strong><a class="headerlink" href="#Strings" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><strong>UFNASC</strong>: UF de nascimento (char = 2). Outras opções: SI - Sem informação; OP - Outro país.</p></li>
-<li><p><strong>UFRESID</strong>: UF de residência (char = 2). Outras opções: OP - Outro país.</p></li>
-<li><p><strong>CIDADE</strong>: Cidade de residência do paciente (char = 200).</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4722,18 +4440,6 @@ PIRACICABA                 9537
 Name: CIDADE, dtype: int64
 </pre></div></div>
 </div>
-<ul>
-<li><p><strong>FAIXAETAR</strong>: Faixa etária do paciente (char = 5).</p>
-<p>00-09</p>
-<p>10-19</p>
-<p>20-29</p>
-<p>30-39</p>
-<p>40-49</p>
-<p>50-59</p>
-<p>60-69</p>
-<p>70+</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4752,27 +4458,6 @@ array([&#39;40-49&#39;, &#39;00-09&#39;, &#39;50-59&#39;, &#39;20-29&#39;, &#39;
        &#39;30-39&#39;], dtype=object)
 </pre></div></div>
 </div>
-<ul>
-<li><p><strong>DRS</strong>: Departamentos Regionais de Saúde (char = 200).</p>
-<p>DRS 01 SĂO PAULO</p>
-<p>DRS 15 SĂO JOSÉ DO RIO PRETO</p>
-<p>DRS 06 BAURU</p>
-<p>DRS 07 CAMPINAS</p>
-<p>DRS 09 MARÍLIA</p>
-<p>DRS 13 RIBEIRĂO PRETO</p>
-<p>DRS 10 PIRACICABA</p>
-<p>DRS 17 TAUBATÉ</p>
-<p>DRS 16 SOROCABA</p>
-<p>DRS 05 BARRETOS</p>
-<p>DRS 03 ARARAQUARA</p>
-<p>DRS 02 ARAÇATUBA</p>
-<p>DRS 04 SANTOS</p>
-<p>DRS 14 SĂO JOĂO DA BOA VISTA</p>
-<p>DRS 08 FRANCA</p>
-<p>DRS 11 PRESIDENTE PRUDENTE</p>
-<p>DRS 12 REGISTRO</p>
-</li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4814,13 +4499,6 @@ array([&#39;DRS 07  CAMPINAS&#39;, nan, &#39;DRS 14  SÃO JOÃO DA BOA VISTA&#39
 66478
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>DESCTOPO</strong>: Descrição da Topografia (char = 80).</p></li>
-<li><p><strong>DESCMORFO</strong>: Descrição da morfologia (char = 80).</p></li>
-<li><p><strong>DSCCIDO</strong>: Descrição da morfologia 3ª Edição (char = 89).</p></li>
-<li><p><strong>CICISUBGRU</strong>: Tumor infantil – Sub grupo (char = 80). [Descrição com letras e nome do tumor]</p></li>
-<li><p><strong>INSTORIG</strong>: Instituição de origem (char = 200). Obrigatório somente se DIAGPREV = 03 – COM DIAGNÓSTICO / COM TRATAMENTO</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4912,10 +4590,6 @@ array([nan])
 </div>
 <div class="section" id="Numbers-and-letters-categories">
 <h3><strong>Numbers and letters categories</strong><a class="headerlink" href="#Numbers-and-letters-categories" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><strong>TOPO</strong>: Código da topografia (char = 4). Formato: C999</p></li>
-<li><p><strong>TOPOGRUP</strong>: Grupo da topografia (char = 3). Formato: C99</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4957,12 +4631,6 @@ array([&#39;C17&#39;, &#39;C41&#39;, &#39;C18&#39;, &#39;C49&#39;, &#39;C20&#39;
        &#39;C12&#39;, &#39;C03&#39;, &#39;C47&#39;, &#39;C37&#39;, &#39;C58&#39;, &#39;C70&#39;, &#39;C66&#39;], dtype=object)
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>META01</strong>: Metástase (char = 3). Formato: C99</p></li>
-<li><p><strong>META02</strong>: Metástase (char = 3). Formato: C99</p></li>
-<li><p><strong>META03</strong>: Metástase (char = 3). Formato: C99</p></li>
-<li><p><strong>META04</strong>: Metástase (char = 3). Formato: C99</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -4986,12 +4654,6 @@ array([&#39;C17&#39;, &#39;C41&#39;, &#39;C18&#39;, &#39;C49&#39;, &#39;C20&#39;
 922473
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>REC01</strong>: Local da recidiva/metástase (char = 3). Formato: C99</p></li>
-<li><p><strong>REC02</strong>: Local da recidiva/metástase (char = 3). Formato: C99</p></li>
-<li><p><strong>REC03</strong>: Local da recidiva/metástase (char = 3). Formato: C99</p></li>
-<li><p><strong>REC04</strong>: Local da recidiva/metástase (char = 3). Formato: C99</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -5015,10 +4677,6 @@ array([&#39;C17&#39;, &#39;C41&#39;, &#39;C18&#39;, &#39;C49&#39;, &#39;C20&#39;
 922473
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>EC</strong>: Estadio clínico (char = 5). [0,IIIB,IA, …]</p></li>
-<li><p><strong>ECGRUP</strong>: Grupo do estadiamento clínico (char = 3). [0,I,II,III,IV,Y,X]</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -5080,11 +4738,6 @@ X       38630
 Name: ECGRUP, dtype: int64
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>T</strong>: Classificação TNM - T (char = 5).</p></li>
-<li><p><strong>N</strong>: Classificação TNM - N (char = 5).</p></li>
-<li><p><strong>M</strong>: Classificação TNM - M (char = 3).</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -5138,11 +4791,6 @@ array([&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;C&#39;, &#39;P&#
 array([&#39;0&#39;, &#39;1&#39;, &#39;X&#39;, &#39;Y&#39;], dtype=object)
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>PT</strong>: Estadiamento pós cirúrgico (char = 5). [1,2,X,Y,IS,2A, …]</p></li>
-<li><p><strong>PN</strong>: Estadiamento pós cirúrgico (char = 5). [0,1,1A,2C, …]</p></li>
-<li><p><strong>PM</strong>: Estadiamento pós cirúrgico (char = 3). [0,1,1A,1B,1C,M0,X,Y]</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -5250,9 +4898,6 @@ array([nan, &#39;Y&#39;, &#39;X&#39;, &#39;0&#39;, &#39;1&#39;, &#39;M&#39;, &#3
 (20, 93)
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>CICI</strong>: Tumor infantil (char = 5).</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -5270,9 +4915,6 @@ array([nan, &#39;Y&#39;, &#39;X&#39;, &#39;0&#39;, &#39;1&#39;, &#39;M&#39;, &#3
 array([nan])
 </pre></div></div>
 </div>
-<ul class="simple">
-<li><p><strong>CICIGRUP</strong>: Tumor infantil – Grupo (char = 80).</p></li>
-</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -7476,13 +7118,13 @@ dtype: int64
 <div><p>This process will be performed by the <code class="docutils literal notranslate"><span class="pre">get_labels</span></code> function, see the <a class="reference external" href="https://cancer-project.readthedocs.io/en/latest/Cancer%20Libraries%20and%20functions.html#General">functions section</a> to see the complete function.</p>
 </div></blockquote>
 <p><strong>Death labels</strong></p>
-<ul>
-<li><p>Death at any time - ob</p></li>
+<ul class="simple">
+<li><p>Death at any time - ob;</p></li>
 <li><p>Patient is alive after one year - vivo_ano1;</p></li>
 <li><p>Patient is alive after three years - vivo_ano3;</p></li>
-<li><p class="rubric" id="patient-is-alive-after-five-years-vivo-ano5">Patient is alive after five years - vivo_ano5;</p>
-</li>
+<li><p>Patient is alive after five years - vivo_ano5.</p></li>
 </ul>
+<hr class="docutils" />
 <p><strong>Last information</strong></p>
 <p>1 - Alive with cancer</p>
 <p>2 - Alive, without other specifications</p>

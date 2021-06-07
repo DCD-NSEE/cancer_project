@@ -479,3 +479,15 @@ The data has 95 columns, below we have a description of each one.
    :caption: Classification vivo_ano1
 
    Label - vivo_ano1
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Classification vivo_ano3
+
+   Label - vivo_ano3
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Classification vivo_ano5
+
+   Label - vivo_ano5
