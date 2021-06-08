@@ -244,7 +244,7 @@
 </div>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Here is presented the project documentation with cancer data provided by FOSP (Fundação Oncocentro de São Paulo). Access the data on the <a class="reference external" href="http://www.fosp.saude.sp.gov.br/publicacoes/downloadarquivos">FOSP website</a>.</p>
+<p>Here is presented the project documentation with cancer data provided by FOSP (Fundação Oncocentro de São Paulo).</p>
 <p>The project was developed using the python language, with the objective of making predictions for deaths and recovery time of patients with the disease.</p>
 <p>Complete files and notebooks are available on <a class="reference external" href="https://github.com/Lucas-Buk/cancer_project">Github</a>.</p>
 </div>
@@ -252,8 +252,8 @@
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>The project will be divided into stages to provide a better understanding and organization. The steps being:</p>
 <ul>
-<li><p>Libraries and Functions</p></li>
-<li><p>Data analysis and first preprocessing.</p></li>
+<li><p>Libraries and Functions;</p></li>
+<li><p>Data analysis, creation of new columns and first preprocessing;</p></li>
 <li><p>Classifiers: with preprocessing, creation and validation of machine learning models. Using six labels:</p>
 <blockquote>
 <div><ul class="simple">
@@ -270,8 +270,15 @@
 </div>
 <div class="section" id="data-dictionary">
 <h2>Data Dictionary<a class="headerlink" href="#data-dictionary" title="Permalink to this headline">¶</a></h2>
-<p>The data has 95 columns, below we have a description of each one.</p>
+<p>The data has 93 columns, below we have a description of each one.</p>
 <ul>
+<li><p><strong>SEXO</strong>: Gender of the patient (int = 1).</p>
+<blockquote>
+<div><p>1 - MALE;</p>
+<p>2 - FEMALE.</p>
+</div></blockquote>
+</li>
+<li><p><strong>IDADE</strong>: Patient’s age (int = 3).</p></li>
 <li><p><strong>ESCOLARI</strong>: Code for patient education (int = 1).</p>
 <blockquote>
 <div><p>1 - ILLITERATE;</p>
@@ -280,13 +287,6 @@
 <p>4 - HIGH SCHOOL;</p>
 <p>5 - UNIVERSITY EDUCATION;</p>
 <p>9 - IGNORED.</p>
-</div></blockquote>
-</li>
-<li><p><strong>IDADE</strong>: Patient’s age (int = 3).</p></li>
-<li><p><strong>SEXO</strong>: Gender of the patient (int = 1).</p>
-<blockquote>
-<div><p>1 - MALE;</p>
-<p>2 - FEMALE.</p>
 </div></blockquote>
 </li>
 <li><p><strong>UFNASC</strong>: UF of birth (char = 2). Other options: SI - No information; OP - Another country.</p></li>
@@ -302,7 +302,7 @@
 </div></blockquote>
 </li>
 <li><p><strong>DTCONSULT</strong>: Date of the first consultation (date = 10). Format: DD/MM/YYYY</p></li>
-<li><p><strong>CLINIC</strong>: Clinic code (int = 2).</p>
+<li><p><strong>CLINICA</strong>: Clinic code (int = 2).</p>
 <blockquote>
 <div><p>1 - ALLERGY / IMMUNOLOGY;</p>
 <p>2 - HEART SURGERY;</p>
@@ -364,7 +364,7 @@
 </li>
 <li><p><strong>TOPO</strong>: Topography code (char = 4). Format: C999</p></li>
 <li><p><strong>TOPOGRUP</strong>: Topography group (char = 3). Format: C99</p></li>
-<li><p><strong>DISCOUNT</strong>: Topography description (char = 80).</p></li>
+<li><p><strong>DESCTOPO</strong>: Topography description (char = 80).</p></li>
 <li><p><strong>MORFO</strong>: Morphology code (char = 5). Format: 99999</p></li>
 <li><p><strong>DESCMORFO</strong>: Description of the morphology (char = 80).</p></li>
 <li><p><strong>EC</strong>: Clinical stage (char = 5).</p></li>
@@ -556,14 +556,8 @@
 <li><p><strong>INSTORIG</strong>: Home institution (char = 200). Mandatory only if DIAGPREV = 03 - WITH DIAGNOSIS / WITH TREATMENT.</p></li>
 <li><p><strong>DRS</strong>: Regional Health Departments (char = 200).</p></li>
 <li><p><strong>RRAS</strong>: Regional Health Care Network (char = 200).</p></li>
-<li><p><strong>PERDASEG</strong>: Loss of follow-up (int = 1).</p>
-<blockquote>
-<div><p>0 - No;</p>
-<p>1 - Yes;</p>
-<p>8 - Not applicable (excluded from the calculation for the loss of follow-up indicator).</p>
-</div></blockquote>
-</li>
-<li><p><strong>ERRO</strong>: Admission with error (int = 1). 0 - Without; 1 - With</p></li>
+<li><p><strong>DTPREENCH</strong>: Completion date (date = 10). Format: DD/MM/YYYY</p></li>
+<li><p><strong>REGISTRADO</strong>:</p></li>
 <li><p><strong>DTRECIDIVA</strong>: Date of the last occurrence of recurrence (date = 10). Format: DD/MM/YYYY</p></li>
 <li><p><strong>RECNENHUM</strong>: Without recurrence (int = 1). 0 - No; 1 - Yes</p></li>
 <li><p><strong>RECLOCAL</strong>: Local recurrence (int = 1). 0 - No; 1 - Yes</p></li>
@@ -573,9 +567,7 @@
 <li><p><strong>REC02</strong>: Recurrence / metastasis local (char = 3). Format: C99</p></li>
 <li><p><strong>REC03</strong>: Recurrence / metastasis local (char = 3). Format: C99</p></li>
 <li><p><strong>REC04</strong>: Recurrence / metastasis local (char = 3). Format: C99</p></li>
-<li><p><strong>IBGEATEN</strong>: Institution’s IBGE code (int = 7).</p></li>
-<li><p><strong>CIDO</strong>: Morphology code 3rd Edition (int = 5). Format: 99999</p></li>
-<li><p><strong>DSCCIDO</strong>: Description of the morphology 3rd Edition (char = 89).</p></li>
+<li><p><strong>HABILIT2</strong>: Hospital qualification (int = 1). CACON or UNACON</p></li>
 </ul>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Libraries and functions</span></p>

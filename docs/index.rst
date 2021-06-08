@@ -19,7 +19,7 @@ Authors
 Introduction
 ------------
 
-Here is presented the project documentation with cancer data provided by FOSP (Fundação Oncocentro de São Paulo). Access the data on the `FOSP website <http://www.fosp.saude.sp.gov.br/publicacoes/downloadarquivos>`_.
+Here is presented the project documentation with cancer data provided by FOSP (Fundação Oncocentro de São Paulo).
 
 The project was developed using the python language, with the objective of making predictions for deaths and recovery time of patients with the disease.
 
@@ -30,8 +30,8 @@ Summary
 
 The project will be divided into stages to provide a better understanding and organization. The steps being:
 
-* Libraries and Functions
-* Data analysis and first preprocessing.
+* Libraries and Functions;
+* Data analysis, creation of new columns and first preprocessing;
 * Classifiers: with preprocessing, creation and validation of machine learning models. Using six labels:
 
    * ob;
@@ -49,7 +49,15 @@ The project will be divided into stages to provide a better understanding and or
 Data Dictionary
 ---------------
 
-The data has 95 columns, below we have a description of each one.
+The data has 93 columns, below we have a description of each one.
+
+* **SEXO**: Gender of the patient (int = 1).
+
+   1 - MALE;
+   
+   2 - FEMALE.
+
+* **IDADE**: Patient's age (int = 3).
 
 * **ESCOLARI**: Code for patient education (int = 1).
 
@@ -64,12 +72,7 @@ The data has 95 columns, below we have a description of each one.
    5 - UNIVERSITY EDUCATION;
    
    9 - IGNORED.
-* **IDADE**: Patient's age (int = 3).
-* **SEXO**: Gender of the patient (int = 1).
 
-   1 - MALE;
-   
-   2 - FEMALE.
 * **UFNASC**: UF of birth (char = 2). Other options: SI - No information; OP - Another country.
 * **UFRESID**: UF of residence (char = 2). Other options: OP - Another country.
 * **IBGE**: Code of the patient's city of residence according to IBGE with check digit (char = 7).
@@ -84,7 +87,7 @@ The data has 95 columns, below we have a description of each one.
    
    9 - NO INFORMATION.
 * **DTCONSULT**: Date of the first consultation (date = 10). Format: DD/MM/YYYY
-* **CLINIC**: Clinic code (int = 2).
+* **CLINICA**: Clinic code (int = 2).
 
    1 - ALLERGY / IMMUNOLOGY;
 
@@ -184,7 +187,7 @@ The data has 95 columns, below we have a description of each one.
    4 - NO INFORMATION.
 * **TOPO**: Topography code (char = 4). Format: C999
 * **TOPOGRUP**: Topography group (char = 3). Format: C99
-* **DISCOUNT**: Topography description (char = 80).
+* **DESCTOPO**: Topography description (char = 80).
 * **MORFO**: Morphology code (char = 5). Format: 99999
 * **DESCMORFO**: Description of the morphology (char = 80).
 * **EC**: Clinical stage (char = 5).
@@ -423,14 +426,8 @@ The data has 95 columns, below we have a description of each one.
 * **INSTORIG**: Home institution (char = 200). Mandatory only if DIAGPREV = 03 - WITH DIAGNOSIS / WITH TREATMENT.
 * **DRS**: Regional Health Departments (char = 200).
 * **RRAS**: Regional Health Care Network (char = 200).
-* **PERDASEG**: Loss of follow-up (int = 1).
-
-   0 - No;
-      
-   1 - Yes;
-      
-   8 - Not applicable (excluded from the calculation for the loss of follow-up indicator).
-* **ERRO**: Admission with error (int = 1). 0 - Without; 1 - With
+* **DTPREENCH**: Completion date (date = 10). Format: DD/MM/YYYY
+* **REGISTRADO**: 
 * **DTRECIDIVA**: Date of the last occurrence of recurrence (date = 10). Format: DD/MM/YYYY
 * **RECNENHUM**: Without recurrence (int = 1). 0 - No; 1 - Yes
 * **RECLOCAL**: Local recurrence (int = 1). 0 - No; 1 - Yes
@@ -440,9 +437,7 @@ The data has 95 columns, below we have a description of each one.
 * **REC02**: Recurrence / metastasis local (char = 3). Format: C99
 * **REC03**: Recurrence / metastasis local (char = 3). Format: C99
 * **REC04**: Recurrence / metastasis local (char = 3). Format: C99
-* **IBGEATEN**: Institution's IBGE code (int = 7).
-* **CIDO**: Morphology code 3rd Edition (int = 5). Format: 99999
-* **DSCCIDO**: Description of the morphology 3rd Edition (char = 89).
+* **HABILIT2**: Hospital qualification (int = 1). CACON or UNACON
 
 .. toctree::
    :maxdepth: 2
