@@ -32,13 +32,11 @@ The project will be divided into stages to provide a better understanding and or
 
 * Libraries and Functions;
 * Data analysis, creation of new columns and first preprocessing;
-* Classifiers: with preprocessing, creation and validation of machine learning models. Using six labels:
+* Classifiers: with preprocessing, creation and validation of machine learning models. Using five labels:
 
-   * ob;
+   * obito_geral;
 
-   * RECNENHUM;
-
-   * RECDIST;
+   * obito_cancer;
 
    * vivo_ano1;
 
@@ -453,21 +451,9 @@ The data has 93 columns, below we have a description of each one.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Classification ob
+   :caption: Classification obito_geral
 
-   Label - ob
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Classification RECNENHUM
-   
-   Label - RECNENHUM
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Classification RECDIST
-
-   Label - RECDIST
+   Label - obito_geral
 
 .. toctree::
    :maxdepth: 2
