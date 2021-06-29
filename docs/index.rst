@@ -457,6 +457,12 @@ The data has 93 columns, below we have a description of each one.
 
 .. toctree::
    :maxdepth: 2
+   :caption: Classification obito_cancer
+
+   Label - obito_cancer
+
+.. toctree::
+   :maxdepth: 2
    :caption: Classification vivo_ano1
 
    Label - vivo_ano1
