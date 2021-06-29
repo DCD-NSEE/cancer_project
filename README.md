@@ -6,6 +6,7 @@ This repository contains the files of the cancer project, from the study noteboo
 * Gisele Fernandes
 * Lucas Buk Cardoso
 * Maria Paula Curado
+* Stela Verzinhasse Peres
 * Tatiana Natasha Toporcov
 * Vanderlei Cunha Parro
 
