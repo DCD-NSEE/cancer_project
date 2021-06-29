@@ -10,7 +10,7 @@ This repository contains the files of the cancer project, from the study noteboo
 * Vanderlei Cunha Parro
 
 # Introduction
-Here is presented the project documentation with cancer data provided by FOSP (Fundação Oncocentro de São Paulo). Access the data on the [FOSP website](http://www.fosp.saude.sp.gov.br/publicacoes/downloadarquivos).
+Here is presented the project documentation with cancer data provided by FOSP (Fundação Oncocentro de São Paulo).
 
 The project was developed using the python language, with the objective of making predictions for deaths and recovery time of patients with the disease.
  
