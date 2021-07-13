@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Libraries &mdash; Cancer Project Documentation</title>
+  <title>Data Dictionary &mdash; Cancer Project Documentation</title>
   
 
   
@@ -89,13 +89,13 @@
             
               <p class="caption"><span class="caption-text">Libraries and functions</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Libraries</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Data Dictionary</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Libraries"><strong>Libraries</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="#Functions"><strong>Functions</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#General"><strong>General</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Models"><strong>Models</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#Data-Dictionary"><strong>Data Dictionary</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="#References"><strong>References</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Data Analysis</span></p>
@@ -194,7 +194,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><strong>Libraries</strong></li>
+      <li><strong>Data Dictionary</strong></li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -483,553 +483,6 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Libraries">
-<h1><strong>Libraries</strong><a class="headerlink" href="#Libraries" title="Permalink to this headline">¶</a></h1>
-<p>Import of all libraries used in the project.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Graphs</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
-<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
-<span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span>
-
-<span class="kn">import</span> <span class="nn">pickle</span> <span class="c1"># Save models</span>
-<span class="n">seed</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># seed for the random state</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Preprocessing</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">MinMaxScaler</span><span class="p">,</span> <span class="n">MaxAbsScaler</span><span class="p">,</span> <span class="n">PowerTransformer</span><span class="p">,</span> <span class="n">QuantileTransformer</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Classification</span>
-<span class="kn">from</span> <span class="nn">imblearn.over_sampling</span> <span class="kn">import</span> <span class="n">SMOTE</span>
-
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">import</span> <span class="nn">xgboost</span> <span class="k">as</span> <span class="nn">xgb</span>
-
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">plot_confusion_matrix</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/usr/local/lib/python3.7/dist-packages/sklearn/externals/six.py:31: FutureWarning:
-
-The module is deprecated in version 0.21 and will be removed in version 0.23 since we&#39;ve dropped support for Python 2.7. Please rely on the official version of six (https://pypi.org/project/six/).
-
-/usr/local/lib/python3.7/dist-packages/sklearn/utils/deprecation.py:144: FutureWarning:
-
-The sklearn.neighbors.base module is  deprecated in version 0.22 and will be removed in version 0.24. The corresponding classes / functions should instead be imported from sklearn.neighbors. Anything that cannot be imported from sklearn.neighbors is now part of the private API.
-
-</pre></div></div>
-</div>
-</div>
-<div class="section" id="Functions">
-<h1><strong>Functions</strong><a class="headerlink" href="#Functions" title="Permalink to this headline">¶</a></h1>
-<p>Here we have some functions used in the project, the ones for general use are for creating new columns in the data and reading and saving datasets. The functions for the models contain the preprocessing, division into training and test data, validation of the regressions and plot of the graph with the features importances.</p>
-<div class="section" id="General">
-<h2><strong>General</strong><a class="headerlink" href="#General" title="Permalink to this headline">¶</a></h2>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;&quot;Read csv files</span>
-
-<span class="sd">  :param path str: path to the csv file.</span>
-
-<span class="sd">  :return: dataframe from the csv file.</span>
-<span class="sd">  :rtype: pd.DataFrame</span>
-<span class="sd">  &quot;&quot;&quot;</span>
-
-  <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">})</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">save_csv</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Save csv files</span>
-
-<span class="sd">  :param df pd.DataFrame: dataframe to be saved.</span>
-<span class="sd">  :param path str: path to save the csv file.</span>
-
-<span class="sd">  :return: no value</span>
-<span class="sd">  :rtype: none</span>
-<span class="sd">  &quot;&quot;&quot;</span>
-
-  <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CSV file saved successfully!&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">get_dates_diff</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">dates_list</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Get the difference, in days, between columns with dates</span>
-
-<span class="sd">  :param df pd.DataFrame: DataFrame to get the dates difference.</span>
-<span class="sd">  :param dates_list list: list with the name of date columns.</span>
-
-<span class="sd">  :return: DataFrame with dates difference in nine new columns</span>
-<span class="sd">  :rtype: pd.DataFrame</span>
-<span class="sd">  &quot;&quot;&quot;</span>
-
-  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;DTTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTULTINFO&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-  <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">dates_list</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;DTTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTULTINFO&#39;</span><span class="p">,</span> <span class="s1">&#39;DTRECIDIVA&#39;</span><span class="p">]:</span> <span class="c1"># Has a different date format</span>
-      <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span>
-    <span class="k">else</span><span class="p">:</span>
-      <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span>
-    <span class="n">df_aux</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_aux</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="n">fmt</span><span class="p">)</span>
-
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;CONSDIAG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTDIAG</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTCONSULT</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;DIAGTRAT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTTRAT</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTDIAG</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;TRATCONS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTTRAT</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTCONSULT</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
-
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;RECCONS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTRECIDIVA</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTCONSULT</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;RECDIAG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTRECIDIVA</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTDIAG</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;RECTRAT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTRECIDIVA</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTTRAT</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
-
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;ULTICONS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTULTINFO</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTCONSULT</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;ULTIDIAG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTULTINFO</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTDIAG</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;ULTITRAT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTULTINFO</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTTRAT</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
-
-  <span class="k">return</span> <span class="n">df_aux</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">get_labels</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Create death labels acording to the last information year.</span>
-
-<span class="sd">  :param df pd.DataFrame: dataframe to be processed.</span>
-
-<span class="sd">  :return: DataFrame with the new labels</span>
-<span class="sd">  :rtype: pd.DataFrame</span>
-<span class="sd">  &quot;&quot;&quot;</span>
-
-  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;obito_geral&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;obito_cancer&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;vivo_ano1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;vivo_ano3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;vivo_ano5&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ULTINFO</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;obito_geral&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ULTINFO</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;obito_cancer&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ULTIDIAG</span> <span class="o">&gt;</span> <span class="mi">365</span><span class="p">,</span> <span class="s1">&#39;vivo_ano1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ULTIDIAG</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="o">*</span><span class="mi">365</span><span class="p">,</span> <span class="s1">&#39;vivo_ano3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ULTIDIAG</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="o">*</span><span class="mi">365</span><span class="p">,</span> <span class="s1">&#39;vivo_ano5&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-
-  <span class="k">return</span> <span class="n">df_aux</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">get_label_rec</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Create the labels analyzing whether there was recurrence.</span>
-
-<span class="sd">  :param df pd.DataFrame: dataframe to be processed.</span>
-
-<span class="sd">  :return: DataFrame with the new labels</span>
-<span class="sd">  :rtype: pd.DataFrame</span>
-<span class="sd">  &quot;&quot;&quot;</span>
-
-  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;ob_com_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;ob_sem_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;vivo_com_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;vivo_sem_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">obito_geral</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">RECNENHUM</span> <span class="o">==</span> <span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;ob_sem_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">obito_geral</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">RECNENHUM</span> <span class="o">==</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;ob_com_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">obito_geral</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">RECNENHUM</span> <span class="o">==</span> <span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;vivo_sem_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">obito_geral</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">RECNENHUM</span> <span class="o">==</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;vivo_com_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-
-  <span class="k">return</span> <span class="n">df_aux</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="Models">
-<h2><strong>Models</strong><a class="headerlink" href="#Models" title="Permalink to this headline">¶</a></h2>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">variables_preprocessing</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Do some preprocessing on the DataFrame like strings splits, fill NaN values,</span>
-<span class="sd">     replace values and drop some columns.</span>
-
-<span class="sd">  :param df pd.DataFrame: DataFrame to be preprocessed.</span>
-
-<span class="sd">  :return: DataFrame after be preprocessed and get some columns removed</span>
-<span class="sd">  :rtype: pd.DataFrame</span>
-<span class="sd">  &quot;&quot;&quot;</span>
-
-  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-  <span class="n">no_info</span> <span class="o">=</span> <span class="s1">&#39;**Sem informação**&#39;</span>
-
-  <span class="c1"># Excluding ECGRUP with X and Y values</span>
-  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[</span><span class="o">~</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ECGRUP</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">])]</span>
-
-  <span class="c1"># Excluding C44 topographies (with morphologies between 80101 and 81103)</span>
-  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[</span><span class="o">~</span><span class="p">((</span><span class="n">df_aux</span><span class="o">.</span><span class="n">TOPOGRUP</span> <span class="o">==</span> <span class="s1">&#39;C44&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">MORFO</span> <span class="o">&gt;=</span> <span class="mi">80101</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">MORFO</span> <span class="o">&lt;=</span> <span class="mi">81103</span><span class="p">))]</span>
-
-  <span class="c1"># REGISTRADO</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">REGISTRADO</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-  <span class="c1"># DRS</span>
-  <span class="n">DRS_expand</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DRS</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;DRS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DRS_expand</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">DRS</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-  <span class="c1"># META</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">META01</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">META02</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-  <span class="c1"># REC</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">REC01</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">REC02</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">REC03</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-  <span class="c1"># PT</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">PT</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">PT</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">PT</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-  <span class="c1"># PN</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">PN</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-  <span class="c1"># PM</span>
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">PM</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-  <span class="n">col</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">columns</span>
-  <span class="n">drop_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">,</span><span class="s1">&#39;QUIMIOANT&#39;</span><span class="p">,</span><span class="s1">&#39;HORMOANT&#39;</span><span class="p">,</span><span class="s1">&#39;TMOANT&#39;</span><span class="p">,</span><span class="s1">&#39;IMUNOANT&#39;</span><span class="p">,</span><span class="s1">&#39;OUTROANT&#39;</span><span class="p">,</span><span class="s1">&#39;UFNASC&#39;</span><span class="p">,</span>
-               <span class="s1">&#39;CICISUBGRU&#39;</span><span class="p">,</span><span class="s1">&#39;CICIGRUP&#39;</span><span class="p">,</span><span class="s1">&#39;CICI&#39;</span><span class="p">,</span><span class="s1">&#39;META04&#39;</span><span class="p">,</span><span class="s1">&#39;META03&#39;</span><span class="p">,</span><span class="s1">&#39;REC04&#39;</span><span class="p">,</span><span class="s1">&#39;CIDADE&#39;</span><span class="p">,</span>
-               <span class="s1">&#39;DESCTOPO&#39;</span><span class="p">,</span><span class="s1">&#39;DESCMORFO&#39;</span><span class="p">,</span><span class="s1">&#39;INSTORIG&#39;</span><span class="p">,</span><span class="s1">&#39;OUTRACLA&#39;</span><span class="p">]</span>
-
-  <span class="n">col</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">drop_cols</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="n">df_aux</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">get_train_test</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">drop_cols</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Get features and label, and then returns train and test dataframes.</span>
-
-<span class="sd">  :param df pd.DataFrame: dataframe that will be splitted.</span>
-<span class="sd">  :param drop_cols list: columns to be removed from the DataFrame.</span>
-<span class="sd">  :param label str: name of the label column.</span>
-<span class="sd">  :param test_size float: size of test (default=0.25).</span>
-<span class="sd">  :param random_state int: value for train_test_split random_state (default=10).</span>
-
-<span class="sd">  :return: train and test DataFrames, X_train, X_test, y_train, y_test</span>
-<span class="sd">  :rtype: pd.DataFrame</span>
-<span class="sd">  &quot;&quot;&quot;</span>
-
-  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-  <span class="n">cols</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">drop_cols</span><span class="p">)</span>
-  <span class="n">lb</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[</span><span class="n">label</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-  <span class="n">cols</span> <span class="o">=</span> <span class="n">cols</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
-  <span class="n">feat</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span>
-
-  <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">feat</span><span class="p">,</span> <span class="n">lb</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">test_size</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">train_preprocessing</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">normalizer</span><span class="o">=</span><span class="s1">&#39;StandardScaler&#39;</span><span class="p">,</span> <span class="n">pca</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                        <span class="n">pca_components</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Preprocessing the train dataset.</span>
-
-<span class="sd">  :param df pd.DataFrame: DataFrame to be preprocessed.</span>
-<span class="sd">  :param normalizer str: which normalizer to be fitted to the data (default=&#39;StandardScaler&#39;).</span>
-<span class="sd">    options:</span>
-<span class="sd">      * &#39;MinMaxScaler&#39;</span>
-<span class="sd">      * &#39;MaxAbsScaler&#39;</span>
-<span class="sd">      * &#39;PowerTransformer&#39;</span>
-<span class="sd">      * &#39;QuantileTransformer&#39;</span>
-<span class="sd">  :param pca bool: if want to use PCA components set True (default=False).</span>
-<span class="sd">  :param pca_components int: number of PCA components (default=None).</span>
-<span class="sd">  :param random_state int: value for pca random_state (default=10).</span>
-
-<span class="sd">  :return df: preprocessed train DataFrame</span>
-<span class="sd">  :rtype: pd.DataFrame</span>
-<span class="sd">  :return enc: trained LabelEncoder</span>
-<span class="sd">  :rtype: dict</span>
-<span class="sd">  :return norm: trained normalizer</span>
-<span class="sd">  :rtype: object</span>
-<span class="sd">  :return pca if param pca=True: trained PCA</span>
-<span class="sd">  :rtype: object</span>
-<span class="sd">  &quot;&quot;&quot;</span>
-
-  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-  <span class="n">list_categorical</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span>
-
-  <span class="n">enc</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-  <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">list_categorical</span><span class="p">:</span>
-    <span class="n">enc</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
-    <span class="n">df_aux</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">enc</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_aux</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
-
-  <span class="k">if</span> <span class="n">normalizer</span> <span class="o">==</span> <span class="s1">&#39;StandardScaler&#39;</span><span class="p">:</span>
-    <span class="n">norm</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
-  <span class="k">elif</span> <span class="n">normalizer</span> <span class="o">==</span> <span class="s1">&#39;MinMaxScaler&#39;</span><span class="p">:</span>
-    <span class="n">norm</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
-  <span class="k">elif</span> <span class="n">normalizer</span> <span class="o">==</span> <span class="s1">&#39;MaxAbsScaler&#39;</span><span class="p">:</span>
-    <span class="n">norm</span> <span class="o">=</span> <span class="n">MaxAbsScaler</span><span class="p">()</span>
-  <span class="k">elif</span> <span class="n">normalizer</span> <span class="o">==</span> <span class="s1">&#39;PowerTransformer&#39;</span><span class="p">:</span>
-    <span class="n">norm</span> <span class="o">=</span> <span class="n">PowerTransformer</span><span class="p">()</span>
-  <span class="k">elif</span> <span class="n">normalizer</span> <span class="o">==</span> <span class="s1">&#39;QuantileTransformer&#39;</span><span class="p">:</span>
-    <span class="n">norm</span> <span class="o">=</span> <span class="n">QuantileTransformer</span><span class="p">(</span><span class="n">output_distribution</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
-
-  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_aux</span><span class="p">)</span>
-
-  <span class="k">if</span> <span class="n">pca</span><span class="p">:</span>
-    <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">pca_components</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
-    <span class="n">df_aux</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_aux</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">df_aux</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">pca</span>
-
-  <span class="k">else</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">df_aux</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">test_preprocessing</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">pca</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Preprocessing the test dataset.</span>
-
-<span class="sd">  :param df pd.DataFrame: DataFrame to be preprocessed.</span>
-<span class="sd">  :param enc: trained encoder with the categorical features.</span>
-<span class="sd">  :param norm: trained normalizer.</span>
-<span class="sd">  :param pca: trained PCA (default=None).</span>
-
-<span class="sd">  :return: preprocessed test DataFrame</span>
-<span class="sd">  :rtype: pd.DataFrame</span>
-<span class="sd">  &quot;&quot;&quot;</span>
-
-  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-  <span class="n">df_aux</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-  <span class="n">list_categorical</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span>
-
-  <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">list_categorical</span><span class="p">:</span>
-    <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">df_aux</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">enc</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">classes_</span><span class="p">),</span> <span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-    <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">enc</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">classes_</span><span class="p">),</span> <span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">enc</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_aux</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">df_aux</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">enc</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">classes_</span><span class="p">)])</span>
-
-  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_aux</span><span class="p">)</span>
-
-  <span class="k">if</span> <span class="n">pca</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">df_aux</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_aux</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="n">df_aux</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">preprocessing</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cols_drop</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">norm_name</span><span class="o">=</span><span class="s1">&#39;StandardScaler&#39;</span><span class="p">,</span>
-                  <span class="n">pca</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pca_components</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">balance_data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">group_years</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                  <span class="n">first_year</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">last_year</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">morpho3</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-
-  <span class="sd">&quot;&quot;&quot;Preprocessing the train and test datasets.</span>
-
-<span class="sd">  :param df pd.DataFrame: DataFrame to be preprocessed.</span>
-<span class="sd">  :param cols_drop list: list of columns to be dropped from dataset.</span>
-<span class="sd">  :param label string: name of the column that will be the label.</span>
-<span class="sd">  :param test_size float: size of test set (default=0.25).</span>
-<span class="sd">  :param normalizer str: which normalizer to be fitted to the data (default=&#39;StandardScaler&#39;).</span>
-<span class="sd">    - options:</span>
-<span class="sd">      * &#39;StandardScaler&#39;;</span>
-<span class="sd">      * &#39;MinMaxScaler&#39;;</span>
-<span class="sd">      * &#39;MaxAbsScaler&#39;;</span>
-<span class="sd">      * &#39;PowerTransformer&#39;;</span>
-<span class="sd">      * &#39;QuantileTransformer&#39;.</span>
-<span class="sd">  :param pca bool: if want to use PCA components set True (default=False).</span>
-<span class="sd">  :param pca_components int: number of PCA components (default=None).</span>
-<span class="sd">  :param balance_data bool: balance the data using oversampling (default=True).</span>
-<span class="sd">  :param group_years bool: create a subset with years grouped (default=False).</span>
-<span class="sd">  :param first_year int: first year of the grouped years. Ignored if group_years = False.</span>
-<span class="sd">  :param last_year int: last year of the grouped years. Ignored if group_years = False.</span>
-<span class="sd">  :param morpho3 bool: use only morphologies that the last number is equal to 3 (default=False).</span>
-<span class="sd">  :param random_state int: value for pca random_state (default=10).</span>
-
-<span class="sd">  :return X_train_: preprocessed train DataFrame</span>
-<span class="sd">  :rtype: pd.DataFrame</span>
-<span class="sd">  :return X_test_: preprocessed test DataFrame</span>
-<span class="sd">  :rtype: pd.DataFrame</span>
-<span class="sd">  :return y_train_: preprocessed train label</span>
-<span class="sd">  :rtype: pd.DataFrame</span>
-<span class="sd">  :return y_test: preprocessed test label</span>
-<span class="sd">  :rtype: pd.DataFrame</span>
-<span class="sd">  :return feat_cols: list with the features columns names</span>
-<span class="sd">  :rtype: list</span>
-<span class="sd">  &quot;&quot;&quot;</span>
-
-  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-  <span class="c1"># Morphology 3</span>
-  <span class="k">if</span> <span class="n">morpho3</span><span class="p">:</span>
-    <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;comportamento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">MORFO</span><span class="p">]</span>
-    <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">comportamento</span> <span class="o">==</span> <span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">df_aux</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;comportamento&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-  <span class="c1"># Grouped years</span>
-  <span class="k">if</span> <span class="n">group_years</span> <span class="ow">and</span> <span class="n">first_year</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">last_year</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ANODIAG</span> <span class="o">&gt;=</span> <span class="n">first_year</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ANODIAG</span> <span class="o">&lt;=</span> <span class="n">last_year</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-  <span class="c1"># Train Test split</span>
-  <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">get_train_test</span><span class="p">(</span><span class="n">df_aux</span><span class="p">,</span> <span class="n">cols_drop</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">test_size</span><span class="p">,</span>
-                                                    <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
-  <span class="n">feat_cols</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span>
-
-  <span class="c1"># Preprocessing</span>
-  <span class="k">if</span> <span class="n">pca</span> <span class="ow">and</span> <span class="n">pca_components</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">X_train_enc</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">pca</span> <span class="o">=</span> <span class="n">train_preprocessing</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">normalizer</span><span class="o">=</span><span class="n">norm_name</span><span class="p">,</span>
-                                                      <span class="n">pca</span><span class="o">=</span><span class="n">pca</span><span class="p">,</span> <span class="n">pca_components</span><span class="o">=</span><span class="n">pca_components</span><span class="p">,</span>
-                                                      <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
-    <span class="n">X_test_</span> <span class="o">=</span> <span class="n">test_preprocessing</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">pca</span><span class="p">)</span>
-
-  <span class="k">else</span><span class="p">:</span>
-    <span class="n">X_train_enc</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span> <span class="o">=</span> <span class="n">train_preprocessing</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">normalizer</span><span class="o">=</span><span class="n">norm_name</span><span class="p">)</span>
-    <span class="n">X_test_</span> <span class="o">=</span> <span class="n">test_preprocessing</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span><span class="p">)</span>
-
-  <span class="c1"># Balancing</span>
-  <span class="k">if</span> <span class="n">balance_data</span><span class="p">:</span>
-    <span class="n">X_train_</span><span class="p">,</span> <span class="n">y_train_</span> <span class="o">=</span> <span class="n">SMOTE</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">X_train_enc</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-  <span class="k">else</span><span class="p">:</span>
-    <span class="n">X_train_</span><span class="p">,</span> <span class="n">y_train_</span> <span class="o">=</span> <span class="n">X_train_enc</span><span class="p">,</span> <span class="n">y_train</span>
-
-  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X_train = </span><span class="si">{</span><span class="n">X_train_</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">, X_test = </span><span class="si">{</span><span class="n">X_test_</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y_train = </span><span class="si">{</span><span class="n">y_train_</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">, y_test = </span><span class="si">{</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="n">X_train_</span><span class="p">,</span> <span class="n">X_test_</span><span class="p">,</span> <span class="n">y_train_</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">feat_cols</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">show_tree</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">feat_cols</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Show the Random Forest tree</span>
-
-<span class="sd">  :param model: machine learning model.</span>
-<span class="sd">  :param feat_cols list: list of the features used in the model training.</span>
-<span class="sd">  :param max_depth int: max_depth to show in the tree (default = 3).</span>
-<span class="sd">  :param estimator int: number of the estimator do show the tree (default = 0).</span>
-
-<span class="sd">  :return: no value</span>
-<span class="sd">  :rtype: none</span>
-<span class="sd">  &quot;&quot;&quot;</span>
-
-  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">23</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-  <span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">estimators_</span><span class="p">[</span><span class="n">estimator</span><span class="p">],</span>
-                 <span class="n">feature_names</span> <span class="o">=</span> <span class="n">feat_cols</span><span class="p">,</span>
-                 <span class="n">filled</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-                 <span class="n">max_depth</span><span class="o">=</span><span class="n">max_depth</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">plot_feat_importances</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">feat_cols</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Shows the features importances for the model.</span>
-
-<span class="sd">  :param model: machine learning model.</span>
-<span class="sd">  :param feat_cols list: list of the features used in the model training.</span>
-<span class="sd">  :param n int: number of features to be shown (default=10).</span>
-
-<span class="sd">  :return: no value</span>
-<span class="sd">  :rtype: none</span>
-<span class="sd">  &quot;&quot;&quot;</span>
-
-  <span class="n">feat_import</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">feat_cols</span><span class="p">)</span>
-  <span class="n">feat_import</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
 <div class="section" id="Data-Dictionary">
 <h1><strong>Data Dictionary</strong><a class="headerlink" href="#Data-Dictionary" title="Permalink to this headline">¶</a></h1>
 <ul>
@@ -1291,6 +744,538 @@ The sklearn.neighbors.base module is  deprecated in version 0.22 and will be rem
 <li><p><strong>REC04</strong>: Recurrence / metastasis local (char = 3). Format: C99</p></li>
 <li><p><strong>HABILIT2</strong>: Hospital qualification (int = 1). CACON or UNACON</p></li>
 </ul>
+</div>
+<div class="section" id="Libraries">
+<h1><strong>Libraries</strong><a class="headerlink" href="#Libraries" title="Permalink to this headline">¶</a></h1>
+<p>Import of all libraries used in the project.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Graphs</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span>
+
+<span class="kn">import</span> <span class="nn">pickle</span> <span class="c1"># Save models</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># seed for the random state</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Preprocessing</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">MinMaxScaler</span><span class="p">,</span> <span class="n">MaxAbsScaler</span><span class="p">,</span> <span class="n">PowerTransformer</span><span class="p">,</span> <span class="n">QuantileTransformer</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Classification</span>
+<span class="kn">from</span> <span class="nn">imblearn.over_sampling</span> <span class="kn">import</span> <span class="n">SMOTE</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">import</span> <span class="nn">xgboost</span> <span class="k">as</span> <span class="nn">xgb</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">plot_confusion_matrix</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Functions">
+<h1><strong>Functions</strong><a class="headerlink" href="#Functions" title="Permalink to this headline">¶</a></h1>
+<p>Here we have some functions used in the project, the ones for general use are for creating new columns in the data and reading and saving datasets. The functions for the models contain the preprocessing, division into training and test data, validation of the regressions and plot of the graph with the features importances.</p>
+<div class="section" id="General">
+<h2><strong>General</strong><a class="headerlink" href="#General" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;&quot;Read csv files</span>
+
+<span class="sd">  :param path str: path to the csv file.</span>
+
+<span class="sd">  :return: dataframe from the csv file.</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">})</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">save_csv</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Save csv files</span>
+
+<span class="sd">  :param df pd.DataFrame: dataframe to be saved.</span>
+<span class="sd">  :param path str: path to save the csv file.</span>
+
+<span class="sd">  :return: no value</span>
+<span class="sd">  :rtype: none</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CSV file saved successfully!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_dates_diff</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">dates_list</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Get the difference, in days, between columns with dates</span>
+
+<span class="sd">  :param df pd.DataFrame: DataFrame to get the dates difference.</span>
+<span class="sd">  :param dates_list list: list with the name of date columns.</span>
+
+<span class="sd">  :return: DataFrame with dates difference in nine new columns</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;DTTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTULTINFO&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+  <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">dates_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;DTTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTULTINFO&#39;</span><span class="p">,</span> <span class="s1">&#39;DTRECIDIVA&#39;</span><span class="p">]:</span> <span class="c1"># Has a different date format</span>
+      <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span>
+    <span class="n">df_aux</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_aux</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="n">fmt</span><span class="p">)</span>
+
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;CONSDIAG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTDIAG</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTCONSULT</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;DIAGTRAT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTTRAT</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTDIAG</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;TRATCONS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTTRAT</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTCONSULT</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
+
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;RECCONS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTRECIDIVA</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTCONSULT</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;RECDIAG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTRECIDIVA</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTDIAG</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;RECTRAT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTRECIDIVA</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTTRAT</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
+
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;ULTICONS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTULTINFO</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTCONSULT</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;ULTIDIAG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTULTINFO</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTDIAG</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;ULTITRAT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">DTULTINFO</span> <span class="o">-</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DTTRAT</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
+
+  <span class="k">return</span> <span class="n">df_aux</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_labels</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Create death labels acording to the last information year.</span>
+
+<span class="sd">  :param df pd.DataFrame: dataframe to be processed.</span>
+
+<span class="sd">  :return: DataFrame with the new labels</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;obito_geral&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;obito_cancer&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;vivo_ano1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;vivo_ano3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;vivo_ano5&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ULTINFO</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;obito_geral&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ULTINFO</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;obito_cancer&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ULTIDIAG</span> <span class="o">&gt;</span> <span class="mi">365</span><span class="p">,</span> <span class="s1">&#39;vivo_ano1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ULTIDIAG</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="o">*</span><span class="mi">365</span><span class="p">,</span> <span class="s1">&#39;vivo_ano3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ULTIDIAG</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="o">*</span><span class="mi">365</span><span class="p">,</span> <span class="s1">&#39;vivo_ano5&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+  <span class="k">return</span> <span class="n">df_aux</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_label_rec</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Create the labels analyzing whether there was recurrence.</span>
+
+<span class="sd">  :param df pd.DataFrame: dataframe to be processed.</span>
+
+<span class="sd">  :return: DataFrame with the new labels</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;ob_com_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;ob_sem_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;vivo_com_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;vivo_sem_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">obito_geral</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">RECNENHUM</span> <span class="o">==</span> <span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;ob_sem_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">obito_geral</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">RECNENHUM</span> <span class="o">==</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;ob_com_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">obito_geral</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">RECNENHUM</span> <span class="o">==</span> <span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;vivo_sem_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">obito_geral</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">RECNENHUM</span> <span class="o">==</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;vivo_com_rec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+  <span class="k">return</span> <span class="n">df_aux</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Models">
+<h2><strong>Models</strong><a class="headerlink" href="#Models" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">variables_preprocessing</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Do some preprocessing on the DataFrame like strings splits, fill NaN values,</span>
+<span class="sd">     replace values and drop some columns.</span>
+
+<span class="sd">  :param df pd.DataFrame: DataFrame to be preprocessed.</span>
+
+<span class="sd">  :return: DataFrame after be preprocessed and get some columns removed</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+  <span class="n">no_info</span> <span class="o">=</span> <span class="s1">&#39;**Sem informação**&#39;</span>
+
+  <span class="c1"># Excluding ECGRUP with X and Y values</span>
+  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[</span><span class="o">~</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ECGRUP</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">])]</span>
+
+  <span class="c1"># Excluding C44 topographies (with morphologies between 80101 and 81103)</span>
+  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[</span><span class="o">~</span><span class="p">((</span><span class="n">df_aux</span><span class="o">.</span><span class="n">TOPOGRUP</span> <span class="o">==</span> <span class="s1">&#39;C44&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">MORFO</span> <span class="o">&gt;=</span> <span class="mi">80101</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">MORFO</span> <span class="o">&lt;=</span> <span class="mi">81103</span><span class="p">))]</span>
+
+  <span class="c1"># REGISTRADO</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">REGISTRADO</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+  <span class="c1"># DRS</span>
+  <span class="n">DRS_expand</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">DRS</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;DRS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DRS_expand</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">DRS</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+  <span class="c1"># META</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">META01</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">META02</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+  <span class="c1"># REC</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">REC01</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">REC02</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">REC03</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+  <span class="c1"># PT</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">PT</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">PT</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">PT</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+  <span class="c1"># PN</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">PN</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+  <span class="c1"># PM</span>
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">PM</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">no_info</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+  <span class="n">col</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">columns</span>
+  <span class="n">drop_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">,</span><span class="s1">&#39;QUIMIOANT&#39;</span><span class="p">,</span><span class="s1">&#39;HORMOANT&#39;</span><span class="p">,</span><span class="s1">&#39;TMOANT&#39;</span><span class="p">,</span><span class="s1">&#39;IMUNOANT&#39;</span><span class="p">,</span><span class="s1">&#39;OUTROANT&#39;</span><span class="p">,</span><span class="s1">&#39;UFNASC&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;CICISUBGRU&#39;</span><span class="p">,</span><span class="s1">&#39;CICIGRUP&#39;</span><span class="p">,</span><span class="s1">&#39;CICI&#39;</span><span class="p">,</span><span class="s1">&#39;META04&#39;</span><span class="p">,</span><span class="s1">&#39;META03&#39;</span><span class="p">,</span><span class="s1">&#39;REC04&#39;</span><span class="p">,</span><span class="s1">&#39;CIDADE&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;DESCTOPO&#39;</span><span class="p">,</span><span class="s1">&#39;DESCMORFO&#39;</span><span class="p">,</span><span class="s1">&#39;INSTORIG&#39;</span><span class="p">,</span><span class="s1">&#39;OUTRACLA&#39;</span><span class="p">]</span>
+
+  <span class="n">col</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">drop_cols</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">df_aux</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_train_test</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">drop_cols</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Get features and label, and then returns train and test dataframes.</span>
+
+<span class="sd">  :param df pd.DataFrame: dataframe that will be splitted.</span>
+<span class="sd">  :param drop_cols list: columns to be removed from the DataFrame.</span>
+<span class="sd">  :param label str: name of the label column.</span>
+<span class="sd">  :param test_size float: size of test (default=0.25).</span>
+<span class="sd">  :param random_state int: value for train_test_split random_state (default=10).</span>
+
+<span class="sd">  :return: train and test DataFrames, X_train, X_test, y_train, y_test</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+  <span class="n">cols</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">drop_cols</span><span class="p">)</span>
+  <span class="n">lb</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[</span><span class="n">label</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+  <span class="n">cols</span> <span class="o">=</span> <span class="n">cols</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+  <span class="n">feat</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span>
+
+  <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">feat</span><span class="p">,</span> <span class="n">lb</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">test_size</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">train_preprocessing</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">normalizer</span><span class="o">=</span><span class="s1">&#39;StandardScaler&#39;</span><span class="p">,</span> <span class="n">pca</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                        <span class="n">pca_components</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Preprocessing the train dataset.</span>
+
+<span class="sd">  :param df pd.DataFrame: DataFrame to be preprocessed.</span>
+<span class="sd">  :param normalizer str: which normalizer to be fitted to the data (default=&#39;StandardScaler&#39;).</span>
+<span class="sd">    options:</span>
+<span class="sd">      * &#39;MinMaxScaler&#39;</span>
+<span class="sd">      * &#39;MaxAbsScaler&#39;</span>
+<span class="sd">      * &#39;PowerTransformer&#39;</span>
+<span class="sd">      * &#39;QuantileTransformer&#39;</span>
+<span class="sd">  :param pca bool: if want to use PCA components set True (default=False).</span>
+<span class="sd">  :param pca_components int: number of PCA components (default=None).</span>
+<span class="sd">  :param random_state int: value for pca random_state (default=10).</span>
+
+<span class="sd">  :return df: preprocessed train DataFrame</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  :return enc: trained LabelEncoder</span>
+<span class="sd">  :rtype: dict</span>
+<span class="sd">  :return norm: trained normalizer</span>
+<span class="sd">  :rtype: object</span>
+<span class="sd">  :return pca if param pca=True: trained PCA</span>
+<span class="sd">  :rtype: object</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+  <span class="n">list_categorical</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span>
+
+  <span class="n">enc</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+  <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">list_categorical</span><span class="p">:</span>
+    <span class="n">enc</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+    <span class="n">df_aux</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">enc</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_aux</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+
+  <span class="k">if</span> <span class="n">normalizer</span> <span class="o">==</span> <span class="s1">&#39;StandardScaler&#39;</span><span class="p">:</span>
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+  <span class="k">elif</span> <span class="n">normalizer</span> <span class="o">==</span> <span class="s1">&#39;MinMaxScaler&#39;</span><span class="p">:</span>
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+  <span class="k">elif</span> <span class="n">normalizer</span> <span class="o">==</span> <span class="s1">&#39;MaxAbsScaler&#39;</span><span class="p">:</span>
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">MaxAbsScaler</span><span class="p">()</span>
+  <span class="k">elif</span> <span class="n">normalizer</span> <span class="o">==</span> <span class="s1">&#39;PowerTransformer&#39;</span><span class="p">:</span>
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">PowerTransformer</span><span class="p">()</span>
+  <span class="k">elif</span> <span class="n">normalizer</span> <span class="o">==</span> <span class="s1">&#39;QuantileTransformer&#39;</span><span class="p">:</span>
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">QuantileTransformer</span><span class="p">(</span><span class="n">output_distribution</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+
+  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_aux</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">pca</span><span class="p">:</span>
+    <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">pca_components</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
+    <span class="n">df_aux</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_aux</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df_aux</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">pca</span>
+
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">df_aux</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">test_preprocessing</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">pca</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Preprocessing the test dataset.</span>
+
+<span class="sd">  :param df pd.DataFrame: DataFrame to be preprocessed.</span>
+<span class="sd">  :param enc: trained encoder with the categorical features.</span>
+<span class="sd">  :param norm: trained normalizer.</span>
+<span class="sd">  :param pca: trained PCA (default=None).</span>
+
+<span class="sd">  :return: preprocessed test DataFrame</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+  <span class="n">df_aux</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+  <span class="n">list_categorical</span> <span class="o">=</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span>
+
+  <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">list_categorical</span><span class="p">:</span>
+    <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">df_aux</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">enc</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">classes_</span><span class="p">),</span> <span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">df_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_aux</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">enc</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">classes_</span><span class="p">),</span> <span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">enc</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_aux</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">df_aux</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">enc</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">classes_</span><span class="p">)])</span>
+
+  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_aux</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">pca</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">df_aux</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_aux</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">df_aux</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">preprocessing</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cols_drop</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">norm_name</span><span class="o">=</span><span class="s1">&#39;StandardScaler&#39;</span><span class="p">,</span>
+                  <span class="n">pca</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pca_components</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">balance_data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">group_years</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                  <span class="n">first_year</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">last_year</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">morpho3</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+
+  <span class="sd">&quot;&quot;&quot;Preprocessing the train and test datasets.</span>
+
+<span class="sd">  :param df pd.DataFrame: DataFrame to be preprocessed.</span>
+<span class="sd">  :param cols_drop list: list of columns to be dropped from dataset.</span>
+<span class="sd">  :param label string: name of the column that will be the label.</span>
+<span class="sd">  :param test_size float: size of test set (default=0.25).</span>
+<span class="sd">  :param normalizer str: which normalizer to be fitted to the data (default=&#39;StandardScaler&#39;).</span>
+<span class="sd">    - options:</span>
+<span class="sd">      * &#39;StandardScaler&#39;;</span>
+<span class="sd">      * &#39;MinMaxScaler&#39;;</span>
+<span class="sd">      * &#39;MaxAbsScaler&#39;;</span>
+<span class="sd">      * &#39;PowerTransformer&#39;;</span>
+<span class="sd">      * &#39;QuantileTransformer&#39;.</span>
+<span class="sd">  :param pca bool: if want to use PCA components set True (default=False).</span>
+<span class="sd">  :param pca_components int: number of PCA components (default=None).</span>
+<span class="sd">  :param balance_data bool: balance the data using oversampling (default=True).</span>
+<span class="sd">  :param group_years bool: create a subset with years grouped (default=False).</span>
+<span class="sd">  :param first_year int: first year of the grouped years. Ignored if group_years = False.</span>
+<span class="sd">  :param last_year int: last year of the grouped years. Ignored if group_years = False.</span>
+<span class="sd">  :param morpho3 bool: use only morphologies that the last number is equal to 3 (default=False).</span>
+<span class="sd">  :param random_state int: value for pca random_state (default=10).</span>
+
+<span class="sd">  :return X_train_: preprocessed train DataFrame</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  :return X_test_: preprocessed test DataFrame</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  :return y_train_: preprocessed train label</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  :return y_test: preprocessed test label</span>
+<span class="sd">  :rtype: pd.DataFrame</span>
+<span class="sd">  :return feat_cols: list with the features columns names</span>
+<span class="sd">  :rtype: list</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+  <span class="c1"># Morphology 3</span>
+  <span class="k">if</span> <span class="n">morpho3</span><span class="p">:</span>
+    <span class="n">df_aux</span><span class="p">[</span><span class="s1">&#39;comportamento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df_aux</span><span class="o">.</span><span class="n">MORFO</span><span class="p">]</span>
+    <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[</span><span class="n">df_aux</span><span class="o">.</span><span class="n">comportamento</span> <span class="o">==</span> <span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">df_aux</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;comportamento&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+  <span class="c1"># Grouped years</span>
+  <span class="k">if</span> <span class="n">group_years</span> <span class="ow">and</span> <span class="n">first_year</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">last_year</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">df_aux</span> <span class="o">=</span> <span class="n">df_aux</span><span class="p">[(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ANODIAG</span> <span class="o">&gt;=</span> <span class="n">first_year</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aux</span><span class="o">.</span><span class="n">ANODIAG</span> <span class="o">&lt;=</span> <span class="n">last_year</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+  <span class="c1"># Train Test split</span>
+  <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">get_train_test</span><span class="p">(</span><span class="n">df_aux</span><span class="p">,</span> <span class="n">cols_drop</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">test_size</span><span class="p">,</span>
+                                                    <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
+  <span class="n">feat_cols</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span>
+
+  <span class="c1"># Preprocessing</span>
+  <span class="k">if</span> <span class="n">pca</span> <span class="ow">and</span> <span class="n">pca_components</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">X_train_enc</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">pca</span> <span class="o">=</span> <span class="n">train_preprocessing</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">normalizer</span><span class="o">=</span><span class="n">norm_name</span><span class="p">,</span>
+                                                      <span class="n">pca</span><span class="o">=</span><span class="n">pca</span><span class="p">,</span> <span class="n">pca_components</span><span class="o">=</span><span class="n">pca_components</span><span class="p">,</span>
+                                                      <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
+    <span class="n">X_test_</span> <span class="o">=</span> <span class="n">test_preprocessing</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">pca</span><span class="p">)</span>
+
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">X_train_enc</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span> <span class="o">=</span> <span class="n">train_preprocessing</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">normalizer</span><span class="o">=</span><span class="n">norm_name</span><span class="p">)</span>
+    <span class="n">X_test_</span> <span class="o">=</span> <span class="n">test_preprocessing</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">enc</span><span class="p">,</span> <span class="n">norm</span><span class="p">)</span>
+
+  <span class="c1"># Balancing</span>
+  <span class="k">if</span> <span class="n">balance_data</span><span class="p">:</span>
+    <span class="n">X_train_</span><span class="p">,</span> <span class="n">y_train_</span> <span class="o">=</span> <span class="n">SMOTE</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">X_train_enc</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">X_train_</span><span class="p">,</span> <span class="n">y_train_</span> <span class="o">=</span> <span class="n">X_train_enc</span><span class="p">,</span> <span class="n">y_train</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X_train = </span><span class="si">{</span><span class="n">X_train_</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">, X_test = </span><span class="si">{</span><span class="n">X_test_</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y_train = </span><span class="si">{</span><span class="n">y_train_</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">, y_test = </span><span class="si">{</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">X_train_</span><span class="p">,</span> <span class="n">X_test_</span><span class="p">,</span> <span class="n">y_train_</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">feat_cols</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">show_tree</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">feat_cols</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Show the Random Forest tree</span>
+
+<span class="sd">  :param model: machine learning model.</span>
+<span class="sd">  :param feat_cols list: list of the features used in the model training.</span>
+<span class="sd">  :param max_depth int: max_depth to show in the tree (default = 3).</span>
+<span class="sd">  :param estimator int: number of the estimator do show the tree (default = 0).</span>
+
+<span class="sd">  :return: no value</span>
+<span class="sd">  :rtype: none</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">23</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+  <span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">estimators_</span><span class="p">[</span><span class="n">estimator</span><span class="p">],</span>
+                 <span class="n">feature_names</span> <span class="o">=</span> <span class="n">feat_cols</span><span class="p">,</span>
+                 <span class="n">filled</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                 <span class="n">max_depth</span><span class="o">=</span><span class="n">max_depth</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">plot_feat_importances</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">feat_cols</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Shows the features importances for the model.</span>
+
+<span class="sd">  :param model: machine learning model.</span>
+<span class="sd">  :param feat_cols list: list of the features used in the model training.</span>
+<span class="sd">  :param n int: number of features to be shown (default=10).</span>
+
+<span class="sd">  :return: no value</span>
+<span class="sd">  :rtype: none</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">feat_import</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">feat_cols</span><span class="p">)</span>
+  <span class="n">feat_import</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="References">
 <h1><strong>References</strong><a class="headerlink" href="#References" title="Permalink to this headline">¶</a></h1>
