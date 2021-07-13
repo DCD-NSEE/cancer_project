@@ -88,6 +88,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html"><strong>Libraries</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Functions"><strong>Functions</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Data-Dictionary"><strong>Data Dictionary</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#References"><strong>References</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Data Analysis</span></p>
@@ -245,16 +246,16 @@
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Here is presented the project documentation with cancer data provided by FOSP (Fundação Oncocentro de São Paulo).</p>
-<p>The project was developed using the python language, with the objective of making predictions for deaths and recovery time of patients with the disease.</p>
-<p>Complete files and notebooks are available on <a class="reference external" href="https://github.com/Lucas-Buk/cancer_project">Github</a>.</p>
+<p>The project was developed using the python language, with the objective of making predictions for deaths using machine learning models, specifically the models Random Forest and XGBoost.</p>
+<p>Complete notebooks are available on <a class="reference external" href="https://github.com/Lucas-Buk/cancer_project">Github</a>.</p>
 </div>
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p>The project will be divided into stages to provide a better understanding and organization. The steps being:</p>
+<p>The project will be divided in topics to provide a better understanding and organization. The steps being:</p>
 <ul>
 <li><p>Libraries and Functions;</p></li>
 <li><p>Data analysis, creation of new columns and first preprocessing;</p></li>
-<li><p>Classifiers: with preprocessing, creation and validation of machine learning models. Using five labels:</p>
+<li><p>Classifiers: with preprocessing, training and validation of machine learning models. Using five labels:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>obito_geral;</p></li>
@@ -266,308 +267,7 @@
 </div></blockquote>
 </li>
 </ul>
-</div>
-<div class="section" id="data-dictionary">
-<h2>Data Dictionary<a class="headerlink" href="#data-dictionary" title="Permalink to this headline">¶</a></h2>
-<p>The data has 93 columns, below we have a description of each one.</p>
-<ul>
-<li><p><strong>SEXO</strong>: Gender of the patient (int = 1).</p>
-<blockquote>
-<div><p>1 - MALE;</p>
-<p>2 - FEMALE.</p>
-</div></blockquote>
-</li>
-<li><p><strong>IDADE</strong>: Patient’s age (int = 3).</p></li>
-<li><p><strong>ESCOLARI</strong>: Code for patient education (int = 1).</p>
-<blockquote>
-<div><p>1 - ILLITERATE;</p>
-<p>2 - ELEMENTARY SCHOOL INCOMPLETE;</p>
-<p>3 - ELEMENTARY SCHOOL COMPLETE;</p>
-<p>4 - HIGH SCHOOL;</p>
-<p>5 - UNIVERSITY EDUCATION;</p>
-<p>9 - IGNORED.</p>
-</div></blockquote>
-</li>
-<li><p><strong>UFNASC</strong>: UF of birth (char = 2). Other options: SI - No information; OP - Another country.</p></li>
-<li><p><strong>UFRESID</strong>: UF of residence (char = 2). Other options: OP - Another country.</p></li>
-<li><p><strong>IBGE</strong>: Code of the patient’s city of residence according to IBGE with check digit (char = 7).</p></li>
-<li><p><strong>CIDADE</strong>: City of residence of the patient (char = 200).</p></li>
-<li><p><strong>CATEATEND</strong>: Category of diagnosis assistance (int = 1).</p>
-<blockquote>
-<div><p>1 - HEALTH INSURANCE;</p>
-<p>2 - SUS;</p>
-<p>3 - PRIVATE;</p>
-<p>9 - NO INFORMATION.</p>
-</div></blockquote>
-</li>
-<li><p><strong>DTCONSULT</strong>: Date of the first consultation (date = 10). Format: DD/MM/YYYY</p></li>
-<li><p><strong>CLINICA</strong>: Clinic code (int = 2).</p>
-<blockquote>
-<div><p>1 - ALLERGY / IMMUNOLOGY;</p>
-<p>2 - HEART SURGERY;</p>
-<p>3 - HEAD AND NECK SURGERY;</p>
-<p>4 - GENERAL SURGERY;</p>
-<p>5 - PEDIATRIC SURGERY;</p>
-<p>6 - PLASTIC SURGERY;</p>
-<p>7 - THORAXIC SURGERY;</p>
-<p>8 - VASCULAR SURGERY;</p>
-<p>9 - CLINICA MEDICA;</p>
-<p>10 - DERMATOLOGY;</p>
-<p>11 - ENDOCRINOLOGY;</p>
-<p>12 - GASTRO SURGERY;</p>
-<p>13 - GASTROENTEROLOGY;</p>
-<p>14 - MANAGEMENT;</p>
-<p>15 - GYNECOLOGY;</p>
-<p>16 - GYNECOLOGY / OBSTETRIC;</p>
-<p>17 - HEMATOLOGY;</p>
-<p>18 - INFECTOLOGY;</p>
-<p>19 - NEPHROLOGY;</p>
-<p>20 - NEUROSURGERY;</p>
-<p>21 - NEUROLOGY;</p>
-<p>22 - OPHTHALMOLOGY;</p>
-<p>23 - SURGICAL ONCOLOGY;</p>
-<p>24 - CLINICAL ONCOLOGY;</p>
-<p>25 - PEDIATRIC ONCOLOGY;</p>
-<p>26 - ORTHOPEDICS;</p>
-<p>27 - OTORHINOLARYNGOLOGY;</p>
-<p>28 - PEDIATRICS;</p>
-<p>29 - PNEUMOLOGY;</p>
-<p>30 - PROCTOLOGY;</p>
-<p>31 - RADIOTHERAPY;</p>
-<p>32 - UROLOGY;</p>
-<p>33 - MASTOLOGY;</p>
-<p>34 - CUTANEA ONCOLOGY;</p>
-<p>35 - PELVIC SURGERY;</p>
-<p>36 - ABDOMINAL SURGERY;</p>
-<p>37 - DENTISTRY;</p>
-<p>38 - HEPATIC TRANSPLANTATION;</p>
-<p>99 - IGNORED.</p>
-</div></blockquote>
-</li>
-<li><p><strong>DIAGPREV</strong>: Diagnosis and previous treatment (int = 1).</p>
-<blockquote>
-<div><p>1 - WITHOUT DIAGNOSIS / WITHOUT TREATMENT;</p>
-<p>2 - WITH DIAGNOSIS / WITHOUT TREATMENT;</p>
-<p>3 - WITH DIAGNOSIS / WITH TREATMENT;</p>
-<p>4 - OTHERS.</p>
-</div></blockquote>
-</li>
-<li><p><strong>DTDIAG</strong>: Date of diagnosis (date = 10). Format: DD/MM/YYYY</p></li>
-<li><p><strong>BASEDIAG</strong>: Code of the diagnosis base (int = 1).</p>
-<blockquote>
-<div><p>1 - CLINICAL EXAMINATION;</p>
-<p>2 - NON-MICROSCOPIC AUXILIARY RESOURCES;</p>
-<p>3 - MICROSCOPIC CONFIRMATION;</p>
-<p>4 - NO INFORMATION.</p>
-</div></blockquote>
-</li>
-<li><p><strong>TOPO</strong>: Topography code (char = 4). Format: C999</p></li>
-<li><p><strong>TOPOGRUP</strong>: Topography group (char = 3). Format: C99</p></li>
-<li><p><strong>DESCTOPO</strong>: Topography description (char = 80).</p></li>
-<li><p><strong>MORFO</strong>: Morphology code (char = 5). Format: 99999</p></li>
-<li><p><strong>DESCMORFO</strong>: Description of the morphology (char = 80).</p></li>
-<li><p><strong>EC</strong>: Clinical stage (char = 5).</p></li>
-<li><p><strong>ECGRUP</strong>: Clinical staging group (char = 3).</p>
-<blockquote>
-<div><p>0 - Primary tumors, classified as in situ;</p>
-<p>I - Localized tumors;</p>
-<p>II - Tumors with regional involvement by direct extension;</p>
-<p>III - Tumors with regional involvement of lymph nodes;</p>
-<p>IV - Tumors with distant metastasis;</p>
-<p>X - For tumors not evaluated by the responsible professional or without information on staging noted in the medical record;</p>
-<p>Y - For tumors in which the TNM classification is not applied. These are non-solid tumors (for example, leukemias).</p>
-</div></blockquote>
-</li>
-<li><p><strong>T</strong>: TNM - T classification (char = 5).</p></li>
-<li><p><strong>N</strong>: TNM - N classification (char = 5).</p></li>
-<li><p><strong>M</strong>: TNM - M classification (char = 3).</p></li>
-<li><p><strong>PT</strong>: Post-surgical staging (char = 5).</p></li>
-<li><p><strong>PN</strong>: Post-surgical staging (char = 5).</p></li>
-<li><p><strong>PM</strong>: Post-surgical staging (char = 3).</p></li>
-<li><p><strong>S</strong>: TNM - S classification (int = 1). Domain: 0; 1; 2; 3; 8 - DOES NOT APPLY; 9 - X</p></li>
-<li><dl>
-<dt><strong>G</strong>: TNM Classification - G (Degree) (char = 5).</dt><dd><p>Domain (except C40, C41, C381, C382, C383, C47, C48 and C49): 0; 1; two; 3; 4; 8 - DOES NOT APPLY; 9 - X.</p>
-<p>Domain (C40, C41, C381, C382, C383, C47, C48 and C49 only): HIGH; LOW; 8 - DOES NOT APPLY; 9 - X.</p>
-</dd>
-</dl>
-</li>
-<li><p><strong>LOCALTNM</strong>: TNM Classification - Location (int = 1).</p>
-<blockquote>
-<div><p>1 - SUPERIOR;</p>
-<p>2 - MEDIUM;</p>
-<p>3 - LOWER;</p>
-<p>8 - NOT APPLICABLE;</p>
-<p>9 - X.</p>
-</div></blockquote>
-</li>
-<li><p><strong>IDMITOTIC</strong>: TNM Classification - Mitotic Index (int = 1).</p>
-<blockquote>
-<div><p>1 - HIGH;</p>
-<p>2 - LOW;</p>
-<p>8 - NOT APPLICABLE;</p>
-<p>9 - X.</p>
-</div></blockquote>
-</li>
-<li><p><strong>PSA</strong>: TNM - PSA classification (int = 1).</p>
-<blockquote>
-<div><p>1 - LESS THAN 10;</p>
-<p>2 - GREATER OR EQUAL TO 10 AND LESS THAN 20;</p>
-<p>3 - GREATER OR EQUAL TO 20;</p>
-<p>8 - NOT APPLICABLE;</p>
-<p>9 - X.</p>
-</div></blockquote>
-</li>
-<li><p><strong>GLEASON</strong>: TNM - Gleason classification (int = 1).</p>
-<blockquote>
-<div><p>1 - SMALLER OR EQUAL TO 6;</p>
-<p>2 - EQUAL TO 7;</p>
-<p>3 - GREATER OR EQUAL TO 8;</p>
-<p>8 - NOT APPLICABLE;</p>
-<p>9 - X.</p>
-</div></blockquote>
-</li>
-<li><p><strong>OUTRACLA</strong>: Another classification of staging (char = 20).</p></li>
-<li><p><strong>META01</strong>: Metastasis (char = 3). Format: C99</p></li>
-<li><p><strong>META02</strong>: Metastasis (char = 3). Format: C99</p></li>
-<li><p><strong>META03</strong>: Metastasis (char = 3). Format: C99</p></li>
-<li><p><strong>META04</strong>: Metastasis (char = 3). Format: C99</p></li>
-<li><p><strong>DTTRAT</strong>: Treatment start date (date = 10). Format: DD/MM/YYYY</p></li>
-<li><p><strong>NAOTRAT</strong>: Reason code for not carrying out the treatment (int = 1).</p>
-<blockquote>
-<div><p>1 - REFUSAL OF TREATMENT;</p>
-<p>2 - ADVANCED DISEASE, LACK OF CLINICAL CONDITIONS;</p>
-<p>3 - OTHER ASSOCIATED DISEASES;</p>
-<p>4 - TREATMENT ABANDONMENT;</p>
-<p>5 - CANCER DEATH;</p>
-<p>6 - DEATH FOR OTHER CAUSES;</p>
-<p>7 - OTHER;</p>
-<p>8 - NOT APPLICABLE (IF HAVE TREATMENT);</p>
-<p>9 - NO INFORMATION.</p>
-</div></blockquote>
-</li>
-<li><p><strong>TRATAMENTO</strong>: Combination code of the treatments (char = 1).</p>
-<blockquote>
-<div><p>A - Surgery;</p>
-<p>B - Radiotherapy;</p>
-<p>C - Chemotherapy;</p>
-<p>D - Surgery + Radiotherapy;</p>
-<p>E - Surgery + Chemotherapy;</p>
-<p>F - Radiotherapy + Chemotherapy;</p>
-<p>G - Surgery + Radio + Chemo;</p>
-<p>H - Surgery + Radio + Chemo + Hormone;</p>
-<p>I - Other treatment combinations;</p>
-<p>J - No treatment.</p>
-</div></blockquote>
-</li>
-<li><p><strong>TRATHOSP</strong>: Combination code of treatments at the hospital (char = 1).</p>
-<blockquote>
-<div><p>A - Surgery;</p>
-<p>B - Radiotherapy;</p>
-<p>C - Chemotherapy;</p>
-<p>D - Surgery + Radiotherapy;</p>
-<p>E - Surgery + Chemotherapy;</p>
-<p>F - Radiotherapy + Chemotherapy;</p>
-<p>G - Surgery + Radio + Chemo;</p>
-<p>H - Surgery + Radio + Chemo + Hormone;</p>
-<p>I - Other treatment combinations;</p>
-<p>J - No treatment.</p>
-</div></blockquote>
-</li>
-<li><p><strong>TRATFANTES</strong>: Combination code of treatments performed before / during admission outside the hospital (char = 1).</p>
-<blockquote>
-<div><p>A - Surgery;</p>
-<p>B - Radiotherapy;</p>
-<p>C - Chemotherapy;</p>
-<p>D - Surgery + Radiotherapy;</p>
-<p>E - Surgery + Chemotherapy;</p>
-<p>F - Radiotherapy + Chemotherapy;</p>
-<p>G - Surgery + Radio + Chemo;</p>
-<p>H - Surgery + Radio + Chemo + Hormone;</p>
-<p>I - Other treatment combinations;</p>
-<p>J - No treatment;</p>
-<p>K - No information.</p>
-</div></blockquote>
-</li>
-<li><p><strong>TRATFAPOS</strong>: Combination code of treatments performed after admission outside the hospital (char = 1).</p>
-<blockquote>
-<div><p>A - Surgery;</p>
-<p>B - Radiotherapy;</p>
-<p>C - Chemotherapy;</p>
-<p>D - Surgery + Radiotherapy;</p>
-<p>E - Surgery + Chemotherapy;</p>
-<p>F - Radiotherapy + Chemotherapy;</p>
-<p>G - Surgery + Radio + Chemo;</p>
-<p>H - Surgery + Radio + Chemo + Hormone;</p>
-<p>I - Other treatment combinations;</p>
-<p>J - No treatment;</p>
-<p>K - No information.</p>
-</div></blockquote>
-</li>
-<li><p><strong>NENHUM</strong>: Treatment received at the hospital = none (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>CIRURGIA</strong>: Treatment received at the hospital = surgery (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>RADIO</strong>: Treatment received at the hospital = radiotherapy (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>QUIMIO</strong>: Treatment received at the hospital = chemotherapy (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>HORMONIO</strong>: Treatment received at the hospital = hormone therapy (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>TMO</strong>: Treatment received at the hospital = tmo (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>IMUNO</strong>: Treatment received at the hospital = immunotherapy (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>OUTROS</strong>: Treatment received at the hospital = others (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>NENHUMANT</strong>: Treatment received outside the hospital and before admission = none (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>CIRURANT</strong>: Treatment received outside the hospital and before admission = surgery (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>RADIOANT</strong>: Treatment received outside the hospital and before admission = radiotherapy (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>QUIMIOANT</strong>: Treatment received outside the hospital and before admission = chemotherapy (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>HORMOANT</strong>: Treatment received outside the hospital and before admission = hormone therapy (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>TMOANT</strong>: Treatment received outside the hospital and before admission = tmo (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>IMUNOANT</strong>: Treatment received outside the hospital and before admission = immunotherapy (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>OUTROANT</strong>: Treatment received outside the hospital and before admission = others (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>NENHUMAPOS</strong>: Treatment received outside the hospital and during / after admission = none (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>CIRURAPOS</strong>: Treatment received outside the hospital and during / after admission = surgery (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>RADIOAPOS</strong>: Treatment received outside the hospital and during / after admission = radiotherapy (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>QUIMIOAPOS</strong>: Treatment received outside the hospital and during / after admission = chemotherapy (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>HORMOAPOS</strong>: Treatment received outside the hospital and during / after admission = hormone therapy (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>TMOAPOS</strong>: Treatment received outside the hospital and during / after admission = tmo (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>IMUNOAPOS</strong>: Treatment received outside the hospital and during / after admission = immunotherapy (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>OUTROAPOS</strong>: Treatment received outside the hospital and during / after admission = other (int = 1). 0 - NO; 1 - YES</p></li>
-<li><p><strong>DTULTINFO</strong>: Date of the patient’s last information (date = 10). Format: DD/MM/YYYY</p></li>
-<li><p><strong>ULTINFO</strong>: Last information about the patient (int = 1).</p>
-<blockquote>
-<div><p>1 - LIVE, WITH CANCER;</p>
-<p>2 - LIVE, WITHOUT OTHER SPECIFICATIONS;</p>
-<p>3 - CANCER DEATH;</p>
-<p>4 - DEATH FOR OTHER CAUSES, WITHOUT OTHER SPECIFICATIONS.</p>
-</div></blockquote>
-</li>
-<li><p><strong>CONSDIAG</strong>: Difference in days between the dates of consultation and diagnosis (num = days).</p></li>
-<li><p><strong>TRATCONS</strong>: Difference in days between the dates of consultation and treatment (num = days).</p></li>
-<li><p><strong>DIAGTRAT</strong>: Difference in days between the dates of treatment and diagnosis (num = days).</p></li>
-<li><p><strong>ANODIAG</strong>: Year of diagnosis (int = 4). Format: 9999</p></li>
-<li><p><strong>CICI</strong>: Childhood tumor (char = 5).</p></li>
-<li><p><strong>CICIGRUP</strong>: Childhood tumor - Group (char = 80).</p></li>
-<li><p><strong>CICISUBGRU</strong>: Childhood tumor - Subgroup (char = 80).</p></li>
-<li><p><strong>FAIXAETAR</strong>: Age range of the patient (char = 5).</p></li>
-<li><p><strong>LATERALI</strong>: Laterality (int = 1).</p>
-<blockquote>
-<div><p>1 - RIGHT;</p>
-<p>2 - LEFT;</p>
-<p>3 - BILATERAL;</p>
-<p>8 - NOT APPLICABLE.</p>
-</div></blockquote>
-</li>
-<li><p><strong>INSTORIG</strong>: Home institution (char = 200). Mandatory only if DIAGPREV = 03 - WITH DIAGNOSIS / WITH TREATMENT.</p></li>
-<li><p><strong>DRS</strong>: Regional Health Departments (char = 200).</p></li>
-<li><p><strong>RRAS</strong>: Regional Health Care Network (char = 200).</p></li>
-<li><p><strong>DTPREENCH</strong>: Completion date (date = 10). Format: DD/MM/YYYY</p></li>
-<li><p><strong>REGISTRADO</strong>:</p></li>
-<li><p><strong>DTRECIDIVA</strong>: Date of the last occurrence of recurrence (date = 10). Format: DD/MM/YYYY</p></li>
-<li><p><strong>RECNENHUM</strong>: Without recurrence (int = 1). 0 - No; 1 - Yes</p></li>
-<li><p><strong>RECLOCAL</strong>: Local recurrence (int = 1). 0 - No; 1 - Yes</p></li>
-<li><p><strong>RECREGIO</strong>: Regional recurrence (int = 1). 0 - No; 1 - Yes</p></li>
-<li><p><strong>RECDIST</strong>: Distance / metastasis recurrence (int = 1). 0 - No; 1 - Yes</p></li>
-<li><p><strong>REC01</strong>: Recurrence / metastasis local (char = 3). Format: C99</p></li>
-<li><p><strong>REC02</strong>: Recurrence / metastasis local (char = 3). Format: C99</p></li>
-<li><p><strong>REC03</strong>: Recurrence / metastasis local (char = 3). Format: C99</p></li>
-<li><p><strong>REC04</strong>: Recurrence / metastasis local (char = 3). Format: C99</p></li>
-<li><p><strong>HABILIT2</strong>: Hospital qualification (int = 1). CACON or UNACON</p></li>
-</ul>
+<p>For each label, some scenarios were used to analyze the performance of the models, such as grouping the years and removing some columns from the data.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Libraries and functions</span></p>
 <ul>
@@ -577,6 +277,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Models"><strong>Models</strong></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Data-Dictionary"><strong>Data Dictionary</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#References"><strong>References</strong></a></li>
 </ul>
 </div>

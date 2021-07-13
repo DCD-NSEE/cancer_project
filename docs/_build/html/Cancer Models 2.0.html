@@ -91,6 +91,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html"><strong>Libraries</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Functions"><strong>Functions</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Data-Dictionary"><strong>Data Dictionary</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#References"><strong>References</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Data Analysis</span></p>
@@ -125,6 +126,14 @@
 <li class="toctree-l1"><a class="reference internal" href="Label%20-%20obito_geral.html#Second-approach"><strong>Second approach</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Label%20-%20obito_geral.html#Third-approach"><strong>Third approach</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Label%20-%20obito_geral.html#Fourth-approach"><strong>Fourth approach</strong></a></li>
+</ul>
+<p class="caption"><span class="caption-text">Classification obito_cancer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20obito_cancer.html"><strong>Introduction</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20obito_cancer.html#First-approach"><strong>First approach</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20obito_cancer.html#Second-approach"><strong>Second approach</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20obito_cancer.html#Third-approach"><strong>Third approach</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Label%20-%20obito_cancer.html#Fourth-approach"><strong>Fourth approach</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classification vivo_ano1</span></p>
 <ul>
@@ -5494,6 +5503,32 @@ dtype: int64
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">NAOTRAT</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+8    538811
+5     18809
+7      9862
+2      7343
+9      2615
+6      1233
+3      1123
+4      1028
+1       929
+Name: NAOTRAT, dtype: int64
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="n">save_csv</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;/content/drive/MyDrive/Trabalho/Cancer/Datasets/cancer_preprocessing_dates.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -6069,33 +6104,33 @@ dtype: int64
 <hr class="docutils" />
 <p><strong>Difference, in days, between dates:</strong></p>
 <div class="math notranslate nohighlight">
-\[\Delta t_1 = t_2 - t_1\]</div>
+\[CONSDIAG = t_2 - t_1\]</div>
 <div class="math notranslate nohighlight">
-\[\Delta t_2 = t_3 - t_2\]</div>
+\[DIAGTRAT = t_3 - t_2\]</div>
 <div class="math notranslate nohighlight">
-\[\Delta t_3 = t_3 - t_1\]</div>
+\[TRATCONS = t_3 - t_1\]</div>
 <p><strong>Recurrence:</strong></p>
 <div class="math notranslate nohighlight">
-\[\Delta t_4 = t_4 - t_1\]</div>
+\[RECCONS = t_4 - t_1\]</div>
 <div class="math notranslate nohighlight">
-\[\Delta t_5 = t_4 - t_2\]</div>
+\[RECDIAG = t_4 - t_2\]</div>
 <div class="math notranslate nohighlight">
-\[\Delta t_6 = t_4 - t_3\]</div>
+\[RECTRAT = t_4 - t_3\]</div>
 <p><strong>Last information:</strong></p>
 <div class="math notranslate nohighlight">
-\[\Delta t_7 = t_5 - t_1\]</div>
+\[ULTICONS = t_5 - t_1\]</div>
 <div class="math notranslate nohighlight">
-\[\Delta t_8 = t_5 - t_2\]</div>
+\[ULTIDIAG = t_5 - t_2\]</div>
 <div class="math notranslate nohighlight">
-\[\Delta t_9 = t_5 - t_3\]</div>
+\[ULTITRAT = t_5 - t_3\]</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DTCONSULT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;DTTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;CONSDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;DIAGTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;TRATCONS&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;DTULTINFO&#39;</span><span class="p">,</span> <span class="s1">&#39;DTRECIDIVA&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t1&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t2&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t3&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t4&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;delta_t5&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t6&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t7&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t8&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t9&#39;</span><span class="p">]</span>
+<span></span><span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DTCONSULT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;DTTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTULTINFO&#39;</span><span class="p">,</span> <span class="s1">&#39;DTRECIDIVA&#39;</span><span class="p">,</span> <span class="s1">&#39;CONSDIAG&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;DIAGTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;TRATCONS&#39;</span><span class="p">,</span> <span class="s1">&#39;RECCONS&#39;</span><span class="p">,</span> <span class="s1">&#39;RECDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;RECTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTICONS&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;ULTIDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTITRAT&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -6475,7 +6510,7 @@ dtype: int64
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(506037, 84)
+(506037, 81)
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -6503,20 +6538,17 @@ dtype: int64
       <th>DTCONSULT</th>
       <th>DTDIAG</th>
       <th>DTTRAT</th>
+      <th>DTULTINFO</th>
+      <th>DTRECIDIVA</th>
       <th>CONSDIAG</th>
       <th>DIAGTRAT</th>
       <th>TRATCONS</th>
-      <th>DTULTINFO</th>
-      <th>DTRECIDIVA</th>
-      <th>delta_t1</th>
-      <th>delta_t2</th>
-      <th>delta_t3</th>
-      <th>delta_t4</th>
-      <th>delta_t5</th>
-      <th>delta_t6</th>
-      <th>delta_t7</th>
-      <th>delta_t8</th>
-      <th>delta_t9</th>
+      <th>RECCONS</th>
+      <th>RECDIAG</th>
+      <th>RECTRAT</th>
+      <th>ULTICONS</th>
+      <th>ULTIDIAG</th>
+      <th>ULTITRAT</th>
     </tr>
   </thead>
   <tbody>
@@ -6525,9 +6557,6 @@ dtype: int64
       <td>2003-02-04</td>
       <td>2003-05-29</td>
       <td>2003-05-29</td>
-      <td>114</td>
-      <td>0.0</td>
-      <td>114.0</td>
       <td>2019-02-12</td>
       <td>2011-02-03</td>
       <td>114</td>
@@ -6545,9 +6574,6 @@ dtype: int64
       <td>2016-01-15</td>
       <td>2015-12-08</td>
       <td>2016-02-29</td>
-      <td>38</td>
-      <td>83.0</td>
-      <td>45.0</td>
       <td>2019-07-31</td>
       <td>NaT</td>
       <td>-38</td>
@@ -6565,9 +6591,6 @@ dtype: int64
       <td>2001-07-10</td>
       <td>2001-10-29</td>
       <td>2001-10-29</td>
-      <td>111</td>
-      <td>0.0</td>
-      <td>111.0</td>
       <td>2007-02-22</td>
       <td>2004-06-22</td>
       <td>111</td>
@@ -7004,7 +7027,7 @@ dtype: int64
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(32891, 84)
+(32891, 81)
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -7032,20 +7055,17 @@ dtype: int64
       <th>DTCONSULT</th>
       <th>DTDIAG</th>
       <th>DTTRAT</th>
+      <th>DTULTINFO</th>
+      <th>DTRECIDIVA</th>
       <th>CONSDIAG</th>
       <th>DIAGTRAT</th>
       <th>TRATCONS</th>
-      <th>DTULTINFO</th>
-      <th>DTRECIDIVA</th>
-      <th>delta_t1</th>
-      <th>delta_t2</th>
-      <th>delta_t3</th>
-      <th>delta_t4</th>
-      <th>delta_t5</th>
-      <th>delta_t6</th>
-      <th>delta_t7</th>
-      <th>delta_t8</th>
-      <th>delta_t9</th>
+      <th>RECCONS</th>
+      <th>RECDIAG</th>
+      <th>RECTRAT</th>
+      <th>ULTICONS</th>
+      <th>ULTIDIAG</th>
+      <th>ULTITRAT</th>
     </tr>
   </thead>
   <tbody>
@@ -7054,9 +7074,6 @@ dtype: int64
       <td>2018-08-23</td>
       <td>2018-07-13</td>
       <td>2018-11-06</td>
-      <td>41</td>
-      <td>116.0</td>
-      <td>75.0</td>
       <td>2020-06-22</td>
       <td>NaT</td>
       <td>-41</td>
@@ -7074,9 +7091,6 @@ dtype: int64
       <td>2003-08-22</td>
       <td>2003-12-08</td>
       <td>2004-05-18</td>
-      <td>108</td>
-      <td>162.0</td>
-      <td>270.0</td>
       <td>2012-04-19</td>
       <td>2008-07-15</td>
       <td>108</td>
@@ -7094,9 +7108,6 @@ dtype: int64
       <td>2010-04-05</td>
       <td>2010-04-05</td>
       <td>2010-10-19</td>
-      <td>0</td>
-      <td>197.0</td>
-      <td>197.0</td>
       <td>2015-08-24</td>
       <td>NaT</td>
       <td>0</td>
@@ -7250,6 +7261,9 @@ dtype: int64
       <th>QUIMIO</th>
       <th>HORMONIO</th>
       <th>...</th>
+      <th>IMUNO</th>
+      <th>OUTROS</th>
+      <th>NENHUMANT</th>
       <th>CIRURANT</th>
       <th>RADIOANT</th>
       <th>NENHUMAPOS</th>
@@ -7281,15 +7295,12 @@ dtype: int64
       <th>REC02</th>
       <th>REC03</th>
       <th>HABILIT2</th>
-      <th>delta_t1</th>
-      <th>delta_t2</th>
-      <th>delta_t3</th>
-      <th>delta_t4</th>
-      <th>delta_t5</th>
-      <th>delta_t6</th>
-      <th>delta_t7</th>
-      <th>delta_t8</th>
-      <th>delta_t9</th>
+      <th>RECCONS</th>
+      <th>RECDIAG</th>
+      <th>RECTRAT</th>
+      <th>ULTICONS</th>
+      <th>ULTIDIAG</th>
+      <th>ULTITRAT</th>
     </tr>
   </thead>
   <tbody>
@@ -7341,6 +7352,9 @@ dtype: int64
       <td>1</td>
       <td>0</td>
       <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -7349,8 +7363,8 @@ dtype: int64
       <td>2019-02-12</td>
       <td>2.0</td>
       <td>114</td>
-      <td>114.0</td>
-      <td>0.0</td>
+      <td>114</td>
+      <td>0</td>
       <td>2003</td>
       <td>20-29</td>
       <td>8</td>
@@ -7367,9 +7381,6 @@ dtype: int64
       <td>**Sem informação**</td>
       <td>**Sem informação**</td>
       <td>2</td>
-      <td>114</td>
-      <td>0</td>
-      <td>114</td>
       <td>2921.0</td>
       <td>2807.0</td>
       <td>2807.0</td>
@@ -7425,6 +7436,9 @@ dtype: int64
       <td>1</td>
       <td>0</td>
       <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -7432,9 +7446,9 @@ dtype: int64
       <td>0</td>
       <td>2019-07-31</td>
       <td>2.0</td>
-      <td>38</td>
-      <td>45.0</td>
-      <td>83.0</td>
+      <td>-38</td>
+      <td>45</td>
+      <td>83</td>
       <td>2015</td>
       <td>50-59</td>
       <td>8</td>
@@ -7451,9 +7465,6 @@ dtype: int64
       <td>**Sem informação**</td>
       <td>**Sem informação**</td>
       <td>2</td>
-      <td>-38</td>
-      <td>83</td>
-      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -7463,7 +7474,7 @@ dtype: int64
     </tr>
   </tbody>
 </table>
-<p>2 rows × 84 columns</p>
+<p>2 rows × 81 columns</p>
 </div></div>
 </div>
 <div class="nbinput docutils container">
@@ -8030,8 +8041,8 @@ CSV file saved successfully!
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(506037, 89)
-(32891, 89)
+(506037, 86)
+(32891, 86)
 </pre></div></div>
 </div>
 <p><strong>SP</strong></p>
@@ -8107,6 +8118,9 @@ CSV file saved successfully!
       <th>QUIMIO</th>
       <th>HORMONIO</th>
       <th>...</th>
+      <th>NENHUMAPOS</th>
+      <th>CIRURAPOS</th>
+      <th>RADIOAPOS</th>
       <th>QUIMIOAPOS</th>
       <th>HORMOAPOS</th>
       <th>TMOAPOS</th>
@@ -8133,15 +8147,12 @@ CSV file saved successfully!
       <th>REC02</th>
       <th>REC03</th>
       <th>HABILIT2</th>
-      <th>delta_t1</th>
-      <th>delta_t2</th>
-      <th>delta_t3</th>
-      <th>delta_t4</th>
-      <th>delta_t5</th>
-      <th>delta_t6</th>
-      <th>delta_t7</th>
-      <th>delta_t8</th>
-      <th>delta_t9</th>
+      <th>RECCONS</th>
+      <th>RECDIAG</th>
+      <th>RECTRAT</th>
+      <th>ULTICONS</th>
+      <th>ULTIDIAG</th>
+      <th>ULTITRAT</th>
       <th>obito_geral</th>
       <th>obito_cancer</th>
       <th>vivo_ano1</th>
@@ -8193,6 +8204,9 @@ CSV file saved successfully!
       <td>0</td>
       <td>1</td>
       <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -8201,8 +8215,8 @@ CSV file saved successfully!
       <td>2019-02-12</td>
       <td>2.0</td>
       <td>114</td>
-      <td>114.0</td>
-      <td>0.0</td>
+      <td>114</td>
+      <td>0</td>
       <td>2003</td>
       <td>20-29</td>
       <td>8</td>
@@ -8219,9 +8233,6 @@ CSV file saved successfully!
       <td>**Sem informação**</td>
       <td>**Sem informação**</td>
       <td>2</td>
-      <td>114</td>
-      <td>0</td>
-      <td>114</td>
       <td>2921.0</td>
       <td>2807.0</td>
       <td>2807.0</td>
@@ -8277,6 +8288,9 @@ CSV file saved successfully!
       <td>0</td>
       <td>0</td>
       <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -8284,9 +8298,9 @@ CSV file saved successfully!
       <td>0</td>
       <td>2019-07-31</td>
       <td>2.0</td>
-      <td>38</td>
-      <td>45.0</td>
-      <td>83.0</td>
+      <td>-38</td>
+      <td>45</td>
+      <td>83</td>
       <td>2015</td>
       <td>50-59</td>
       <td>8</td>
@@ -8303,9 +8317,6 @@ CSV file saved successfully!
       <td>**Sem informação**</td>
       <td>**Sem informação**</td>
       <td>2</td>
-      <td>-38</td>
-      <td>83</td>
-      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -8320,7 +8331,7 @@ CSV file saved successfully!
     </tr>
   </tbody>
 </table>
-<p>2 rows × 89 columns</p>
+<p>2 rows × 86 columns</p>
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -8519,6 +8530,9 @@ CSV file saved successfully!
       <th>QUIMIO</th>
       <th>HORMONIO</th>
       <th>...</th>
+      <th>NENHUMAPOS</th>
+      <th>CIRURAPOS</th>
+      <th>RADIOAPOS</th>
       <th>QUIMIOAPOS</th>
       <th>HORMOAPOS</th>
       <th>TMOAPOS</th>
@@ -8545,15 +8559,12 @@ CSV file saved successfully!
       <th>REC02</th>
       <th>REC03</th>
       <th>HABILIT2</th>
-      <th>delta_t1</th>
-      <th>delta_t2</th>
-      <th>delta_t3</th>
-      <th>delta_t4</th>
-      <th>delta_t5</th>
-      <th>delta_t6</th>
-      <th>delta_t7</th>
-      <th>delta_t8</th>
-      <th>delta_t9</th>
+      <th>RECCONS</th>
+      <th>RECDIAG</th>
+      <th>RECTRAT</th>
+      <th>ULTICONS</th>
+      <th>ULTIDIAG</th>
+      <th>ULTITRAT</th>
       <th>obito_geral</th>
       <th>obito_cancer</th>
       <th>vivo_ano1</th>
@@ -8605,6 +8616,9 @@ CSV file saved successfully!
       <td>0</td>
       <td>0</td>
       <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -8612,9 +8626,9 @@ CSV file saved successfully!
       <td>0</td>
       <td>2020-06-22</td>
       <td>1.0</td>
-      <td>41</td>
-      <td>75.0</td>
-      <td>116.0</td>
+      <td>-41</td>
+      <td>75</td>
+      <td>116</td>
       <td>2018</td>
       <td>20-29</td>
       <td>8</td>
@@ -8631,9 +8645,6 @@ CSV file saved successfully!
       <td>**Sem informação**</td>
       <td>**Sem informação**</td>
       <td>2</td>
-      <td>-41</td>
-      <td>116</td>
-      <td>75</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -8689,6 +8700,9 @@ CSV file saved successfully!
       <td>0</td>
       <td>0</td>
       <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -8697,8 +8711,8 @@ CSV file saved successfully!
       <td>2012-04-19</td>
       <td>2.0</td>
       <td>108</td>
-      <td>270.0</td>
-      <td>162.0</td>
+      <td>270</td>
+      <td>162</td>
       <td>2003</td>
       <td>40-49</td>
       <td>8</td>
@@ -8715,9 +8729,6 @@ CSV file saved successfully!
       <td>**Sem informação**</td>
       <td>**Sem informação**</td>
       <td>2</td>
-      <td>108</td>
-      <td>162</td>
-      <td>270</td>
       <td>1789.0</td>
       <td>1681.0</td>
       <td>1519.0</td>
@@ -8732,7 +8743,7 @@ CSV file saved successfully!
     </tr>
   </tbody>
 </table>
-<p>2 rows × 89 columns</p>
+<p>2 rows × 86 columns</p>
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">

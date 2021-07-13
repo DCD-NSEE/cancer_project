@@ -91,6 +91,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html"><strong>Libraries</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Functions"><strong>Functions</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#Data-Dictionary"><strong>Data Dictionary</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Cancer%20Libraries%20and%20functions.html#References"><strong>References</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Data Analysis</span></p>
@@ -589,8 +590,8 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(506037, 93)
-(32891, 93)
+(506037, 90)
+(32891, 90)
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -608,12 +609,12 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-delta_t6      431715
-delta_t5      431715
-delta_t4      431715
 DTRECIDIVA    431715
-LOCALTNM           0
-IDMITOTIC          0
+RECDIAG       431715
+RECCONS       431715
+RECTRAT       431715
+QUIMIO             0
+NAOTRAT            0
 dtype: int64
 </pre></div></div>
 </div>
@@ -632,12 +633,12 @@ dtype: int64
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-delta_t6      29244
-delta_t5      29244
-delta_t4      29244
 DTRECIDIVA    29244
-LOCALTNM          0
-IDMITOTIC         0
+RECDIAG       29244
+RECCONS       29244
+RECTRAT       29244
+QUIMIO            0
+NAOTRAT           0
 dtype: int64
 </pre></div></div>
 </div>
@@ -664,10 +665,10 @@ vivo_sem_rec    0.730128
 ob_sem_rec      0.585984
 ULTINFO         0.456566
 vivo_ano3       0.403906
-delta_t8        0.377902
-delta_t7        0.375342
+ULTIDIAG        0.377902
+ULTICONS        0.375342
 ob_com_rec      0.372341
-delta_t9        0.370999
+ULTITRAT        0.370999
 vivo_ano1       0.334877
 vivo_ano5       0.332117
 QUIMIO          0.283284
@@ -675,8 +676,8 @@ CIRURGIA        0.267225
 RECNENHUM       0.254474
 MORFO           0.190021
 RECREGIO        0.179450
-delta_t5        0.175034
-delta_t4        0.173088
+RECDIAG         0.175034
+RECCONS         0.173088
 ANODIAG         0.167594
 Name: obito_cancer, dtype: float64
 </pre></div></div>
@@ -703,17 +704,17 @@ vivo_sem_rec    0.796206
 ob_sem_rec      0.744893
 ULTINFO         0.564266
 vivo_ano3       0.399038
-delta_t8        0.371161
-delta_t7        0.366288
-delta_t9        0.360228
+ULTIDIAG        0.371161
+ULTICONS        0.366288
+ULTITRAT        0.360228
 vivo_ano5       0.314455
 vivo_ano1       0.313149
 CIRURGIA        0.307777
 ob_com_rec      0.288295
 QUIMIO          0.285630
-delta_t5        0.200811
-delta_t4        0.200060
-delta_t6        0.193978
+RECDIAG         0.200811
+RECCONS         0.200060
+RECTRAT         0.193978
 MORFO           0.176119
 CATEATEND       0.161740
 RECNENHUM       0.151496
@@ -767,18 +768,16 @@ Name: obito_cancer, dtype: int64
 <h2><strong>Preprocessing</strong><a class="headerlink" href="#Preprocessing" title="Permalink to this headline">¶</a></h2>
 <p>Now we are going to divide the data into training and testing, and then do the preprocessing in both datasets to perform the training of the models and their evaluation.</p>
 <p>First, it is necessary to define the columns that will be used as features and the label. We will not use some columns of the data: <code class="docutils literal notranslate"><span class="pre">UFRESID</span></code>, because we already have the division between SP and other states in the two datasets. The date columns will also be removed, <code class="docutils literal notranslate"><span class="pre">DTCONSULT</span></code>, <code class="docutils literal notranslate"><span class="pre">DTDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">DTTRAT</span></code>, <code class="docutils literal notranslate"><span class="pre">DTRECIDIVA</span></code>, <code class="docutils literal notranslate"><span class="pre">DTULTINFO</span></code> and <code class="docutils literal notranslate"><span class="pre">DTPREENCH</span></code>, because we already have the difference in days in other columns.</p>
-<p>It was chosen to keep the column <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, so we will not use the <code class="docutils literal notranslate"><span class="pre">FAIXAETAR</span></code>. The columns <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>, <code class="docutils literal notranslate"><span class="pre">DIAGTRAT</span></code> contain the same information as the <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t2</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code>.</p>
-<p>Finally, the other columns contained in the list <code class="docutils literal notranslate"><span class="pre">list_drop</span></code> are possible labels, so they will not be used as features for machine learning models.</p>
+<p>It was chosen to keep the column <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, so we will not use the <code class="docutils literal notranslate"><span class="pre">FAIXAETAR</span></code>. Finally, the other columns contained in the list <code class="docutils literal notranslate"><span class="pre">list_drop</span></code> are possible labels, so they will not be used as features for machine learning models.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="n">list_drop</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;UFRESID&#39;</span><span class="p">,</span> <span class="s1">&#39;DTCONSULT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;DTTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTRECIDIVA&#39;</span><span class="p">,</span> <span class="s1">&#39;DTULTINFO&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;DTPREENCH&#39;</span><span class="p">,</span> <span class="s1">&#39;FAIXAETAR&#39;</span><span class="p">,</span> <span class="s1">&#39;CONSDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;TRATCONS&#39;</span><span class="p">,</span> <span class="s1">&#39;DIAGTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t4&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;delta_t5&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t6&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t7&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t8&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t9&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano1&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;vivo_ano3&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano5&#39;</span><span class="p">,</span> <span class="s1">&#39;ob_com_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;ob_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_com_rec&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;vivo_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTINFO&#39;</span><span class="p">,</span> <span class="s1">&#39;obito_geral&#39;</span><span class="p">]</span>
+             <span class="s1">&#39;DTPREENCH&#39;</span><span class="p">,</span> <span class="s1">&#39;FAIXAETAR&#39;</span><span class="p">,</span> <span class="s1">&#39;RECCONS&#39;</span><span class="p">,</span> <span class="s1">&#39;RECDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;RECTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTICONS&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;ULTIDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTITRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano1&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano3&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano5&#39;</span><span class="p">,</span> <span class="s1">&#39;ob_com_rec&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;ob_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_com_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTINFO&#39;</span><span class="p">,</span> <span class="s1">&#39;obito_geral&#39;</span><span class="p">]</span>
 
 <span class="n">lb</span> <span class="o">=</span> <span class="s1">&#39;obito_cancer&#39;</span>
 </pre></div>
@@ -883,7 +882,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states</span>
-<span class="n">rf_fora</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">56_000_000</span><span class="p">},</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+<span class="n">rf_fora</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">57_000_000</span><span class="p">},</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
                                  <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">)</span>
 <span class="n">rf_fora</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_OS</span><span class="p">,</span> <span class="n">y_train_OS</span><span class="p">)</span>
 </pre></div>
@@ -895,7 +894,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
-                       class_weight={0: 1, 1: 56000000}, criterion=&#39;entropy&#39;,
+                       class_weight={0: 1, 1: 57000000}, criterion=&#39;entropy&#39;,
                        max_depth=None, max_features=&#39;auto&#39;, max_leaf_nodes=None,
                        max_samples=None, min_impurity_decrease=0.0,
                        min_impurity_split=None, min_samples_leaf=1,
@@ -909,7 +908,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora</span><span class="p">,</span> <span class="n">feat_cols_OS</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora</span><span class="p">,</span> <span class="n">feat_cols_OS</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -931,8 +930,10 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># SP</span>
-<span class="n">xgboost_sp</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="n">xgboost_sp</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+                               <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">2.1</span><span class="p">,</span>
                                <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+
 <span class="n">xgboost_sp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_SP</span><span class="p">,</span> <span class="n">y_train_SP</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -947,7 +948,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
               learning_rate=0.1, max_delta_step=0, max_depth=15,
               min_child_weight=1, missing=None, n_estimators=100, n_jobs=1,
               nthread=None, objective=&#39;binary:logistic&#39;, random_state=10,
-              reg_alpha=0, reg_lambda=1, scale_pos_weight=2, seed=None,
+              reg_alpha=0, reg_lambda=1, scale_pos_weight=2.1, seed=None,
               silent=None, subsample=1, verbosity=1)
 </pre></div></div>
 </div>
@@ -957,8 +958,10 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states</span>
-<span class="n">xgboost_fora</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
+<span class="n">xgboost_fora</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+                                 <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
                                  <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+
 <span class="n">xgboost_fora</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_OS</span><span class="p">,</span> <span class="n">y_train_OS</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1023,7 +1026,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">ANODIAG</span></code> and <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">ANODIAG</span></code> and <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1063,7 +1066,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">ANODIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code> and <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">ANODIAG</span></code> and <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>.</p>
 </div></blockquote>
 </div>
 <div class="section" id="id2">
@@ -1088,7 +1091,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>The confusion matrix obtained for the XGBoost algorithm, with SP dataset, shows a good performance of the model, with 84% of accuracy.</p>
+<div><p>The confusion matrix obtained for the XGBoost algorithm, with SP dataset, shows a good performance of the model, with 85% of accuracy.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1128,7 +1131,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>The confusion matrix obtained for the XGBoost, with the other states data, also shows a good performance of the model. It was obtained a confusion matrix with the balanced main diagonal, showing 82% of accuracy.</p>
+<div><p>The confusion matrix obtained for the XGBoost, with the other states data, also shows a good performance of the model. It was obtained a confusion matrix with the balanced main diagonal, showing 83% of accuracy.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1147,7 +1150,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>Again we noticed that the most used feature was <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, with a lot of advantage. The following most important features were <code class="docutils literal notranslate"><span class="pre">REC01</span></code>, <code class="docutils literal notranslate"><span class="pre">PSA</span></code> and <code class="docutils literal notranslate"><span class="pre">M</span></code>.</p>
+<div><p>Again we noticed that the most used feature was <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, with a lot of advantage. The following most important features were <code class="docutils literal notranslate"><span class="pre">PSA</span></code>, <code class="docutils literal notranslate"><span class="pre">REC01</span></code> and <code class="docutils literal notranslate"><span class="pre">M</span></code>.</p>
 </div></blockquote>
 </div>
 </div>
@@ -1159,18 +1162,16 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 <h2><strong>Preprocessing</strong><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>Now we are going to divide the data into training and testing, and then do the preprocessing in both datasets to perform the training of the models and their evaluation.</p>
 <p>First, it is necessary to define the columns that will be used as features and the label. We will not use some columns of the data: <code class="docutils literal notranslate"><span class="pre">UFRESID</span></code>, because we already have the division between SP and other states in the two datasets. The date columns will also be removed, <code class="docutils literal notranslate"><span class="pre">DTCONSULT</span></code>, <code class="docutils literal notranslate"><span class="pre">DTDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">DTTRAT</span></code>, <code class="docutils literal notranslate"><span class="pre">DTRECIDIVA</span></code>, <code class="docutils literal notranslate"><span class="pre">DTULTINFO</span></code> and <code class="docutils literal notranslate"><span class="pre">DTPREENCH</span></code>, because we already have the difference in days in other columns.</p>
-<p>It was chosen to keep the column <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, so we will not use the <code class="docutils literal notranslate"><span class="pre">FAIXAETAR</span></code>, as well as the column <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code> and not the column <code class="docutils literal notranslate"><span class="pre">EC</span></code>. The columns <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>, <code class="docutils literal notranslate"><span class="pre">DIAGTRAT</span></code> contain the same information as the <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t2</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code>.</p>
-<p>Finally, the other columns contained in the list <code class="docutils literal notranslate"><span class="pre">list_drop</span></code> are possible labels, so they will not be used as features for machine learning models.</p>
+<p>It was chosen to keep the column <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, so we will not use the <code class="docutils literal notranslate"><span class="pre">FAIXAETAR</span></code>, as well as the column <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code> and not the column <code class="docutils literal notranslate"><span class="pre">EC</span></code>. Finally, the other columns contained in the list <code class="docutils literal notranslate"><span class="pre">list_drop</span></code> are possible labels, so they will not be used as features for machine learning models.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="n">list_drop</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;UFRESID&#39;</span><span class="p">,</span> <span class="s1">&#39;DTCONSULT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;DTTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTRECIDIVA&#39;</span><span class="p">,</span> <span class="s1">&#39;DTULTINFO&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;DTPREENCH&#39;</span><span class="p">,</span> <span class="s1">&#39;FAIXAETAR&#39;</span><span class="p">,</span> <span class="s1">&#39;CONSDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;TRATCONS&#39;</span><span class="p">,</span> <span class="s1">&#39;DIAGTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t4&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;delta_t5&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t6&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t7&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t8&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t9&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano1&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;vivo_ano3&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano5&#39;</span><span class="p">,</span> <span class="s1">&#39;ob_com_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;ob_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_com_rec&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;vivo_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTINFO&#39;</span><span class="p">,</span> <span class="s1">&#39;EC&#39;</span><span class="p">,</span> <span class="s1">&#39;obito_geral&#39;</span><span class="p">]</span>
+             <span class="s1">&#39;DTPREENCH&#39;</span><span class="p">,</span> <span class="s1">&#39;FAIXAETAR&#39;</span><span class="p">,</span><span class="s1">&#39;RECCONS&#39;</span><span class="p">,</span> <span class="s1">&#39;RECDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;RECTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTICONS&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;ULTIDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTITRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano1&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano3&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano5&#39;</span><span class="p">,</span> <span class="s1">&#39;ob_com_rec&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;ob_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_com_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTINFO&#39;</span><span class="p">,</span> <span class="s1">&#39;EC&#39;</span><span class="p">,</span> <span class="s1">&#39;obito_geral&#39;</span><span class="p">]</span>
 
 <span class="n">lb</span> <span class="o">=</span> <span class="s1">&#39;obito_cancer&#39;</span>
 </pre></div>
@@ -1258,7 +1259,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_sp</span><span class="p">,</span> <span class="n">feat_cols_SP</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_sp</span><span class="p">,</span> <span class="n">feat_cols_SP</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1301,7 +1302,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora</span><span class="p">,</span> <span class="n">feat_cols_OS</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora</span><span class="p">,</span> <span class="n">feat_cols_OS</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1350,7 +1351,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states</span>
-<span class="n">xgboost_fora</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="n">xgboost_fora</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">3.8</span><span class="p">,</span>
                                  <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 
 <span class="n">xgboost_fora</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_OS</span><span class="p">,</span> <span class="n">y_train_OS</span><span class="p">)</span>
@@ -1367,7 +1368,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
               learning_rate=0.1, max_delta_step=0, max_depth=15,
               min_child_weight=1, missing=None, n_estimators=100, n_jobs=1,
               nthread=None, objective=&#39;binary:logistic&#39;, random_state=10,
-              reg_alpha=0, reg_lambda=1, scale_pos_weight=4, seed=None,
+              reg_alpha=0, reg_lambda=1, scale_pos_weight=3.8, seed=None,
               silent=None, subsample=1, verbosity=1)
 </pre></div></div>
 </div>
@@ -1417,7 +1418,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code> and <code class="docutils literal notranslate"><span class="pre">ANODIAG</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code> and <code class="docutils literal notranslate"><span class="pre">ANODIAG</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1457,7 +1458,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">ANODIAG</span></code> and <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">ANODIAG</span></code> and <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>.</p>
 </div></blockquote>
 </div>
 <div class="section" id="id9">
@@ -1541,7 +1542,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>Again we noticed that the most used feature was <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, with a good advantage. The following most important features were <code class="docutils literal notranslate"><span class="pre">REC01</span></code>, <code class="docutils literal notranslate"><span class="pre">TOPOGRUP</span></code> and <code class="docutils literal notranslate"><span class="pre">IMUNO</span></code>.</p>
+<div><p>Again we noticed that the most used feature was <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, with a good advantage. The following most important features were <code class="docutils literal notranslate"><span class="pre">REC01</span></code>, <code class="docutils literal notranslate"><span class="pre">IMUNO</span></code> and <code class="docutils literal notranslate"><span class="pre">TOPOGRUP</span></code>.</p>
 </div></blockquote>
 </div>
 </div>
@@ -1553,18 +1554,16 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 <h2><strong>Preprocessing</strong><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <p>Now we are going to divide the data into training and testing, and then do the preprocessing in both datasets to perform the training of the models and their evaluation. We will use the years grouped too, resulting in 5 datasets for SP and more 5 for other states.</p>
 <p>First, it is necessary to define the columns that will be used as features and the label. We will not use some columns of the data: <code class="docutils literal notranslate"><span class="pre">UFRESID</span></code>, because we already have the division between SP and other states in the two datasets. The date columns will also be removed, <code class="docutils literal notranslate"><span class="pre">DTCONSULT</span></code>, <code class="docutils literal notranslate"><span class="pre">DTDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">DTTRAT</span></code>, <code class="docutils literal notranslate"><span class="pre">DTRECIDIVA</span></code>, <code class="docutils literal notranslate"><span class="pre">DTULTINFO</span></code> and <code class="docutils literal notranslate"><span class="pre">DTPREENCH</span></code>, because we already have the difference in days in other columns.</p>
-<p>It was chosen to keep the column <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, so we will not use the <code class="docutils literal notranslate"><span class="pre">FAIXAETAR</span></code>, as well as the column <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code> and not the column <code class="docutils literal notranslate"><span class="pre">EC</span></code>. The columns <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>, <code class="docutils literal notranslate"><span class="pre">DIAGTRAT</span></code> contain the same information as the <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t2</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code>.</p>
-<p>Finally, the other columns contained in the list <code class="docutils literal notranslate"><span class="pre">list_drop</span></code> are possible labels, so they will not be used as features for machine learning models.</p>
+<p>It was chosen to keep the column <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, so we will not use the <code class="docutils literal notranslate"><span class="pre">FAIXAETAR</span></code>, as well as the column <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code> and not the column <code class="docutils literal notranslate"><span class="pre">EC</span></code>. Finally, the other columns contained in the list <code class="docutils literal notranslate"><span class="pre">list_drop</span></code> are possible labels, so they will not be used as features for machine learning models.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="n">list_drop</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;UFRESID&#39;</span><span class="p">,</span> <span class="s1">&#39;DTCONSULT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;DTTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTRECIDIVA&#39;</span><span class="p">,</span> <span class="s1">&#39;DTULTINFO&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;DTPREENCH&#39;</span><span class="p">,</span> <span class="s1">&#39;FAIXAETAR&#39;</span><span class="p">,</span> <span class="s1">&#39;CONSDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;TRATCONS&#39;</span><span class="p">,</span> <span class="s1">&#39;DIAGTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t4&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;delta_t5&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t6&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t7&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t8&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t9&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano1&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;vivo_ano3&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano5&#39;</span><span class="p">,</span> <span class="s1">&#39;ob_com_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;ob_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_com_rec&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;vivo_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTINFO&#39;</span><span class="p">,</span> <span class="s1">&#39;EC&#39;</span><span class="p">,</span> <span class="s1">&#39;obito_geral&#39;</span><span class="p">]</span>
+             <span class="s1">&#39;DTPREENCH&#39;</span><span class="p">,</span> <span class="s1">&#39;FAIXAETAR&#39;</span><span class="p">,</span> <span class="s1">&#39;RECCONS&#39;</span><span class="p">,</span> <span class="s1">&#39;RECDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;RECTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTICONS&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;ULTIDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTITRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano1&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano3&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano5&#39;</span><span class="p">,</span> <span class="s1">&#39;ob_com_rec&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;ob_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_com_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTINFO&#39;</span><span class="p">,</span> <span class="s1">&#39;EC&#39;</span><span class="p">,</span> <span class="s1">&#39;obito_geral&#39;</span><span class="p">]</span>
 
 <span class="n">lb</span> <span class="o">=</span> <span class="s1">&#39;obito_cancer&#39;</span>
 </pre></div>
@@ -1926,7 +1925,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, and <code class="docutils literal notranslate"><span class="pre">delta_t2</span></code>. <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code> being the difference, in days, between treatment and consultation and <code class="docutils literal notranslate"><span class="pre">delta_t2</span></code> between treatment and diagnosis.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, and <code class="docutils literal notranslate"><span class="pre">DIAGTRAT</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -2009,7 +2008,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code> and <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code> and <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -2092,7 +2091,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code> and <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code> and <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -2100,7 +2099,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># SP - 2012 to 2015</span>
-<span class="n">rf_sp_12_15</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">60_000_000</span><span class="p">},</span>
+<span class="n">rf_sp_12_15</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">57_000_000</span><span class="p">},</span>
                                      <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">)</span>
 <span class="n">rf_sp_12_15</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainSP_12_15</span><span class="p">,</span> <span class="n">y_trainSP_12_15</span><span class="p">)</span>
 </pre></div>
@@ -2112,7 +2111,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
-                       class_weight={0: 1, 1: 60000000}, criterion=&#39;entropy&#39;,
+                       class_weight={0: 1, 1: 57000000}, criterion=&#39;entropy&#39;,
                        max_depth=None, max_features=&#39;auto&#39;, max_leaf_nodes=None,
                        max_samples=None, min_impurity_decrease=0.0,
                        min_impurity_split=None, min_samples_leaf=1,
@@ -2126,7 +2125,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_sp_12_15</span><span class="p">,</span> <span class="n">feat_SP_12_15</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_sp_12_15</span><span class="p">,</span> <span class="n">feat_SP_12_15</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2175,7 +2174,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code> and <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code> and <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -2258,7 +2257,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, and <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, and <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>.</p>
 </div></blockquote>
 <p><strong>Other states</strong></p>
 <div class="nbinput docutils container">
@@ -2267,7 +2266,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states - 2000 to 2003</span>
-<span class="n">rf_fora_00_03</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">16_000_000</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
+<span class="n">rf_fora_00_03</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">10_000_000</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
                                        <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">)</span>
 <span class="n">rf_fora_00_03</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainOS_00_03</span><span class="p">,</span> <span class="n">y_trainOS_00_03</span><span class="p">)</span>
 </pre></div>
@@ -2279,7 +2278,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
-                       class_weight={0: 16000000, 1: 1}, criterion=&#39;entropy&#39;,
+                       class_weight={0: 10000000, 1: 1}, criterion=&#39;entropy&#39;,
                        max_depth=None, max_features=&#39;auto&#39;, max_leaf_nodes=None,
                        max_samples=None, min_impurity_decrease=0.0,
                        min_impurity_split=None, min_samples_leaf=1,
@@ -2342,7 +2341,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code> and <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code> and <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -2350,7 +2349,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states - 2004 to 2007</span>
-<span class="n">rf_fora_04_07</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">45_000_000</span><span class="p">},</span>
+<span class="n">rf_fora_04_07</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">43_000_000</span><span class="p">},</span>
                                        <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">)</span>
 <span class="n">rf_fora_04_07</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainOS_04_07</span><span class="p">,</span> <span class="n">y_trainOS_04_07</span><span class="p">)</span>
 </pre></div>
@@ -2362,7 +2361,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
-                       class_weight={0: 1, 1: 45000000}, criterion=&#39;entropy&#39;,
+                       class_weight={0: 1, 1: 43000000}, criterion=&#39;entropy&#39;,
                        max_depth=None, max_features=&#39;auto&#39;, max_leaf_nodes=None,
                        max_samples=None, min_impurity_decrease=0.0,
                        min_impurity_split=None, min_samples_leaf=1,
@@ -2376,7 +2375,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_04_07</span><span class="p">,</span> <span class="n">feat_OS_04_07</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_04_07</span><span class="p">,</span> <span class="n">feat_OS_04_07</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2425,7 +2424,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code> and <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code> and <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -2433,7 +2432,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states - 2008 to 2011</span>
-<span class="n">rf_fora_08_11</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">76_000_000</span><span class="p">},</span>
+<span class="n">rf_fora_08_11</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">78_000_000</span><span class="p">},</span>
                                        <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">)</span>
 <span class="n">rf_fora_08_11</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainOS_08_11</span><span class="p">,</span> <span class="n">y_trainOS_08_11</span><span class="p">)</span>
 </pre></div>
@@ -2445,7 +2444,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
-                       class_weight={0: 1, 1: 76000000}, criterion=&#39;entropy&#39;,
+                       class_weight={0: 1, 1: 78000000}, criterion=&#39;entropy&#39;,
                        max_depth=None, max_features=&#39;auto&#39;, max_leaf_nodes=None,
                        max_samples=None, min_impurity_decrease=0.0,
                        min_impurity_split=None, min_samples_leaf=1,
@@ -2459,7 +2458,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_08_11</span><span class="p">,</span> <span class="n">feat_OS_08_11</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_08_11</span><span class="p">,</span> <span class="n">feat_OS_08_11</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2508,7 +2507,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code> and <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code> and <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -2516,7 +2515,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states - 2012 to 2015</span>
-<span class="n">rf_fora_12_15</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">63_000_000</span><span class="p">},</span>
+<span class="n">rf_fora_12_15</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">61_000_000</span><span class="p">},</span>
                                        <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">)</span>
 <span class="n">rf_fora_12_15</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainOS_12_15</span><span class="p">,</span> <span class="n">y_trainOS_12_15</span><span class="p">)</span>
 </pre></div>
@@ -2528,7 +2527,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
-                       class_weight={0: 1, 1: 63000000}, criterion=&#39;entropy&#39;,
+                       class_weight={0: 1, 1: 61000000}, criterion=&#39;entropy&#39;,
                        max_depth=None, max_features=&#39;auto&#39;, max_leaf_nodes=None,
                        max_samples=None, min_impurity_decrease=0.0,
                        min_impurity_split=None, min_samples_leaf=1,
@@ -2542,7 +2541,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_12_15</span><span class="p">,</span> <span class="n">feat_OS_12_15</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_12_15</span><span class="p">,</span> <span class="n">feat_OS_12_15</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2572,7 +2571,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The confusion matrix obtained for the Random Forest, with other states data from 2012 to 2015, also shows a good performance of the model, presenting 80% of accuracy.</p>
+<div><p>The confusion matrix obtained for the Random Forest, with other states data from 2012 to 2015, also shows a good performance of the model, presenting 83% of accuracy.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -2591,7 +2590,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code>, <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code> and <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>, <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code> and <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -2625,7 +2624,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_16_20</span><span class="p">,</span> <span class="n">feat_OS_16_20</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_16_20</span><span class="p">,</span> <span class="n">feat_OS_16_20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2674,7 +2673,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">IDADE</span></code> and <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code> and <code class="docutils literal notranslate"><span class="pre">DIAGTRAT</span></code>.</p>
 </div></blockquote>
 </div>
 <div class="section" id="id12">
@@ -2688,7 +2687,8 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># SP - 2000 to 2003</span>
-<span class="n">xgb_sp_00_03</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+<span class="n">xgb_sp_00_03</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+                                 <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
                                  <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">1.35</span><span class="p">)</span>
 <span class="n">xgb_sp_00_03</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainSP_00_03</span><span class="p">,</span> <span class="n">y_trainSP_00_03</span><span class="p">)</span>
 </pre></div>
@@ -2755,7 +2755,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># SP - 2004 to 2007</span>
 <span class="n">xgb_sp_04_07</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
-                                 <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">1.8</span><span class="p">)</span>
+                                 <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">1.85</span><span class="p">)</span>
 <span class="n">xgb_sp_04_07</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainSP_04_07</span><span class="p">,</span> <span class="n">y_trainSP_04_07</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2770,7 +2770,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
               learning_rate=0.1, max_delta_step=0, max_depth=15,
               min_child_weight=1, missing=None, n_estimators=100, n_jobs=1,
               nthread=None, objective=&#39;binary:logistic&#39;, random_state=10,
-              reg_alpha=0, reg_lambda=1, scale_pos_weight=1.8, seed=None,
+              reg_alpha=0, reg_lambda=1, scale_pos_weight=1.85, seed=None,
               silent=None, subsample=1, verbosity=1)
 </pre></div></div>
 </div>
@@ -2953,7 +2953,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># SP - 2016 to 2021</span>
 <span class="n">xgb_sp_16_21</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
-                                 <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+                                 <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
 <span class="n">xgb_sp_16_21</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainSP_16_21</span><span class="p">,</span> <span class="n">y_trainSP_16_21</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2968,7 +2968,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
               learning_rate=0.1, max_delta_step=0, max_depth=15,
               min_child_weight=1, missing=None, n_estimators=100, n_jobs=1,
               nthread=None, objective=&#39;binary:logistic&#39;, random_state=10,
-              reg_alpha=0, reg_lambda=1, scale_pos_weight=25, seed=None,
+              reg_alpha=0, reg_lambda=1, scale_pos_weight=32, seed=None,
               silent=None, subsample=1, verbosity=1)
 </pre></div></div>
 </div>
@@ -3019,7 +3019,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states - 2000 to 2003</span>
-<span class="n">xgb_fora_00_03</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">3.2</span><span class="p">,</span>
+<span class="n">xgb_fora_00_03</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">3.67</span><span class="p">,</span>
                                    <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 <span class="n">xgb_fora_00_03</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainOS_00_03</span><span class="p">,</span> <span class="n">y_trainOS_00_03</span><span class="p">)</span>
 </pre></div>
@@ -3035,7 +3035,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
               learning_rate=0.1, max_delta_step=0, max_depth=15,
               min_child_weight=1, missing=None, n_estimators=100, n_jobs=1,
               nthread=None, objective=&#39;binary:logistic&#39;, random_state=10,
-              reg_alpha=0, reg_lambda=1, scale_pos_weight=3.2, seed=None,
+              reg_alpha=0, reg_lambda=1, scale_pos_weight=3.67, seed=None,
               silent=None, subsample=1, verbosity=1)
 </pre></div></div>
 </div>
@@ -3077,7 +3077,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>Again we noticed that the most used feature was <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, with a good advantage. The following most important features were <code class="docutils literal notranslate"><span class="pre">REC01</span></code>, <code class="docutils literal notranslate"><span class="pre">RECNENHUM</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p>
+<div><p>Again we noticed that the most used feature was <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, with a good advantage. The following most important features were <code class="docutils literal notranslate"><span class="pre">REC01</span></code>, <code class="docutils literal notranslate"><span class="pre">G</span></code> and <code class="docutils literal notranslate"><span class="pre">RECNENHUM</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -3085,7 +3085,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states - 2004 to 2007</span>
-<span class="n">xgb_fora_04_07</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">3.2</span><span class="p">,</span>
+<span class="n">xgb_fora_04_07</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
                                    <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 <span class="n">xgb_fora_04_07</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainOS_04_07</span><span class="p">,</span> <span class="n">y_trainOS_04_07</span><span class="p">)</span>
 </pre></div>
@@ -3101,7 +3101,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
               learning_rate=0.1, max_delta_step=0, max_depth=15,
               min_child_weight=1, missing=None, n_estimators=100, n_jobs=1,
               nthread=None, objective=&#39;binary:logistic&#39;, random_state=10,
-              reg_alpha=0, reg_lambda=1, scale_pos_weight=3.2, seed=None,
+              reg_alpha=0, reg_lambda=1, scale_pos_weight=3, seed=None,
               silent=None, subsample=1, verbosity=1)
 </pre></div></div>
 </div>
@@ -3143,7 +3143,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>Again we noticed that the most used feature was <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, with a good advantage. The following most important features were <code class="docutils literal notranslate"><span class="pre">REC01</span></code>, <code class="docutils literal notranslate"><span class="pre">RECNENHUM</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p>
+<div><p>Again we noticed that the most used feature was <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, with a good advantage. The following most important features were <code class="docutils literal notranslate"><span class="pre">REC01</span></code>, <code class="docutils literal notranslate"><span class="pre">RECNENHUM</span></code> and <code class="docutils literal notranslate"><span class="pre">BASEDIAG</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -3151,7 +3151,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states - 2008 to 2011</span>
-<span class="n">xgb_fora_08_11</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+<span class="n">xgb_fora_08_11</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span>
                                    <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 <span class="n">xgb_fora_08_11</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainOS_08_11</span><span class="p">,</span> <span class="n">y_trainOS_08_11</span><span class="p">)</span>
 </pre></div>
@@ -3167,7 +3167,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
               learning_rate=0.1, max_delta_step=0, max_depth=15,
               min_child_weight=1, missing=None, n_estimators=100, n_jobs=1,
               nthread=None, objective=&#39;binary:logistic&#39;, random_state=10,
-              reg_alpha=0, reg_lambda=1, scale_pos_weight=15, seed=None,
+              reg_alpha=0, reg_lambda=1, scale_pos_weight=18, seed=None,
               silent=None, subsample=1, verbosity=1)
 </pre></div></div>
 </div>
@@ -3190,7 +3190,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>The confusion matrix obtained for the XGBoost, with other states from 2008 to 2011, also shows a good performance of the model with 80% of accuracy.</p>
+<div><p>The confusion matrix obtained for the XGBoost, with other states from 2008 to 2011, also shows a good performance of the model with 81% of accuracy.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -3209,7 +3209,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>Again we noticed that the most used feature was <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, but not with a lot of advantage. The following most important features were <code class="docutils literal notranslate"><span class="pre">TOPGRUP</span></code>, <code class="docutils literal notranslate"><span class="pre">REC01</span></code> and <code class="docutils literal notranslate"><span class="pre">QUIMIOAPOS</span></code>.</p>
+<div><p>Again we noticed that the most used feature was <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, but not with a lot of advantage. The following most important features were <code class="docutils literal notranslate"><span class="pre">TOPGRUP</span></code>, <code class="docutils literal notranslate"><span class="pre">REC01</span></code> and <code class="docutils literal notranslate"><span class="pre">HORMONIO</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -3322,7 +3322,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>The confusion matrix obtained for the XGBoost, with other states from 2016 to 2020, shows the best performance comparing with the other models, with 82% of accuracy.</p>
+<div><p>The confusion matrix obtained for the XGBoost, with other states from 2016 to 2020, shows the best performance comparing with the other models, with 83% of accuracy.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -4125,18 +4125,16 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 <h2><strong>Preprocessing</strong><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
 <p>Now we are going to divide the data into training and testing, and then do the preprocessing in both datasets to perform the training of the models and their evaluation. We will use the years grouped too, resulting in 5 datasets for SP and more 5 for other states.</p>
 <p>First, it is necessary to define the columns that will be used as features and the label. We will not use some columns of the data: <code class="docutils literal notranslate"><span class="pre">UFRESID</span></code>, because we already have the division between SP and other states in the two datasets. The date columns will also be removed, <code class="docutils literal notranslate"><span class="pre">DTCONSULT</span></code>, <code class="docutils literal notranslate"><span class="pre">DTDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">DTTRAT</span></code>, <code class="docutils literal notranslate"><span class="pre">DTRECIDIVA</span></code>, <code class="docutils literal notranslate"><span class="pre">DTULTINFO</span></code> and <code class="docutils literal notranslate"><span class="pre">DTPREENCH</span></code>, because we already have the difference in days in other columns.</p>
-<p>It was chosen to keep the column <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, so we will not use the <code class="docutils literal notranslate"><span class="pre">FAIXAETAR</span></code>, as well as the column <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code> and not the column <code class="docutils literal notranslate"><span class="pre">EC</span></code>. The columns <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>, <code class="docutils literal notranslate"><span class="pre">DIAGTRAT</span></code> contain the same information as the <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t2</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code>.</p>
-<p>Finally, the other columns contained in the list <code class="docutils literal notranslate"><span class="pre">list_drop</span></code> are possible labels, so they will not be used as features for machine learning models.</p>
+<p>It was chosen to keep the column <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, so we will not use the <code class="docutils literal notranslate"><span class="pre">FAIXAETAR</span></code>, as well as the column <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code> and not the column <code class="docutils literal notranslate"><span class="pre">EC</span></code>. Finally, the other columns contained in the list <code class="docutils literal notranslate"><span class="pre">list_drop</span></code> are possible labels, so they will not be used as features for machine learning models.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="n">list_drop</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;UFRESID&#39;</span><span class="p">,</span> <span class="s1">&#39;DTCONSULT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;DTTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;DTRECIDIVA&#39;</span><span class="p">,</span> <span class="s1">&#39;DTULTINFO&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;DTPREENCH&#39;</span><span class="p">,</span> <span class="s1">&#39;FAIXAETAR&#39;</span><span class="p">,</span> <span class="s1">&#39;CONSDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;TRATCONS&#39;</span><span class="p">,</span> <span class="s1">&#39;DIAGTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t4&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;delta_t5&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t6&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t7&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t8&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_t9&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano1&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;vivo_ano3&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano5&#39;</span><span class="p">,</span> <span class="s1">&#39;ob_com_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;ob_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_com_rec&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;vivo_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTINFO&#39;</span><span class="p">,</span> <span class="s1">&#39;EC&#39;</span><span class="p">,</span> <span class="s1">&#39;obito_geral&#39;</span><span class="p">]</span>
+             <span class="s1">&#39;DTPREENCH&#39;</span><span class="p">,</span> <span class="s1">&#39;FAIXAETAR&#39;</span><span class="p">,</span> <span class="s1">&#39;RECCONS&#39;</span><span class="p">,</span> <span class="s1">&#39;RECDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;RECTRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTICONS&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;ULTIDIAG&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTITRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano1&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano3&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_ano5&#39;</span><span class="p">,</span> <span class="s1">&#39;ob_com_rec&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;ob_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_com_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;vivo_sem_rec&#39;</span><span class="p">,</span> <span class="s1">&#39;ULTINFO&#39;</span><span class="p">,</span> <span class="s1">&#39;EC&#39;</span><span class="p">,</span> <span class="s1">&#39;obito_geral&#39;</span><span class="p">]</span>
 
 <span class="n">lb</span> <span class="o">=</span> <span class="s1">&#39;obito_cancer&#39;</span>
 </pre></div>
@@ -4433,7 +4431,7 @@ y_train = (9298,), y_test = (2062,)
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># SP - 2000 to 2003</span>
-<span class="n">rf_sp_00_03</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
+<span class="n">rf_sp_00_03</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">40_000_000</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
                                      <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">)</span>
 <span class="n">rf_sp_00_03</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainSP_00_03</span><span class="p">,</span> <span class="n">y_trainSP_00_03</span><span class="p">)</span>
 </pre></div>
@@ -4444,14 +4442,14 @@ y_train = (9298,), y_test = (2062,)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight={0: 1, 1: 1},
-                       criterion=&#39;entropy&#39;, max_depth=None, max_features=&#39;auto&#39;,
-                       max_leaf_nodes=None, max_samples=None,
-                       min_impurity_decrease=0.0, min_impurity_split=None,
-                       min_samples_leaf=1, min_samples_split=2,
-                       min_weight_fraction_leaf=0.0, n_estimators=100,
-                       n_jobs=None, oob_score=False, random_state=10, verbose=0,
-                       warm_start=False)
+RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
+                       class_weight={0: 40000000, 1: 1}, criterion=&#39;entropy&#39;,
+                       max_depth=None, max_features=&#39;auto&#39;, max_leaf_nodes=None,
+                       max_samples=None, min_impurity_decrease=0.0,
+                       min_impurity_split=None, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=None, oob_score=False,
+                       random_state=10, verbose=0, warm_start=False)
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -4508,7 +4506,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight={0: 1, 1: 1},
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code>, and <code class="docutils literal notranslate"><span class="pre">REC01</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, and <code class="docutils literal notranslate"><span class="pre">DIAGTRAT</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -4542,7 +4540,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_sp_04_07</span><span class="p">,</span> <span class="n">feat_SP_04_07</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_sp_04_07</span><span class="p">,</span> <span class="n">feat_SP_04_07</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4591,7 +4589,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code> and <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code> and <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -4599,7 +4597,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># SP - 2008 to 2011</span>
-<span class="n">rf_sp_08_11</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">49_000_000</span><span class="p">},</span>
+<span class="n">rf_sp_08_11</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">49_500_000</span><span class="p">},</span>
                                      <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">)</span>
 <span class="n">rf_sp_08_11</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainSP_08_11</span><span class="p">,</span> <span class="n">y_trainSP_08_11</span><span class="p">)</span>
 </pre></div>
@@ -4611,7 +4609,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
-                       class_weight={0: 1, 1: 49000000}, criterion=&#39;entropy&#39;,
+                       class_weight={0: 1, 1: 49500000}, criterion=&#39;entropy&#39;,
                        max_depth=None, max_features=&#39;auto&#39;, max_leaf_nodes=None,
                        max_samples=None, min_impurity_decrease=0.0,
                        min_impurity_split=None, min_samples_leaf=1,
@@ -4674,7 +4672,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code> and <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code> and <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -4682,7 +4680,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># SP - 2012 to 2015</span>
-<span class="n">rf_sp_12_15</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">60_000_000</span><span class="p">},</span>
+<span class="n">rf_sp_12_15</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">58_000_000</span><span class="p">},</span>
                                      <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">)</span>
 <span class="n">rf_sp_12_15</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainSP_12_15</span><span class="p">,</span> <span class="n">y_trainSP_12_15</span><span class="p">)</span>
 </pre></div>
@@ -4694,7 +4692,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
-                       class_weight={0: 1, 1: 60000000}, criterion=&#39;entropy&#39;,
+                       class_weight={0: 1, 1: 58000000}, criterion=&#39;entropy&#39;,
                        max_depth=None, max_features=&#39;auto&#39;, max_leaf_nodes=None,
                        max_samples=None, min_impurity_decrease=0.0,
                        min_impurity_split=None, min_samples_leaf=1,
@@ -4708,7 +4706,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_sp_12_15</span><span class="p">,</span> <span class="n">feat_SP_12_15</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_sp_12_15</span><span class="p">,</span> <span class="n">feat_SP_12_15</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4757,7 +4755,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code> and <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code> and <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -4840,7 +4838,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, and <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, and <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>.</p>
 </div></blockquote>
 <p><strong>Other states</strong></p>
 <div class="nbinput docutils container">
@@ -4849,7 +4847,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states - 2000 to 2003</span>
-<span class="n">rf_fora_00_03</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">650_000_00</span><span class="p">},</span>
+<span class="n">rf_fora_00_03</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">65_800_000</span><span class="p">},</span>
                                        <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">)</span>
 <span class="n">rf_fora_00_03</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainOS_00_03</span><span class="p">,</span> <span class="n">y_trainOS_00_03</span><span class="p">)</span>
 </pre></div>
@@ -4861,7 +4859,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
-                       class_weight={0: 1, 1: 65000000}, criterion=&#39;entropy&#39;,
+                       class_weight={0: 1, 1: 65800000}, criterion=&#39;entropy&#39;,
                        max_depth=None, max_features=&#39;auto&#39;, max_leaf_nodes=None,
                        max_samples=None, min_impurity_decrease=0.0,
                        min_impurity_split=None, min_samples_leaf=1,
@@ -4924,7 +4922,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code>, <code class="docutils literal notranslate"><span class="pre">IDADE</span></code> and <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>, <code class="docutils literal notranslate"><span class="pre">IDADE</span></code> and <code class="docutils literal notranslate"><span class="pre">DIAGTRAT</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -4932,7 +4930,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states - 2004 to 2007</span>
-<span class="n">rf_fora_04_07</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">60_000_000</span><span class="p">},</span>
+<span class="n">rf_fora_04_07</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">57_000_000</span><span class="p">},</span>
                                        <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">)</span>
 <span class="n">rf_fora_04_07</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainOS_04_07</span><span class="p">,</span> <span class="n">y_trainOS_04_07</span><span class="p">)</span>
 </pre></div>
@@ -4944,7 +4942,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
-                       class_weight={0: 1, 1: 60000000}, criterion=&#39;entropy&#39;,
+                       class_weight={0: 1, 1: 57000000}, criterion=&#39;entropy&#39;,
                        max_depth=None, max_features=&#39;auto&#39;, max_leaf_nodes=None,
                        max_samples=None, min_impurity_decrease=0.0,
                        min_impurity_split=None, min_samples_leaf=1,
@@ -4958,7 +4956,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_04_07</span><span class="p">,</span> <span class="n">feat_OS_04_07</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_04_07</span><span class="p">,</span> <span class="n">feat_OS_04_07</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -5007,7 +5005,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code> and <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code> and <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -5041,7 +5039,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_08_11</span><span class="p">,</span> <span class="n">feat_OS_08_11</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_08_11</span><span class="p">,</span> <span class="n">feat_OS_08_11</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -5090,7 +5088,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code> and <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code> and <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -5124,7 +5122,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_12_15</span><span class="p">,</span> <span class="n">feat_OS_12_15</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_12_15</span><span class="p">,</span> <span class="n">feat_OS_12_15</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -5173,7 +5171,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t3</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code> and <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>, <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code> and <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -5207,7 +5205,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_16_20</span><span class="p">,</span> <span class="n">feat_OS_16_20</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span></span><span class="n">show_tree</span><span class="p">(</span><span class="n">rf_fora_16_20</span><span class="p">,</span> <span class="n">feat_OS_16_20</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -5256,7 +5254,7 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">delta_t1</span></code>, <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">delta_t2</span></code> and <code class="docutils literal notranslate"><span class="pre">IBGE</span></code>.</p>
+<div><p>The four most important features in the model were <code class="docutils literal notranslate"><span class="pre">CONSDIAG</span></code>, <code class="docutils literal notranslate"><span class="pre">IDADE</span></code>, <code class="docutils literal notranslate"><span class="pre">IBGE</span></code> and <code class="docutils literal notranslate"><span class="pre">TRATCONS</span></code>.</p>
 </div></blockquote>
 </div>
 <div class="section" id="id18">
@@ -5441,7 +5439,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>The confusion matrix obtained for the XGBoost, with the SP data from 2008 to 2011, shows a good performance of the model, with 83% of accuracy.</p>
+<div><p>The confusion matrix obtained for the XGBoost, with the SP data from 2008 to 2011, shows a good performance of the model, with 84% of accuracy.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -5469,7 +5467,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># SP - 2012 to 2015</span>
 <span class="n">xgb_sp_12_15</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
-                                 <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">3.8</span><span class="p">)</span>
+                                 <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">3.6</span><span class="p">)</span>
 <span class="n">xgb_sp_12_15</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainSP_12_15</span><span class="p">,</span> <span class="n">y_trainSP_12_15</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -5484,7 +5482,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
               learning_rate=0.1, max_delta_step=0, max_depth=15,
               min_child_weight=1, missing=None, n_estimators=100, n_jobs=1,
               nthread=None, objective=&#39;binary:logistic&#39;, random_state=10,
-              reg_alpha=0, reg_lambda=1, scale_pos_weight=3.8, seed=None,
+              reg_alpha=0, reg_lambda=1, scale_pos_weight=3.6, seed=None,
               silent=None, subsample=1, verbosity=1)
 </pre></div></div>
 </div>
@@ -5592,7 +5590,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features were <code class="docutils literal notranslate"><span class="pre">RECNENHUM</span></code>, <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, <code class="docutils literal notranslate"><span class="pre">TOPOGRUP</span></code> and <code class="docutils literal notranslate"><span class="pre">M</span></code>.</p>
+<div><p>The four most important features were <code class="docutils literal notranslate"><span class="pre">RECNENHUM</span></code>, <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, <code class="docutils literal notranslate"><span class="pre">TOPOGRUP</span></code> and <code class="docutils literal notranslate"><span class="pre">HORMOAPOS</span></code>.</p>
 </div></blockquote>
 <p><strong>Other states</strong></p>
 <div class="nbinput docutils container">
@@ -5601,7 +5599,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states - 2000 to 2003</span>
-<span class="n">xgb_fora_00_03</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">2.8</span><span class="p">,</span>
+<span class="n">xgb_fora_00_03</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
                                    <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 <span class="n">xgb_fora_00_03</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainOS_00_03</span><span class="p">,</span> <span class="n">y_trainOS_00_03</span><span class="p">)</span>
 </pre></div>
@@ -5617,7 +5615,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
               learning_rate=0.1, max_delta_step=0, max_depth=15,
               min_child_weight=1, missing=None, n_estimators=100, n_jobs=1,
               nthread=None, objective=&#39;binary:logistic&#39;, random_state=10,
-              reg_alpha=0, reg_lambda=1, scale_pos_weight=2.8, seed=None,
+              reg_alpha=0, reg_lambda=1, scale_pos_weight=2.5, seed=None,
               silent=None, subsample=1, verbosity=1)
 </pre></div></div>
 </div>
@@ -5640,7 +5638,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>The confusion matrix obtained for the XGBoost, with other states data from 2000 to 2003, also shows a good performance of the model, with 77% of accuracy.</p>
+<div><p>The confusion matrix obtained for the XGBoost, with other states data from 2000 to 2003, also shows a good performance of the model, with 76% of accuracy.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -5659,7 +5657,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>Again we noticed that the most used feature was <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, with a good advantage. The following most important features were <code class="docutils literal notranslate"><span class="pre">REC01</span></code>, <code class="docutils literal notranslate"><span class="pre">HABILIT2</span></code> and <code class="docutils literal notranslate"><span class="pre">RECLOCAL</span></code>.</p>
+<div><p>Again we noticed that the most used feature was <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, with a good advantage. The following most important features were <code class="docutils literal notranslate"><span class="pre">REC01</span></code>, <code class="docutils literal notranslate"><span class="pre">HABILIT2</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -5667,7 +5665,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states - 2004 to 2007</span>
-<span class="n">xgb_fora_04_07</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
+<span class="n">xgb_fora_04_07</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">2.35</span><span class="p">,</span>
                                    <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 <span class="n">xgb_fora_04_07</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainOS_04_07</span><span class="p">,</span> <span class="n">y_trainOS_04_07</span><span class="p">)</span>
 </pre></div>
@@ -5683,7 +5681,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
               learning_rate=0.1, max_delta_step=0, max_depth=15,
               min_child_weight=1, missing=None, n_estimators=100, n_jobs=1,
               nthread=None, objective=&#39;binary:logistic&#39;, random_state=10,
-              reg_alpha=0, reg_lambda=1, scale_pos_weight=2.5, seed=None,
+              reg_alpha=0, reg_lambda=1, scale_pos_weight=2.35, seed=None,
               silent=None, subsample=1, verbosity=1)
 </pre></div></div>
 </div>
@@ -5733,7 +5731,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states - 2008 to 2011</span>
-<span class="n">xgb_fora_08_11</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">5.3</span><span class="p">,</span>
+<span class="n">xgb_fora_08_11</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">5.1</span><span class="p">,</span>
                                    <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 <span class="n">xgb_fora_08_11</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainOS_08_11</span><span class="p">,</span> <span class="n">y_trainOS_08_11</span><span class="p">)</span>
 </pre></div>
@@ -5749,7 +5747,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
               learning_rate=0.1, max_delta_step=0, max_depth=15,
               min_child_weight=1, missing=None, n_estimators=100, n_jobs=1,
               nthread=None, objective=&#39;binary:logistic&#39;, random_state=10,
-              reg_alpha=0, reg_lambda=1, scale_pos_weight=5.3, seed=None,
+              reg_alpha=0, reg_lambda=1, scale_pos_weight=5.1, seed=None,
               silent=None, subsample=1, verbosity=1)
 </pre></div></div>
 </div>
@@ -5791,7 +5789,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>Again we noticed that the most used feature was <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, but not with a lot of advantage. The following most important features were <code class="docutils literal notranslate"><span class="pre">REC01</span></code>, <code class="docutils literal notranslate"><span class="pre">HORMONIO</span></code> and <code class="docutils literal notranslate"><span class="pre">RECNENHUM</span></code>.</p>
+<div><p>Again we noticed that the most used feature was <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, but not with a lot of advantage. The following most important features were <code class="docutils literal notranslate"><span class="pre">REC01</span></code>, <code class="docutils literal notranslate"><span class="pre">HORMONIO</span></code> and <code class="docutils literal notranslate"><span class="pre">OUTROS</span></code>.</p>
 </div></blockquote>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -5865,7 +5863,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Other states - 2016 to 2020</span>
-<span class="n">xgb_fora_16_20</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mi">28</span><span class="p">,</span>
+<span class="n">xgb_fora_16_20</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">scale_pos_weight</span><span class="o">=</span><span class="mf">27.8</span><span class="p">,</span>
                                    <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 <span class="n">xgb_fora_16_20</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trainOS_16_20</span><span class="p">,</span> <span class="n">y_trainOS_16_20</span><span class="p">)</span>
 </pre></div>
@@ -5881,7 +5879,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
               learning_rate=0.1, max_delta_step=0, max_depth=15,
               min_child_weight=1, missing=None, n_estimators=100, n_jobs=1,
               nthread=None, objective=&#39;binary:logistic&#39;, random_state=10,
-              reg_alpha=0, reg_lambda=1, scale_pos_weight=28, seed=None,
+              reg_alpha=0, reg_lambda=1, scale_pos_weight=27.8, seed=None,
               silent=None, subsample=1, verbosity=1)
 </pre></div></div>
 </div>
@@ -5923,7 +5921,7 @@ XGBClassifier(base_score=0.5, booster=&#39;gbtree&#39;, colsample_bylevel=1,
 </div>
 </div>
 <blockquote>
-<div><p>The four most important features were <code class="docutils literal notranslate"><span class="pre">PSA</span></code>, <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, <code class="docutils literal notranslate"><span class="pre">GLEASON</span></code> and <code class="docutils literal notranslate"><span class="pre">PT</span></code>.</p>
+<div><p>The four most important features were <code class="docutils literal notranslate"><span class="pre">PSA</span></code>, <code class="docutils literal notranslate"><span class="pre">ECGRUP</span></code>, <code class="docutils literal notranslate"><span class="pre">GLEASON</span></code> and <code class="docutils literal notranslate"><span class="pre">RECREGIO</span></code>.</p>
 </div></blockquote>
 </div>
 </div>
