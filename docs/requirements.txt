@@ -1,4 +1,5 @@
 nbsphinx
+Sphinx==4.0.2
 pandas
 matplotlib
 scikit-learn
