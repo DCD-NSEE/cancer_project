@@ -56,7 +56,7 @@ For each label, some scenarios were used to analyze the performance of the model
    :maxdepth: 2
    :caption: Data Analysis
 
-   Cancer Models 2.0
+   Cancer Models
 
 .. toctree::
    :maxdepth: 2
