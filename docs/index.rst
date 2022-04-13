@@ -19,9 +19,9 @@ Authors
 Introduction
 ------------
 
-Here is presented the project documentation with cancer data provided by FOSP (Fundação Oncocentro de São Paulo).
+Here is presented the project documentation using **all types of cancer** provided by FOSP (Fundação Oncocentro de São Paulo).
 
-The project was developed using the python language, with the objective of making predictions for deaths using machine learning models, specifically the models Random Forest and XGBoost. 
+The project was developed using the python language, with the objective of making predictions for death and survival using machine learning models, specifically the models Random Forest and XGBoost. 
 
 Complete notebooks are available on `Github <https://github.com/Lucas-Buk/cancer_project>`_.
 
