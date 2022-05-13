@@ -1259,6 +1259,7 @@ y_train = (24668,), y_test = (8223,)
                                <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
                                <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span>
                                <span class="n">max_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
 <span class="n">rf_sp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_SP</span><span class="p">,</span> <span class="n">y_train_SP</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1281,12 +1282,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 1.27}, criterion=&#39;entropy&#39;
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_28_0.png" src="_images/Label_-_obito_geral_28_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.83      0.81      0.82     69132
+           1       0.78      0.81      0.79     57378
+
+    accuracy                           0.81    126510
+   macro avg       0.80      0.81      0.81    126510
+weighted avg       0.81      0.81      0.81    126510
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with SP data, shows a good performance of the model, with 81% of accuracy.</p>
@@ -1368,6 +1386,7 @@ RandomForestClassifier(class_weight={0: 1, 1: 1.27}, criterion=&#39;entropy&#39;
                                  <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
                                  <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span>
                                  <span class="n">max_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
 <span class="n">rf_fora</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_OS</span><span class="p">,</span> <span class="n">y_train_OS</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1390,12 +1409,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 1.8}, criterion=&#39;entropy&#39;,
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_36_0.png" src="_images/Label_-_obito_geral_36_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.81      0.84      5092
+           1       0.72      0.81      0.76      3131
+
+    accuracy                           0.81      8223
+   macro avg       0.80      0.81      0.80      8223
+weighted avg       0.82      0.81      0.81      8223
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest algorithm, with other states data, shows a good performance of the model, because the model achieves a 81% of accuracy.</p>
@@ -1503,12 +1539,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=1.25)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_46_0.png" src="_images/Label_-_obito_geral_46_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.83      0.85     69132
+           1       0.81      0.83      0.82     57378
+
+    accuracy                           0.83    126510
+   macro avg       0.83      0.83      0.83    126510
+weighted avg       0.83      0.83      0.83    126510
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with SP data, shows a good performance of the model, with 83% of accuracy.</p>
@@ -1595,12 +1648,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=2.35)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_53_0.png" src="_images/Label_-_obito_geral_53_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.82      0.85      5092
+           1       0.74      0.82      0.77      3131
+
+    accuracy                           0.82      8223
+   macro avg       0.81      0.82      0.81      8223
+weighted avg       0.83      0.82      0.82      8223
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost algorithm, with other states data, shows a good performance of the model, because the model achieves a 82% of accuracy.</p>
@@ -1772,12 +1842,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 1.15}, criterion=&#39;entropy&#39;
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_74_0.png" src="_images/Label_-_obito_geral_74_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.81      0.80      0.80     60502
+           1       0.79      0.80      0.79     56661
+
+    accuracy                           0.80    117163
+   macro avg       0.80      0.80      0.80    117163
+weighted avg       0.80      0.80      0.80    117163
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with SP data, also shows a good performance of the model, with 80% of accuracy.</p>
@@ -1882,12 +1969,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 1.48}, criterion=&#39;entropy&#39;
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_82_0.png" src="_images/Label_-_obito_geral_82_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.80      0.83      4578
+           1       0.74      0.80      0.77      3115
+
+    accuracy                           0.80      7693
+   macro avg       0.80      0.80      0.80      7693
+weighted avg       0.81      0.80      0.80      7693
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest algorithm with other states data shows a good performance of the model, because the model achieves a 80% of accuracy.</p>
@@ -1995,12 +2099,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=1.108)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_92_0.png" src="_images/Label_-_obito_geral_92_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.83      0.82      0.83     60502
+           1       0.82      0.82      0.82     56661
+
+    accuracy                           0.82    117163
+   macro avg       0.82      0.82      0.82    117163
+weighted avg       0.82      0.82      0.82    117163
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with SP data, also shows a good performance of the model, with 82% of accuracy.</p>
@@ -2087,12 +2208,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=1.8)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_99_0.png" src="_images/Label_-_obito_geral_99_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.81      0.83      4578
+           1       0.74      0.81      0.77      3115
+
+    accuracy                           0.81      7693
+   macro avg       0.80      0.81      0.80      7693
+weighted avg       0.81      0.81      0.81      7693
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost algorithm with SP data shows a good performance of the model, because the model achieves a 81% of accuracy.</p>
@@ -2474,12 +2612,29 @@ RandomForestClassifier(class_weight={0: 1.85, 1: 1}, criterion=&#39;entropy&#39;
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_129_0.png" src="_images/Label_-_obito_geral_129_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.67      0.79      0.73      5933
+           1       0.87      0.79      0.83     10692
+
+    accuracy                           0.79     16625
+   macro avg       0.77      0.79      0.78     16625
+weighted avg       0.80      0.79      0.79     16625
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with SP data from 2000 to 2003, shows a good performance of the model, with 79% of accuracy.</p>
@@ -2584,12 +2739,29 @@ RandomForestClassifier(class_weight={0: 1.25, 1: 1}, criterion=&#39;entropy&#39;
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_137_0.png" src="_images/Label_-_obito_geral_137_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.73      0.79      0.76      8835
+           1       0.84      0.79      0.81     12052
+
+    accuracy                           0.79     20887
+   macro avg       0.79      0.79      0.79     20887
+weighted avg       0.79      0.79      0.79     20887
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with SP data from 2004 to 2007, shows a good performance of the model, with 79% of accuracy.</p>
@@ -2694,12 +2866,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 1.2}, criterion=&#39;entropy&#39;,
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_145_0.png" src="_images/Label_-_obito_geral_145_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.80      0.80      0.80     13700
+           1       0.81      0.80      0.80     14043
+
+    accuracy                           0.80     27743
+   macro avg       0.80      0.80      0.80     27743
+weighted avg       0.80      0.80      0.80     27743
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with SP data from 2008 to 2011, shows a good performance of the model, with 80% of accuracy.</p>
@@ -2804,12 +2993,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 2}, criterion=&#39;entropy&#39;,
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_153_0.png" src="_images/Label_-_obito_geral_153_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.81      0.84     21278
+           1       0.73      0.81      0.77     13352
+
+    accuracy                           0.81     34630
+   macro avg       0.80      0.81      0.81     34630
+weighted avg       0.82      0.81      0.81     34630
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with SP data from 2012 to 2015, shows a good performance of the model with 81% of accuracy.</p>
@@ -2914,12 +3120,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 2.9}, criterion=&#39;entropy&#39;,
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_161_0.png" src="_images/Label_-_obito_geral_161_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.92      0.81      0.86     19595
+           1       0.60      0.81      0.69      7031
+
+    accuracy                           0.81     26626
+   macro avg       0.76      0.81      0.78     26626
+weighted avg       0.84      0.81      0.82     26626
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with SP data from 2016 to 2021, shows a good performance of the model, with 81% of accuracy.</p>
@@ -3025,12 +3248,29 @@ RandomForestClassifier(class_weight={0: 1.43, 1: 1}, criterion=&#39;entropy&#39;
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_170_0.png" src="_images/Label_-_obito_geral_170_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.66      0.74      0.70       383
+           1       0.80      0.74      0.77       552
+
+    accuracy                           0.74       935
+   macro avg       0.73      0.74      0.74       935
+weighted avg       0.75      0.74      0.74       935
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with other states data from 2000 to 2003, also shows a good performance of the model, and we have a balanced main diagonal with 74% of accuracy.</p>
@@ -3135,12 +3375,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 1.5001}, criterion=&#39;entropy&#3
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_178_0.png" src="_images/Label_-_obito_geral_178_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.80      0.79      0.79       672
+           1       0.78      0.79      0.79       643
+
+    accuracy                           0.79      1315
+   macro avg       0.79      0.79      0.79      1315
+weighted avg       0.79      0.79      0.79      1315
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with other states data from 2004 to 2007, also shows a good performance of the model, with 79% of accuracy.</p>
@@ -3245,12 +3502,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 2.3}, criterion=&#39;entropy&#39;,
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_186_0.png" src="_images/Label_-_obito_geral_186_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.82      0.78      0.80       913
+           1       0.73      0.78      0.76       701
+
+    accuracy                           0.78      1614
+   macro avg       0.78      0.78      0.78      1614
+weighted avg       0.78      0.78      0.78      1614
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with other states data from 2008 to 2011, also shows a good performance of the model, presenting 78% of accuracy.</p>
@@ -3355,12 +3629,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 3.7}, criterion=&#39;entropy&#39;,
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_194_0.png" src="_images/Label_-_obito_geral_194_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.80      0.85      1447
+           1       0.67      0.80      0.73       706
+
+    accuracy                           0.80      2153
+   macro avg       0.78      0.80      0.79      2153
+weighted avg       0.82      0.80      0.81      2153
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with other states data from 2012 to 2015, also shows a good performance of the model, presenting 80% of accuracy.</p>
@@ -3465,12 +3756,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 4.5}, criterion=&#39;entropy&#39;,
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_202_0.png" src="_images/Label_-_obito_geral_202_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.93      0.83      0.88      1632
+           1       0.64      0.83      0.72       576
+
+    accuracy                           0.83      2208
+   macro avg       0.79      0.83      0.80      2208
+weighted avg       0.86      0.83      0.84      2208
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with other states data from 2016 to 2020, also shows a good performance of the model, presenting 83% of accuracy.</p>
@@ -3579,12 +3887,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=0.5)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_213_0.png" src="_images/Label_-_obito_geral_213_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.69      0.80      0.74      5933
+           1       0.88      0.80      0.84     10692
+
+    accuracy                           0.80     16625
+   macro avg       0.79      0.80      0.79     16625
+weighted avg       0.81      0.80      0.81     16625
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with SP data from 2000 to 2003, shows a good performance of the model, here with 80% of accuracy.</p>
@@ -3671,12 +3996,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=0.73)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_220_0.png" src="_images/Label_-_obito_geral_220_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.76      0.81      0.78      8835
+           1       0.85      0.81      0.83     12052
+
+    accuracy                           0.81     20887
+   macro avg       0.80      0.81      0.81     20887
+weighted avg       0.81      0.81      0.81     20887
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with SP data from 2004 to 2007, shows a good performance of the model, with 81% of accuracy.</p>
@@ -3763,12 +4105,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=1.15)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_227_0.png" src="_images/Label_-_obito_geral_227_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.82      0.82      0.82     13700
+           1       0.82      0.82      0.82     14043
+
+    accuracy                           0.82     27743
+   macro avg       0.82      0.82      0.82     27743
+weighted avg       0.82      0.82      0.82     27743
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with SP data from 2008 to 2011, shows a good performance of the model, with 82% of accuracy.</p>
@@ -3855,12 +4214,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=1.9)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_234_0.png" src="_images/Label_-_obito_geral_234_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.83      0.85     21278
+           1       0.75      0.83      0.79     13352
+
+    accuracy                           0.83     34630
+   macro avg       0.82      0.83      0.82     34630
+weighted avg       0.83      0.83      0.83     34630
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with SP data from 2012 to 2015, shows a good performance of the model, with 83% of accuracy.</p>
@@ -3947,12 +4323,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=3.5)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_241_0.png" src="_images/Label_-_obito_geral_241_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.93      0.83      0.88     19595
+           1       0.64      0.83      0.72      7031
+
+    accuracy                           0.83     26626
+   macro avg       0.79      0.83      0.80     26626
+weighted avg       0.85      0.83      0.84     26626
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with SP data from 2016 to 2021, shows a good performance of the model, with 83% of accuracy.</p>
@@ -4040,12 +4433,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=0.65)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_249_0.png" src="_images/Label_-_obito_geral_249_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.65      0.73      0.69       383
+           1       0.79      0.73      0.76       552
+
+    accuracy                           0.73       935
+   macro avg       0.72      0.73      0.72       935
+weighted avg       0.74      0.73      0.73       935
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with other states data from 2000 to 2003, also shows a good performance of the model, with 73% of accuracy.</p>
@@ -4132,12 +4542,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=1.6)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_256_0.png" src="_images/Label_-_obito_geral_256_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.80      0.80      0.80       672
+           1       0.79      0.80      0.79       643
+
+    accuracy                           0.80      1315
+   macro avg       0.80      0.80      0.80      1315
+weighted avg       0.80      0.80      0.80      1315
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with other states data from 2004 to 2007, also shows a good performance of the model with 80% of accuracy.</p>
@@ -4224,12 +4651,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=3.5)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_263_0.png" src="_images/Label_-_obito_geral_263_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.83      0.79      0.81       913
+           1       0.75      0.79      0.77       701
+
+    accuracy                           0.79      1614
+   macro avg       0.79      0.79      0.79      1614
+weighted avg       0.79      0.79      0.79      1614
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with other states data from 2008 to 2011, also shows a good performance of the model with 79% of accuracy.</p>
@@ -4316,12 +4760,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=12)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_270_0.png" src="_images/Label_-_obito_geral_270_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.80      0.85      1447
+           1       0.67      0.80      0.73       706
+
+    accuracy                           0.80      2153
+   macro avg       0.78      0.80      0.79      2153
+weighted avg       0.82      0.80      0.81      2153
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with other states data from 2012 to 2015, also shows a good performance of the model with 80% of accuracy.</p>
@@ -4408,12 +4869,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=25)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_277_0.png" src="_images/Label_-_obito_geral_277_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.92      0.81      0.86      1632
+           1       0.60      0.81      0.69       576
+
+    accuracy                           0.81      2208
+   macro avg       0.76      0.81      0.78      2208
+weighted avg       0.84      0.81      0.82      2208
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with other states data from 2016 to 2020, shows the best performance comparing with the other models, with 81% of accuracy.</p>
@@ -5477,12 +5955,29 @@ RandomForestClassifier(class_weight={0: 2.15, 1: 1}, criterion=&#39;entropy&#39;
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_365_0.png" src="_images/Label_-_obito_geral_365_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.61      0.77      0.68      4790
+           1       0.88      0.77      0.82     10577
+
+    accuracy                           0.77     15367
+   macro avg       0.75      0.77      0.75     15367
+weighted avg       0.80      0.77      0.78     15367
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with SP data from 2000 to 2003, shows a good performance of the model, with 77% of accuracy.</p>
@@ -5587,12 +6082,29 @@ RandomForestClassifier(class_weight={0: 1.32, 1: 1}, criterion=&#39;entropy&#39;
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_373_0.png" src="_images/Label_-_obito_geral_373_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.69      0.78      0.74      7548
+           1       0.85      0.78      0.81     11842
+
+    accuracy                           0.78     19390
+   macro avg       0.77      0.78      0.77     19390
+weighted avg       0.79      0.78      0.78     19390
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with SP data from 2004 to 2007, shows a good performance of the model, with 78% of accuracy.</p>
@@ -5697,12 +6209,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 1.098}, criterion=&#39;entropy&#39
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_381_0.png" src="_images/Label_-_obito_geral_381_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.77      0.79      0.78     12072
+           1       0.81      0.79      0.80     13732
+
+    accuracy                           0.79     25804
+   macro avg       0.79      0.79      0.79     25804
+weighted avg       0.79      0.79      0.79     25804
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with SP data from 2008 to 2011, shows a good performance of the model, with 79% of accuray.</p>
@@ -5807,12 +6336,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 1.8}, criterion=&#39;entropy&#39;,
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_389_0.png" src="_images/Label_-_obito_geral_389_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.81      0.83     19067
+           1       0.74      0.81      0.77     12975
+
+    accuracy                           0.81     32042
+   macro avg       0.80      0.81      0.80     32042
+weighted avg       0.81      0.81      0.81     32042
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with SP data from 2012 to 2015, shows a good performance of the model with 81% of accuracy.</p>
@@ -5917,12 +6463,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 2.5}, criterion=&#39;entropy&#39;,
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_397_0.png" src="_images/Label_-_obito_geral_397_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.92      0.81      0.86     17594
+           1       0.63      0.81      0.71      6967
+
+    accuracy                           0.81     24561
+   macro avg       0.77      0.81      0.78     24561
+weighted avg       0.83      0.81      0.82     24561
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with SP data from 2016 to 2021, shows a good performance of the model, with 81% of accuracy.</p>
@@ -6028,12 +6591,29 @@ RandomForestClassifier(class_weight={0: 1.48, 1: 1}, criterion=&#39;entropy&#39;
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_406_0.png" src="_images/Label_-_obito_geral_406_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.67      0.77      0.72       326
+           1       0.85      0.77      0.81       539
+
+    accuracy                           0.77       865
+   macro avg       0.76      0.77      0.76       865
+weighted avg       0.78      0.77      0.77       865
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with other states data from 2000 to 2003, also shows a good performance of the model, and we have a balanced main diagonal with 77% of accuracy.</p>
@@ -6138,12 +6718,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 1.17}, criterion=&#39;entropy&#39;
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_414_0.png" src="_images/Label_-_obito_geral_414_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.77      0.77      0.77       615
+           1       0.77      0.77      0.77       617
+
+    accuracy                           0.77      1232
+   macro avg       0.77      0.77      0.77      1232
+weighted avg       0.77      0.77      0.77      1232
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with other states data from 2004 to 2007, also shows a good performance of the model, with 77% of accuracy.</p>
@@ -6248,12 +6845,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 1.6}, criterion=&#39;entropy&#39;,
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_422_0.png" src="_images/Label_-_obito_geral_422_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.84      0.80      0.82       843
+           1       0.76      0.80      0.78       670
+
+    accuracy                           0.80      1513
+   macro avg       0.80      0.80      0.80      1513
+weighted avg       0.80      0.80      0.80      1513
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with other states data from 2008 to 2011, also shows a good performance of the model, presenting 80% of accuracy.</p>
@@ -6358,12 +6972,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 2.9}, criterion=&#39;entropy&#39;,
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_430_0.png" src="_images/Label_-_obito_geral_430_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.82      0.85      1319
+           1       0.71      0.82      0.76       705
+
+    accuracy                           0.82      2024
+   macro avg       0.80      0.82      0.81      2024
+weighted avg       0.83      0.82      0.82      2024
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with other states data from 2012 to 2015, also shows a good performance of the model, presenting 82% of accuracy.</p>
@@ -6468,12 +7099,29 @@ RandomForestClassifier(class_weight={0: 1, 1: 2.8}, criterion=&#39;entropy&#39;,
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_438_0.png" src="_images/Label_-_obito_geral_438_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.94      0.83      0.88      1558
+           1       0.61      0.83      0.70       504
+
+    accuracy                           0.83      2062
+   macro avg       0.77      0.83      0.79      2062
+weighted avg       0.86      0.83      0.84      2062
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the Random Forest, with other states data from 2016 to 2020, also shows a good performance of the model, presenting 83% of accuracy.</p>
@@ -6582,12 +7230,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=0.4)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_449_0.png" src="_images/Label_-_obito_geral_449_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.63      0.79      0.70      4790
+           1       0.89      0.79      0.84     10577
+
+    accuracy                           0.79     15367
+   macro avg       0.76      0.79      0.77     15367
+weighted avg       0.81      0.79      0.80     15367
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with the SP data from 2000 to 2003, shows a good performance of the model, here with 79% of accuracy.</p>
@@ -6674,12 +7339,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=0.65)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_456_0.png" src="_images/Label_-_obito_geral_456_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.72      0.80      0.76      7548
+           1       0.86      0.80      0.83     11842
+
+    accuracy                           0.80     19390
+   macro avg       0.79      0.80      0.79     19390
+weighted avg       0.80      0.80      0.80     19390
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with the SP data from 2004 to 2007, shows a good performance of the model, with 80% of accuracy.</p>
@@ -6766,12 +7448,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=1.04)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_463_0.png" src="_images/Label_-_obito_geral_463_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.79      0.81      0.80     12072
+           1       0.83      0.81      0.82     13732
+
+    accuracy                           0.81     25804
+   macro avg       0.81      0.81      0.81     25804
+weighted avg       0.82      0.81      0.81     25804
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with SP data from 2008 to 2011, shows a good performance of the model, with 81% of accuracy.</p>
@@ -6858,12 +7557,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=1.7)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_470_0.png" src="_images/Label_-_obito_geral_470_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.83      0.85     19067
+           1       0.76      0.83      0.79     12975
+
+    accuracy                           0.83     32042
+   macro avg       0.82      0.83      0.82     32042
+weighted avg       0.83      0.83      0.83     32042
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with SP data from 2012 to 2015, shows a good performance of the model, with 83% of accuracy.</p>
@@ -6950,12 +7666,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=3.2)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_477_0.png" src="_images/Label_-_obito_geral_477_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.92      0.83      0.87     17594
+           1       0.65      0.83      0.73      6967
+
+    accuracy                           0.83     24561
+   macro avg       0.79      0.83      0.80     24561
+weighted avg       0.85      0.83      0.83     24561
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, for SP data from 2016 to 2021, shows a good performance of the model, with 83% of accuracy.</p>
@@ -7043,12 +7776,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=0.45)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_485_0.png" src="_images/Label_-_obito_geral_485_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.65      0.75      0.70       326
+           1       0.84      0.75      0.79       539
+
+    accuracy                           0.75       865
+   macro avg       0.74      0.75      0.75       865
+weighted avg       0.77      0.75      0.76       865
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with other states data from 2000 to 2003, also shows a good performance of the model, with 75% of accuracy.</p>
@@ -7135,12 +7885,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=0.9)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_492_0.png" src="_images/Label_-_obito_geral_492_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.76      0.76      0.76       615
+           1       0.76      0.76      0.76       617
+
+    accuracy                           0.76      1232
+   macro avg       0.76      0.76      0.76      1232
+weighted avg       0.76      0.76      0.76      1232
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with other states data from 2004 to 2007, also shows a good performance of the model with 76% of accuracy.</p>
@@ -7227,12 +7994,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=2.35)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_499_0.png" src="_images/Label_-_obito_geral_499_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.83      0.79      0.81       843
+           1       0.75      0.79      0.77       670
+
+    accuracy                           0.79      1513
+   macro avg       0.79      0.79      0.79      1513
+weighted avg       0.79      0.79      0.79      1513
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with other states data from 2008 to 2011, also shows a good performance of the model with 79% of accuracy.</p>
@@ -7319,12 +8103,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=8.03)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_506_0.png" src="_images/Label_-_obito_geral_506_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.81      0.85      1319
+           1       0.70      0.81      0.75       705
+
+    accuracy                           0.81      2024
+   macro avg       0.79      0.81      0.80      2024
+weighted avg       0.82      0.81      0.82      2024
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with other states data from 2012 to 2015, also shows a good performance of the model with 81% of accuracy.</p>
@@ -7411,12 +8212,29 @@ XGBClassifier(max_depth=10, random_state=10, scale_pos_weight=11)
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/Label_-_obito_geral_513_0.png" src="_images/Label_-_obito_geral_513_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+              precision    recall  f1-score   support
+
+           0       0.93      0.82      0.87      1558
+           1       0.60      0.82      0.69       504
+
+    accuracy                           0.82      2062
+   macro avg       0.77      0.82      0.78      2062
+weighted avg       0.85      0.82      0.83      2062
+
+</pre></div></div>
 </div>
 <blockquote>
 <div><p>The confusion matrix obtained for the XGBoost, with other states data from 2016 to 2020, shows the best performance comparing with the other models, with 82% of accuracy.</p>
