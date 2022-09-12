@@ -9,19 +9,21 @@ Welcome to Cancer Project's documentation!
 Authors
 -------
 
-* Gisele Fernandes
-* Lucas Buk Cardoso
-* Maria Paula Curado
-* Stela Verzinhasse Peres 
-* Tatiana Natasha Toporcov
-* Vanderlei Cunha Parro
+* Gisele Fernandes - Epidemiology and Statistics on Cancer Group, International Research Center, A.C. Camargo Cancer Center
+* Lucas Buk Cardoso - Research Engineer at Núcleo de Sistemas Eletrônicos Embarcados, Instituto Mauá de Tecnologia
+* Maria Paula Curado - Epidemiology and Statistics on Cancer Group, International Research Center, A.C. Camargo Cancer Center
+* Stela Verzinhasse Peres - Director of Information and Epidemiology, Fundação Oncocentro de São Paulo
+* Tatiana Natasha Toporcov - Epidemiology Department, Faculdade de Saúde Pública, Universidade de São Paulo
+* Vanderlei Cunha Parro - Coordinator of Núcleo de Sistemas Eletrônicos Embarcados, Instituto Mauá de Tecnologia
 
 Introduction
 ------------
 
 Here is presented the project documentation using **all types of cancer** provided by FOSP (Fundação Oncocentro de São Paulo).
 
-The project was developed using the python language, with the objective of making predictions for death and survival using machine learning models, specifically the models Random Forest and XGBoost. 
+The project aims to use machine learning models to predict and identify the characteristics that most interfere in the death and survival of cancer patients in the state of São Paulo, Brazil. The data were extracted from the Deputy Directorate of Information and Epidemiology of Fundação Oncocentro de São Paulo, coordinator of the Hospital Cancer Registry of São Paulo, and contains patients treated between 2000 and 2021.
+
+The project was developed using the python language, using machine learning models, specifically the models Random Forest and XGBoost. 
 
 Complete notebooks are available on `Github <https://github.com/Lucas-Buk/cancer_project>`_.
 
