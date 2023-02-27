@@ -18,7 +18,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'Cancer Project'
-copyright = '2021, Lucas Buk Cardoso'
+copyright = '2022, Lucas Buk Cardoso'
 author = 'Lucas Buk Cardoso'
 
 # The full version, including alpha/beta/rc tags
