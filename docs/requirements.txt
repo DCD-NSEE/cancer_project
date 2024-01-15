@@ -11,3 +11,4 @@ xgboost
 ipython
 ipykernel
 shap
+sphinx_rtd_theme
