@@ -25,7 +25,7 @@ The project aims to use machine learning models to predict and identify the char
 
 The project was developed using the python language, using machine learning models, specifically the models Random Forest and XGBoost. 
 
-Complete notebooks are available on `Github <https://github.com/Lucas-Buk/cancer_project>`_.
+Complete notebooks are available on `Github <https://github.com/DCD-NSEE/cancer_project>`_.
 
 Summary
 -------
